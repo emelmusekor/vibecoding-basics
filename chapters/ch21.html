@@ -1,0 +1,246 @@
+<section class="chapter" id="ch21" data-part="6" data-title="3D와 여럿이 하는 게임">
+  <div class="ch-head">
+    <div class="ch-num">21</div>
+    <div>
+      <h2>3D와 여럿이 하는 게임</h2>
+      <div class="meta">비유 <b>상자 속 인형극 · 가게를 거쳐 가는 봉투</b> · 용어 3D, 카메라, 모델 파일, 실시간 연결, 지연(핑)</div>
+    </div>
+  </div>
+
+  <p>지금까지 본 게임은 대부분 <strong>2D</strong>였습니다. 2D 게임은 종이 위에 그린 그림과 같습니다. 가로와 세로만 있어서, 화면에 보이는 모습이 곧 그림 전부입니다.</p>
+  <p><strong>3D</strong> 게임은 상자 속 인형극에 가깝습니다. 상자 안에 무대를 꾸미고 인형을 세운 뒤, 조명을 비추고 카메라로 찍은 모습을 화면에 보여 줍니다. 인형은 앞뒤옆이 모두 만들어져 있어서 카메라를 옮기면 다른 면이 보입니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 800 310" role="img" aria-label="왼쪽은 종이 위에 그린 평면 그림, 오른쪽은 상자 무대 안의 인형을 조명이 비추고 카메라가 찍는 모습">
+      <!-- 2D 종이 -->
+      <text x="170" y="28" font-size="16" font-weight="800" text-anchor="middle" fill="#b8406a">2D · 종이 위 그림</text>
+      <g transform="rotate(-3 170 160)">
+        <rect x="50" y="50" width="240" height="190" rx="4" fill="#fff" stroke="#cfd3db" stroke-width="2"/>
+        <rect x="80" y="130" width="70" height="60" fill="#e9c79a" stroke="#9a7449" stroke-width="2"/>
+        <path d="M72 132 L115 96 L158 132 Z" fill="#c2692a"/>
+        <rect x="104" y="160" width="20" height="30" fill="#7d5a35"/>
+        <rect x="222" y="160" width="10" height="30" fill="#7d5a35"/>
+        <circle cx="227" cy="146" r="24" fill="#5fae64"/>
+        <circle cx="185" cy="168" r="8" fill="#f2c9a0"/>
+        <rect x="178" y="176" width="14" height="16" rx="4" fill="#2f6fb0"/>
+        <line x1="62" y1="192" x2="280" y2="192" stroke="#8a93a6" stroke-width="2"/>
+      </g>
+      <text x="170" y="272" font-size="14" text-anchor="middle" fill="#4a5468">가로 · 세로 두 방향만 있습니다</text>
+      <text x="170" y="292" font-size="14" text-anchor="middle" fill="#4a5468">보이는 모습이 그림 전부</text>
+
+      <!-- 3D 상자 무대 -->
+      <text x="590" y="28" font-size="16" font-weight="800" text-anchor="middle" fill="#b8406a">3D · 상자 속 인형극</text>
+      <path d="M380 40 L760 40 L700 70 L440 70 Z" fill="#f1e6ee" stroke="#c2a07a" stroke-width="2"/>
+      <path d="M440 70 L700 70 L700 180 L440 180 Z" fill="#f6eef8" stroke="#c2a07a" stroke-width="2"/>
+      <path d="M380 40 L440 70 L440 180 L380 250 Z" fill="#ead9e4" stroke="#c2a07a" stroke-width="2"/>
+      <path d="M760 40 L700 70 L700 180 L760 250 Z" fill="#ead9e4" stroke="#c2a07a" stroke-width="2"/>
+      <path d="M380 250 L440 180 L700 180 L760 250 Z" fill="#e3d2bd" stroke="#c2a07a" stroke-width="2"/>
+      <!-- 인형: 집 -->
+      <path d="M470 205 L510 195 L540 205 L540 168 L510 158 L470 168 Z" fill="#e9c79a" stroke="#9a7449" stroke-width="1.5"/>
+      <path d="M470 205 L470 168 L500 178 L500 215 Z" fill="#d6ad78" stroke="#9a7449" stroke-width="1.5"/>
+      <path d="M500 215 L540 205 L540 168 L500 178 Z" fill="#e9c79a" stroke="#9a7449" stroke-width="1.5"/>
+      <path d="M464 170 L494 140 L546 166 L500 180 Z" fill="#c2692a"/>
+      <path d="M494 140 L510 128 L546 166 Z" fill="#a8551f"/>
+      <!-- 인형: 나무 -->
+      <rect x="642" y="190" width="10" height="26" fill="#7d5a35"/>
+      <path d="M622 196 L647 140 L672 196 Z" fill="#5fae64"/>
+      <path d="M647 140 L672 196 L656 200 Z" fill="#4a944f"/>
+      <!-- 인형: 사람 -->
+      <circle cx="590" cy="186" r="9" fill="#f2c9a0"/>
+      <rect x="581" y="195" width="18" height="22" rx="5" fill="#2f6fb0"/>
+      <ellipse cx="590" cy="220" rx="14" ry="4" fill="#000" opacity=".12"/>
+
+      <!-- 조명 -->
+      <g class="reveal d3">
+        <line x1="570" y1="44" x2="570" y2="62" stroke="#4a5468" stroke-width="3"/>
+        <path d="M556 62 h28 l6 12 h-40 z" fill="#4a5468"/>
+        <path d="M552 76 L486 206 L680 206 L588 76 Z" fill="#ffd95e" opacity=".22">
+          <animate attributeName="opacity" values=".12;.3;.12" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <text x="604" y="56" font-size="14" font-weight="700" fill="#8a6312">조명</text>
+      </g>
+
+      <!-- 카메라 이동 -->
+      <path id="c21-cam" d="M 420 290 Q 570 320 720 290" fill="none" stroke="#b8406a" stroke-width="1.5" stroke-dasharray="4 5" opacity=".6"/>
+      <g class="reveal d4">
+        <g>
+          <rect x="-18" y="-11" width="30" height="22" rx="4" fill="#1d2433"/>
+          <path d="M12 -6 L22 -11 L22 11 L12 6 Z" fill="#1d2433"/>
+          <circle cx="-3" cy="0" r="6" fill="#7aa2f7"/>
+          <animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="linear"><mpath href="#c21-cam"/></animateMotion>
+        </g>
+        <text x="760" y="300" font-size="14" font-weight="700" text-anchor="end" fill="#b8406a">카메라</text>
+      </g>
+
+      <!-- 이름표 -->
+      <g class="reveal d1"><text x="452" y="268" font-size="14" font-weight="700" fill="#9a7449">무대</text><line x1="466" y1="256" x2="452" y2="232" stroke="#9a7449" stroke-width="1.5"/></g>
+      <g class="reveal d2"><text x="604" y="242" font-size="14" font-weight="700" fill="#2f6fb0">인형(모델)</text></g>
+    </svg>
+    <figcaption>3D 화면은 상자 속 무대를 카메라로 찍은 사진을 1초에 수십 번 다시 찍어서 보여 주는 것입니다.</figcaption>
+  </figure>
+
+  <h3>3D에는 무엇이 더 필요할까</h3>
+  <div class="pair">
+    <div><b>카메라 · 어디서 보나</b>같은 무대도 카메라 위치에 따라 전혀 다르게 보입니다. 카메라가 주인공 뒤를 따라갈지, 위에서 내려다볼지 정해야 합니다.</div>
+    <div><b>조명 · 어디서 비추나</b>조명이 없으면 인형이 까맣게 보입니다. 빛을 받는 면은 밝게, 반대쪽 면은 어둡게 칠해야 입체로 보입니다.</div>
+    <div><b>모델 파일 · 인형 서류</b>인형 하나하나가 <code>.glb</code> 같은 양식의 서류입니다. 모양과 색이 모두 담겨 있어서 용량이 크고, 처음 열 때 택배가 오래 걸립니다(9장).</div>
+    <div><b>기기 성능 · 책상 넓이</b>카메라가 움직일 때마다 모든 인형의 모든 면을 다시 계산해서 그립니다. 책상(3장)이 좁은 휴대폰에서는 화면이 뚝뚝 끊기기 쉽습니다.</div>
+  </div>
+  <p>웹에서 3D를 만들 때는 직접 하나하나 계산하지 않고 <b>Three.js</b> 같은 도구를 가져다 씁니다. 조수에게 "Three.js로 만들어 줘"라고 하면 그 도구를 써서 무대와 카메라를 차려 줍니다.</p>
+  <p>바이브코딩으로 3D 게임도 만들 수 있습니다. 다만 카메라 각도, 조명, 인형 크기, 바닥에 발이 닿는지처럼 고칠 곳이 2D보다 훨씬 많습니다. 처음에는 같은 게임을 2D로 만들어 규칙과 재미를 확인하고, 그다음에 3D로 옮기는 편이 덜 헤맵니다.</p>
+
+  <div class="lab c21-lab1">
+    <div class="lab-title">직접 해 보기 · 종이 그림과 인형극<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">같은 장면을 2D와 3D로 바꿔 보세요. 3D에서는 슬라이더를 움직이거나 그림을 옆으로 끌어서 카메라를 돌려 봅니다.</p>
+      <div class="c21-modes" role="group" aria-label="보기 방식">
+        <button type="button" data-v="2d">2D · 위에서 본 평면</button>
+        <button type="button" data-v="3d">3D · 카메라로 본 무대</button>
+      </div>
+      <div class="c21-view-wrap"><canvas class="c21-view" aria-label="장면 그림"></canvas></div>
+      <div class="c21-ctrls">
+        <div class="slider"><label for="c21-yaw">카메라 돌리기</label><input id="c21-yaw" class="c21-yaw" type="range" min="0" max="359" value="35"><output class="c21-yaw-out">35°</output></div>
+        <div class="slider"><label for="c21-pitch">카메라 높이</label><input id="c21-pitch" class="c21-pitch" type="range" min="8" max="80" value="28"><output class="c21-pitch-out">28°</output></div>
+        <div class="slider"><label for="c21-sun">조명 방향</label><input id="c21-sun" class="c21-sun" type="range" min="0" max="359" value="220"><output class="c21-sun-out">220°</output></div>
+        <label class="switch c21-wire-sw"><input type="checkbox" class="c21-wire"><span class="track"></span>선만 보기</label>
+      </div>
+      <div class="c21-stat"></div>
+      <div class="lab-msg c21-msg1">위의 두 단추를 번갈아 눌러 보세요.</div>
+    </div>
+  </div>
+
+  <h3>여럿이 하는 게임은 가게를 거칩니다</h3>
+  <p>친구와 각자 휴대폰으로 같은 게임을 한다고 해 봅니다. 내 화면은 내 책상 위에서, 친구 화면은 친구 집 책상 위에서 돌아갑니다. 12장에서 본 손님 테이블처럼 <strong>두 화면은 서로를 모릅니다.</strong> 내가 캐릭터를 움직여도 친구 휴대폰은 그 사실을 알 길이 없습니다.</p>
+  <p>그래서 가운데에 가게(서버)를 둡니다. 각자의 화면은 "내 캐릭터가 지금 여기 있어요"라는 봉투를 가게로 보내고, 가게는 모든 사람의 위치를 모아 다시 나눠 줍니다. 친구 화면은 가게에서 받은 봉투를 보고 내 캐릭터를 그립니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 860 280" role="img" aria-label="친구 A와 B의 화면은 직접 연결되지 않고, 위치 봉투가 가운데 가게를 거쳐 서로에게 전해진다">
+      <defs>
+        <path id="c21-a2s" d="M 210 120 Q 320 70 380 118"/>
+        <path id="c21-s2b" d="M 480 118 Q 540 70 650 120"/>
+        <path id="c21-b2s" d="M 650 160 Q 540 210 480 162"/>
+        <path id="c21-s2a" d="M 380 162 Q 320 210 210 160"/>
+      </defs>
+      <!-- A 집 -->
+      <path d="M20 90 L115 40 L210 90 Z" fill="#2f6fb0"/>
+      <rect x="30" y="90" width="170" height="140" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+      <rect x="62" y="116" width="106" height="74" rx="6" fill="#1d2433"/>
+      <rect x="68" y="122" width="94" height="62" rx="2" fill="#fff"/>
+      <circle cx="100" cy="150" r="9" fill="#2f6fb0"><animate attributeName="cx" values="90;130;90" dur="8s" repeatCount="indefinite"/></circle>
+      <circle cx="140" cy="168" r="8" fill="#e3632b" opacity=".85"/>
+      <text x="115" y="214" font-size="15" font-weight="700" text-anchor="middle" fill="#2f6fb0">친구 A의 화면</text>
+
+      <!-- B 집 -->
+      <path d="M650 90 L745 40 L840 90 Z" fill="#e3632b"/>
+      <rect x="660" y="90" width="170" height="140" fill="#fdeee5" stroke="#e3632b" stroke-width="2"/>
+      <rect x="692" y="116" width="106" height="74" rx="6" fill="#1d2433"/>
+      <rect x="698" y="122" width="94" height="62" rx="2" fill="#fff"/>
+      <circle cx="730" cy="150" r="9" fill="#2f6fb0"><animate attributeName="cx" values="720;720;760;760;720" keyTimes="0;0.25;0.3;0.75;0.8" dur="8s" repeatCount="indefinite"/></circle>
+      <circle cx="770" cy="168" r="8" fill="#e3632b"/>
+      <text x="745" y="214" font-size="15" font-weight="700" text-anchor="middle" fill="#e3632b">친구 B의 화면</text>
+
+      <!-- 가게 -->
+      <path d="M360 80 h140 l-12 -24 h-116 z" fill="#c2692a"/>
+      <rect x="370" y="80" width="120" height="120" fill="#fbe7d6" stroke="#c2692a" stroke-width="2"/>
+      <text x="430" y="112" font-size="16" font-weight="800" text-anchor="middle" fill="#c2692a">가게</text>
+      <text x="430" y="132" font-size="13" text-anchor="middle" fill="#4a5468">서버</text>
+      <rect x="392" y="142" width="76" height="44" rx="4" fill="#fff" stroke="#9a7449" stroke-width="1.5"/>
+      <text x="430" y="160" font-size="13" text-anchor="middle" fill="#2f6fb0">A 위치</text>
+      <text x="430" y="178" font-size="13" text-anchor="middle" fill="#e3632b">B 위치</text>
+
+      <!-- 직접은 모름 -->
+      <g class="reveal d2">
+        <path d="M 200 252 L 660 252" stroke="#c43d3d" stroke-width="2" stroke-dasharray="6 6"/>
+        <circle cx="430" cy="252" r="12" fill="#fff" stroke="#c43d3d" stroke-width="2"/>
+        <path d="M424 246 l12 12 M436 246 l-12 12" stroke="#c43d3d" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="430" y="276" font-size="13.5" text-anchor="middle" fill="#c43d3d">두 화면끼리는 직접 주고받지 않습니다</text>
+      </g>
+
+      <!-- 봉투들 -->
+      <g opacity="0">
+        <rect x="-16" y="-11" width="32" height="22" rx="3" fill="#fff" stroke="#2f6fb0" stroke-width="2"/><path d="M-16 -11 L0 1 L16 -11" fill="none" stroke="#2f6fb0" stroke-width="2"/>
+        <animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.12;1" calcMode="linear"><mpath href="#c21-a2s"/></animateMotion>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.12;0.13;1" dur="8s" repeatCount="indefinite"/>
+      </g>
+      <g opacity="0">
+        <rect x="-16" y="-11" width="32" height="22" rx="3" fill="#fff" stroke="#2f6fb0" stroke-width="2"/><path d="M-16 -11 L0 1 L16 -11" fill="none" stroke="#2f6fb0" stroke-width="2"/>
+        <animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.14;0.26;1" calcMode="linear"><mpath href="#c21-s2b"/></animateMotion>
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.139;0.14;0.26;0.27;1" dur="8s" repeatCount="indefinite"/>
+      </g>
+      <g opacity="0">
+        <rect x="-16" y="-11" width="32" height="22" rx="3" fill="#fff" stroke="#e3632b" stroke-width="2"/><path d="M-16 -11 L0 1 L16 -11" fill="none" stroke="#e3632b" stroke-width="2"/>
+        <animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.5;0.62;1" calcMode="linear"><mpath href="#c21-b2s"/></animateMotion>
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.499;0.5;0.62;0.63;1" dur="8s" repeatCount="indefinite"/>
+      </g>
+      <g opacity="0">
+        <rect x="-16" y="-11" width="32" height="22" rx="3" fill="#fff" stroke="#e3632b" stroke-width="2"/><path d="M-16 -11 L0 1 L16 -11" fill="none" stroke="#e3632b" stroke-width="2"/>
+        <animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.64;0.76;1" calcMode="linear"><mpath href="#c21-s2a"/></animateMotion>
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.639;0.64;0.76;0.77;1" dur="8s" repeatCount="indefinite"/>
+      </g>
+    </svg>
+    <figcaption>A가 움직이면 위치 봉투가 가게로 가고, 가게가 B에게 전합니다. B 화면의 A는 봉투가 도착한 뒤에야 움직입니다.</figcaption>
+  </figure>
+
+  <h3>차례대로 하는 게임과 동시에 하는 게임</h3>
+  <div class="c21-ways">
+    <div class="c21-way">
+      <h5>턴제 · 차례대로</h5>
+      <p>보드게임, 퀴즈 대결처럼 한 사람씩 번갈아 둡니다. 상대가 둘 때까지 기다리는 시간이 원래 있으니 1~2초 늦게 알아도 문제가 없습니다.</p>
+      <p class="c21-note">13장의 "몇 초마다 물어보기"로도 만들 수 있습니다. 바이브코딩으로 시작하기 좋습니다.</p>
+    </div>
+    <div class="c21-way">
+      <h5>실시간 · 동시에 움직이기</h5>
+      <p>달리기 경주, 술래잡기처럼 모두가 같은 순간에 움직입니다. 1초에 여러 번 위치를 주고받아야 하고, 조금만 늦어도 눈에 띕니다.</p>
+      <p class="c21-note">13장의 "가게가 먼저 알려 주기"(실시간 연결)가 필요합니다. 만들기도, 고치기도 훨씬 어렵습니다.</p>
+    </div>
+  </div>
+  <p>봉투가 도로를 오가는 데는 시간이 걸립니다. 이 시간을 <strong>지연</strong>이라 하고, 게임에서는 흔히 <b>핑</b>이라고 부릅니다. 봉투가 가게까지 갔다 오는 시간을 ms(1000분의 1초) 단위로 잽니다. 핑이 크면 친구 캐릭터가 늦게 따라오거나, 한동안 멈춰 있다가 갑자기 다른 곳에 나타납니다. 순간이동처럼 보이는 이유입니다.</p>
+
+  <div class="lab c21-lab2">
+    <div class="lab-title">직접 해 보기 · 친구 화면에는 언제 보일까<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">A 화면을 누른 뒤 방향키(또는 아래 화살표 단추)로 파란 A를 움직여 보세요. 친구의 B 화면에서 A가 어떻게 보이는지 지켜봅니다. 지연과 보내는 횟수를 바꿔 가며 비교합니다.</p>
+      <div class="c21-modes c21-net-modes" role="group" aria-label="게임 방식">
+        <button type="button" data-m="real">실시간 · 동시에 움직이기</button>
+        <button type="button" data-m="turn">턴제 · 차례대로</button>
+      </div>
+      <div class="slider"><label for="c21-lag">지연(핑)</label><input id="c21-lag" class="c21-lag" type="range" min="0" max="1000" step="10" value="150"><output class="c21-lag-out">150ms</output></div>
+      <div class="slider c21-rate-row"><label for="c21-rate">1초에 보내는 횟수</label><input id="c21-rate" class="c21-rate" type="range" min="1" max="30" value="10"><output class="c21-rate-out">10번</output></div>
+      <div class="row c21-sw-row">
+        <label class="switch"><input type="checkbox" class="c21-server" checked><span class="track"></span>가게(서버) 거치기</label>
+        <label class="switch"><input type="checkbox" class="c21-ghost" checked><span class="track"></span>B 화면에 A의 실제 위치 겹쳐 보기</label>
+        <label class="switch"><input type="checkbox" class="c21-smooth"><span class="track"></span>B 화면에서 사이 채우기</label>
+      </div>
+      <div class="c21-net-wrap"><canvas class="c21-net" tabindex="0" aria-label="A 화면, 가게, B 화면. 눌러서 시작한 뒤 방향키로 A를 움직입니다"></canvas></div>
+      <div class="c21-pad" aria-label="A 움직이기 단추">
+        <button type="button" data-d="up" aria-label="위">▲</button>
+        <button type="button" data-d="left" aria-label="왼쪽">◀</button>
+        <button type="button" data-d="down" aria-label="아래">▼</button>
+        <button type="button" data-d="right" aria-label="오른쪽">▶</button>
+      </div>
+      <div class="c21-meters">
+        <div class="c21-m"><span>A가 보낸 봉투</span><b class="c21-cnt">0개</b></div>
+        <div class="c21-m"><span>이대로 1분이면</span><b class="c21-min">-</b></div>
+        <div class="c21-m"><span>B 화면의 A가 늦는 정도</span><b class="c21-late">-</b></div>
+      </div>
+      <div class="lab-msg c21-msg2">A 화면을 눌러 시작하세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>3D 게임이 휴대폰에서 너무 느려요.</dt>
+      <dd>3D는 화면을 그릴 때마다 모든 인형의 모든 면을 다시 계산합니다. 휴대폰은 책상이 좁고 계산하는 힘도 약합니다. 조수에게 "휴대폰에서도 부드럽게 돌도록 인형 수와 그림자를 줄여 줘"처럼 기기를 말해 줍니다.</dd>
+      <dt>처음 로딩이 너무 길어요.</dt>
+      <dd>3D 모델 파일은 사진보다 큰 경우가 많습니다. 인형마다 택배 상자가 하나씩이니, 인형이 많고 클수록 오래 기다립니다(9장). 용량을 줄인 모델을 쓰거나, 처음에는 꼭 필요한 인형만 불러오게 부탁합니다.</dd>
+      <dt>친구 캐릭터가 순간이동해요.</dt>
+      <dd>위치 봉투가 늦게 오거나 드문드문 오기 때문입니다. 봉투 사이의 빈 시간에는 친구 화면이 내 캐릭터의 위치를 모릅니다. 위 체험의 "사이 채우기"처럼 봉투 사이를 부드럽게 이어 그리게 해 달라고 할 수 있지만, 지연 자체를 없애지는 못합니다.</dd>
+      <dt>같은 방에 들어갔는데 서로 안 보여요.</dt>
+      <dd>게임이 각자 책상 위에서만 돌고 있는 경우입니다. 화면 파일만 배포하면(11장) 방 이름이 같아도 서로의 위치를 전해 줄 가게가 없습니다. 위치를 모아서 나눠 주는 서버가 있어야 합니다.</dd>
+      <dt>여럿이 하다가 갑자기 연결이 끊겼어요.</dt>
+      <dd>실시간 연결을 빌려 주는 무료 서비스는 동시에 연결할 수 있는 사람 수나 주고받는 양에 한도가 있습니다(13장). 한 반이 모두 접속해 1초에 여러 번씩 봉투를 보내면 금방 한도에 닿습니다. 보내는 횟수를 줄이거나 턴제로 바꾸는 것을 생각해 봅니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">3D는 상자 속 인형극이라 카메라·조명·모델 파일·기기 성능이 더 필요합니다. 여럿이 하는 게임은 가게(서버)를 거쳐야 서로 보이고, 봉투가 오가는 시간만큼 늦게 보입니다.</p>
+</section>

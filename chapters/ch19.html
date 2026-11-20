@@ -1,0 +1,90 @@
+<section class="chapter" id="ch19" data-part="6" data-title="게임 장르 지도">
+  <div class="ch-head">
+    <div class="ch-num">19</div>
+    <div>
+      <h2>게임 장르 지도</h2>
+      <div class="meta">비유 <b>지도 위의 동네</b> · 용어 장르, 충돌 판정, 멀티플레이</div>
+    </div>
+  </div>
+
+  <p>게임은 종류가 아주 많습니다. 재미를 느끼는 지점과 조작 방법이 비슷한 게임끼리 묶은 것을 <strong>장르</strong>라고 합니다. AI에게 "퀴즈 게임", "러너 게임"처럼 장르 이름을 말하면 화면 구성과 규칙의 큰 틀이 한 번에 전해집니다. 장르를 모르고 "게임 만들어 줘"라고만 하면 AI가 아무 장르나 골라 만듭니다.</p>
+  <p>아래 지도는 장르를 두 가지 기준으로 늘어놓은 것입니다. <b>가로</b>는 한 판을 하는 데 드는 시간입니다. 왼쪽은 몇십 초에서 몇 분이면 끝나고, 오른쪽은 며칠, 몇 주에 걸쳐 이어서 합니다. <b>세로</b>는 무엇을 쓰는 게임인지입니다. 위쪽은 손이 빨라야 하고, 아래쪽은 천천히 생각하면 됩니다. 점의 색은 바이브코딩으로 만들 때의 어려움입니다.</p>
+
+  <figure class="fig c19-fig">
+    <div class="c19-mapwrap">
+      <svg class="c19-map" viewBox="0 0 900 540" role="img" aria-label="게임 장르를 한 판 길이와 손 빠르기 두 기준으로 놓은 지도. 점을 누르면 설명 카드가 열린다">
+        <defs>
+          <marker id="c19-ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8a93a6"/></marker>
+        </defs>
+        <rect x="90" y="30" width="790" height="420" rx="14" fill="#fff" stroke="#e2e0d8" stroke-width="2"/>
+        <rect x="90" y="30" width="790" height="140" rx="14" fill="#fbeef2" opacity=".55"/>
+        <rect x="90" y="310" width="790" height="140" rx="14" fill="#eaf1f9" opacity=".55"/>
+        <line x1="485" y1="40" x2="485" y2="440" stroke="#e2e0d8" stroke-width="2" stroke-dasharray="6 6"/>
+        <line x1="100" y1="240" x2="870" y2="240" stroke="#e2e0d8" stroke-width="2" stroke-dasharray="6 6"/>
+        <!-- 세로축 -->
+        <line x1="60" y1="420" x2="60" y2="60" stroke="#8a93a6" stroke-width="2.5" marker-start="url(#c19-ar)" marker-end="url(#c19-ar)"/>
+        <text x="60" y="24" font-size="15" font-weight="800" text-anchor="middle" fill="#b8406a">손 빠르기</text>
+        <text x="60" y="472" font-size="15" font-weight="800" text-anchor="middle" fill="#2f6fb0">머리 쓰기</text>
+        <!-- 가로축 -->
+        <line x1="110" y1="490" x2="860" y2="490" stroke="#8a93a6" stroke-width="2.5" marker-start="url(#c19-ar)" marker-end="url(#c19-ar)"/>
+        <text x="110" y="520" font-size="15" font-weight="800" fill="#4a5468">한 판이 몇 분</text>
+        <text x="860" y="520" font-size="15" font-weight="800" text-anchor="end" fill="#4a5468">며칠, 몇 주 이어서</text>
+        <text x="485" y="520" font-size="14" text-anchor="middle" fill="#8a93a6">한 판 길이</text>
+        <g class="c19-dots"></g>
+      </svg>
+    </div>
+    <p class="c19-swipe">지도를 옆으로 밀면 오른쪽 부분도 볼 수 있습니다.</p>
+    <div class="c19-legend">
+      <span><i style="background:#2b8a4a"></i>쉬움</span>
+      <span><i style="background:#d89a1c"></i>보통</span>
+      <span><i style="background:#c43d3d"></i>어려움</span>
+      <span class="c19-lg-multi"><i></i>여럿이 하는 게임은 어느 장르에나 붙일 수 있는 방식이라 아래쪽에 따로 둡니다</span>
+    </div>
+    <div class="c19-multi-row"></div>
+    <div class="c19-detail" aria-live="polite"><p class="c19-detail-empty">지도의 점을 누르면 그 장르의 설명 카드가 여기에 열립니다.</p></div>
+  </figure>
+
+  <h3>처음 만든다면 이 순서로</h3>
+  <p>앞쪽 장르일수록 만들 것이 적습니다. 하나를 끝까지 완성하고 17장의 세이브 포인트를 남긴 뒤 다음으로 넘어갑니다.</p>
+  <ol class="c19-order"></ol>
+
+  <h3>카드에 나오는 "필요한 것" 풀이</h3>
+  <div class="c19-gloss"></div>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 내게 맞는 장르 고르기<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">조건을 눌러 카드를 걸러 보세요. 마음에 드는 카드의 "AI에게 이렇게 말해 보세요"를 복사해서 안티그래비티에 붙여 넣으면 바로 시작할 수 있습니다.</p>
+      <div class="c19-filters">
+        <div class="c19-fg" data-f="diff"><span>어려움</span>
+          <button type="button" data-v="">전체</button><button type="button" data-v="1">쉬움</button><button type="button" data-v="2">보통</button><button type="button" data-v="3">어려움</button>
+        </div>
+        <div class="c19-fg" data-f="who"><span>사람 수</span>
+          <button type="button" data-v="">전체</button><button type="button" data-v="solo">혼자</button><button type="button" data-v="multi">여럿이</button>
+        </div>
+        <div class="c19-fg" data-f="input"><span>조작</span>
+          <button type="button" data-v="">전체</button><button type="button" data-v="touch">터치·클릭만으로</button><button type="button" data-v="key">키보드가 편함</button>
+        </div>
+        <div class="c19-fg" data-f="server"><span>서버</span>
+          <button type="button" data-v="">전체</button><button type="button" data-v="no">서버 없이</button><button type="button" data-v="yes">서버 필요</button>
+        </div>
+      </div>
+      <div class="c19-count"></div>
+      <div class="c19-cards"></div>
+      <div class="lab-msg c19-msg">조건을 하나 눌러 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>"게임 만들어 줘"라고만 했더니 엉뚱한 게 나왔어요.</dt>
+      <dd>AI는 어떤 게임을 원하는지 모르니 아무 장르나 골라 만듭니다. 장르 이름과 함께 무엇을 하면 점수가 오르고, 언제 끝나는지 같은 규칙을 한두 문장으로 말해야 합니다. 위 카드의 예시 문장이 그런 모양입니다. 22장에서 더 자세히 다룹니다.</dd>
+      <dt>처음부터 큰 RPG를 만들려다 망가졌어요.</dt>
+      <dd>RPG처럼 큰 게임은 전투, 지도, 이야기, 저장이 모두 얽혀 있어서 AI가 한 곳을 고치다 다른 곳을 망가뜨리기 쉽습니다. 전투 장면 하나처럼 작은 조각부터 만들고, 잘 될 때마다 세이브 포인트를 남깁니다(17장).</dd>
+      <dt>다른 사람 게임의 캐릭터를 넣어도 되나요?</dt>
+      <dd>안 됩니다. 이미 있는 게임의 캐릭터, 그림, 음악, 이름은 만든 사람에게 저작권이 있습니다. 혼자 연습용으로 보는 것을 넘어 남에게 보여 주거나 올리면 문제가 됩니다. 직접 그리거나, 도형으로 대신하거나, 사용 허락이 적힌 무료 재료를 씁니다. 무료 재료도 출처를 밝혀야 하는 것이 있으니 안내문을 읽어 봅니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">장르 = 재미와 조작이 비슷한 게임끼리 묶은 이름. AI에게는 장르와 규칙을 함께 말하고, 쉬운 장르부터 작게 시작합니다.</p>
+</section>

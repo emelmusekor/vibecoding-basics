@@ -1,0 +1,42 @@
+/* 21장 3D와 여럿이 하는 게임 */
+#ch21 .c21-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+#ch21 .c21-modes button { border: 1px solid var(--line); background: #fff; border-radius: 9px; padding: 8px 6px; font-size: 14.5px; font-weight: 700; cursor: pointer; color: var(--ink-2); line-height: 1.35; }
+#ch21 .c21-modes button:hover { background: var(--soft); }
+#ch21 .c21-modes button[aria-pressed="true"] { background: var(--p6); border-color: var(--p6); color: #fff; }
+
+#ch21 .c21-view-wrap, #ch21 .c21-net-wrap { position: relative; border: 1px solid #cfd3db; border-radius: 10px; overflow: hidden; background: #f4f1ea; }
+#ch21 canvas { display: block; width: 100%; }
+#ch21 .c21-view { touch-action: pan-y; cursor: grab; }
+#ch21 .c21-view.drag { cursor: grabbing; }
+#ch21 .c21-net { touch-action: manipulation; cursor: pointer; outline: none; }
+#ch21 .c21-net-wrap:focus-within { box-shadow: 0 0 0 3px color-mix(in srgb, var(--p6) 45%, transparent); }
+
+#ch21 .c21-ctrls { margin-top: 12px; }
+#ch21 .c21-ctrls .slider { transition: opacity .2s; }
+#ch21 .c21-ctrls .off, #ch21 .c21-rate-row.off { opacity: .35; pointer-events: none; }
+#ch21 .c21-wire-sw { margin-top: 6px; }
+#ch21 .c21-stat { margin-top: 10px; font-size: 14px; color: var(--ink-2); background: var(--soft); border-radius: 8px; padding: 6px 12px; font-variant-numeric: tabular-nums; }
+
+#ch21 .c21-ways { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0 18px; }
+@media (max-width: 720px) { #ch21 .c21-ways { grid-template-columns: 1fr; } }
+#ch21 .c21-way { border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; background: #fff; }
+#ch21 .c21-way h5 { margin: 0 0 4px; font-size: 16px; color: var(--p6); }
+#ch21 .c21-way p { margin: 0 0 6px; font-size: 15px; line-height: 1.6; }
+#ch21 .c21-way .c21-note { font-size: 14px; color: var(--ink-2); background: var(--soft); border-radius: 8px; padding: 6px 10px; margin: 0; }
+
+#ch21 .c21-sw-row { margin: 8px 0 12px; gap: 10px 22px; }
+#ch21 .c21-sw-row .switch { font-size: 14.5px; }
+
+#ch21 .c21-pad { display: grid; grid-template-columns: repeat(3, 52px); grid-template-rows: 44px 44px; gap: 6px; justify-content: center; margin: 12px 0 0; user-select: none; -webkit-user-select: none; }
+#ch21 .c21-pad button { border: 1px solid var(--line); background: #fff; border-radius: 10px; font-size: 16px; color: #2f6fb0; cursor: pointer; touch-action: none; }
+#ch21 .c21-pad button:active, #ch21 .c21-pad button.on { background: #e3edf9; border-color: #2f6fb0; }
+#ch21 .c21-pad [data-d="up"] { grid-column: 2; grid-row: 1; }
+#ch21 .c21-pad [data-d="left"] { grid-column: 1; grid-row: 2; }
+#ch21 .c21-pad [data-d="down"] { grid-column: 2; grid-row: 2; }
+#ch21 .c21-pad [data-d="right"] { grid-column: 3; grid-row: 2; }
+
+#ch21 .c21-meters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+@media (max-width: 640px) { #ch21 .c21-meters { grid-template-columns: 1fr; } }
+#ch21 .c21-m { background: var(--soft); border-radius: 10px; padding: 8px 12px; display: flex; flex-direction: column; gap: 2px; }
+#ch21 .c21-m span { font-size: 13.5px; color: var(--ink-2); }
+#ch21 .c21-m b { font-size: 17px; font-variant-numeric: tabular-nums; }

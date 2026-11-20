@@ -1,0 +1,80 @@
+/* 22장 AI에게 게임 기획 전하기 */
+#ch22 .c22-sheet { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px; margin: 14px 0 20px; counter-reset: c22; }
+#ch22 .c22-sheet div { background: var(--soft); border-radius: 10px; padding: 9px 12px; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+#ch22 .c22-sheet b { display: block; color: var(--p6); font-size: 14.5px; }
+
+/* 계단 그림 */
+#ch22 .c22-flag, #ch22 .c22-walker { transform-box: view-box; }
+#ch22 .c22-flag { animation: 12s ease infinite both; }
+#ch22 .c22-flag.f1 { animation-name: c22-f1; }
+#ch22 .c22-flag.f2 { animation-name: c22-f2; }
+#ch22 .c22-flag.f3 { animation-name: c22-f3; }
+#ch22 .c22-flag.f4 { animation-name: c22-f4; }
+@keyframes c22-f1 { 0%, 8% { opacity: 0; transform: translateY(-30px); } 12%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+@keyframes c22-f2 { 0%, 26% { opacity: 0; transform: translateY(-30px); } 30%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+@keyframes c22-f3 { 0%, 46% { opacity: 0; transform: translateY(-30px); } 50%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+@keyframes c22-f4 { 0%, 66% { opacity: 0; transform: translateY(-30px); } 70%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+#ch22 .c22-walker { animation: c22-walk 12s ease-in-out infinite both; }
+@keyframes c22-walk {
+  0%, 12% { transform: translate(80px, 220px); opacity: 1; }
+  18% { transform: translate(170px, 150px); }
+  22%, 32% { transform: translate(250px, 170px); }
+  38% { transform: translate(340px, 100px); }
+  42%, 52% { transform: translate(420px, 120px); }
+  58% { transform: translate(510px, 50px); }
+  62%, 92% { transform: translate(585px, 70px); opacity: 1; }
+  100% { transform: translate(585px, 70px); opacity: 0; }
+}
+
+/* 말하는 법 */
+#ch22 .c22-say { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; margin: 10px 0 18px; }
+@media (max-width: 720px) { #ch22 .c22-say { grid-template-columns: 1fr; } }
+#ch22 .c22-say > div { border-radius: 12px; padding: 10px 14px; font-size: 15.5px; font-weight: 600; line-height: 1.6; }
+#ch22 .c22-say span { display: block; font-size: 12.5px; font-weight: 700; margin-bottom: 2px; }
+#ch22 .c22-bad { background: #fbe5e5; color: #7a2a2a; }
+#ch22 .c22-bad span { color: var(--bad); }
+#ch22 .c22-good { background: #e4f3e8; color: #1f5a33; }
+#ch22 .c22-good span { color: var(--ok); }
+
+/* 체험 */
+#ch22 .c22-ex { margin-bottom: 14px; gap: 8px; }
+#ch22 .c22-ex > span { font-size: 14px; font-weight: 700; color: var(--ink-2); }
+#ch22 .c22-ex .btn { font-size: 14px; padding: 5px 12px; }
+#ch22 .c22-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 860px) { #ch22 .c22-grid { grid-template-columns: 1fr; } }
+#ch22 .c22-form { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+#ch22 fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+#ch22 legend, #ch22 .c22-f > span { font-size: 14px; font-weight: 700; color: var(--ink); padding: 0; margin-bottom: 4px; display: block; }
+#ch22 legend small, #ch22 .c22-f small { font-weight: 500; color: var(--ink-3); }
+#ch22 .c22-f { display: flex; flex-direction: column; min-width: 0; }
+#ch22 .c22-f input, #ch22 .c22-f textarea, #ch22 .c22-f select { border: 1px solid #cfd3db; border-radius: 8px; padding: 6px 10px; font-size: 15px; width: 100%; background: #fff; resize: vertical; font-family: inherit; }
+#ch22 .c22-f input:focus, #ch22 .c22-f textarea:focus, #ch22 .c22-f select:focus { outline: 2px solid color-mix(in srgb, var(--p6) 40%, transparent); border-color: var(--p6); }
+#ch22 .c22-f.miss input { border-color: var(--warn); background: #fffaf0; }
+#ch22 .c22-two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 520px) { #ch22 .c22-two { grid-template-columns: 1fr; } }
+#ch22 .c22-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+#ch22 .c22-chips button { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 4px 12px; font-size: 14px; cursor: pointer; color: var(--ink-2); }
+#ch22 .c22-chips button:hover { background: var(--soft); }
+#ch22 .c22-chips button[aria-pressed="true"] { background: var(--p6); border-color: var(--p6); color: #fff; font-weight: 700; }
+#ch22 .c22-checks { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14.5px; margin-top: 2px; }
+#ch22 .c22-checks label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+#ch22 .c22-checks input { accent-color: var(--p6); width: 16px; height: 16px; }
+
+#ch22 .c22-out { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+@media (max-width: 860px) { #ch22 .c22-out { position: static; } }
+#ch22 .c22-way { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+#ch22 .c22-way button { border: 1px solid var(--line); background: #fff; border-radius: 9px; padding: 7px 6px; font-size: 14.5px; font-weight: 700; cursor: pointer; color: var(--ink-2); }
+#ch22 .c22-way button[aria-pressed="true"] { background: var(--p6); border-color: var(--p6); color: #fff; }
+#ch22 .c22-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+#ch22 .c22-steps button { border: 0; border-bottom: 3px solid var(--line); background: transparent; padding: 4px 2px 5px; font-size: 13.5px; font-weight: 700; color: var(--ink-3); cursor: pointer; }
+#ch22 .c22-steps button.done { color: #7650aa; border-color: #c9b6e3; }
+#ch22 .c22-steps button.on { color: var(--p6); border-color: var(--p6); }
+#ch22 .c22-warn:empty { display: none; }
+#ch22 .c22-warn { display: flex; flex-direction: column; gap: 4px; }
+#ch22 .c22-warn p { margin: 0; background: #fdf1d8; border-left: 4px solid var(--warn); border-radius: 0 8px 8px 0; padding: 5px 10px; font-size: 14px; line-height: 1.5; }
+#ch22 .c22-warn p.info { background: #eef3fa; border-color: #2f6fb0; }
+#ch22 .c22-chat { border: 1px solid #d9cde6; border-radius: 12px; background: #f7f3fb; overflow: hidden; }
+#ch22 .c22-chat-head { font-size: 13px; font-weight: 700; color: #7650aa; padding: 6px 12px; border-bottom: 1px solid #e6dcf0; }
+#ch22 .c22-prompt { margin: 0; padding: 12px 14px; font-family: inherit; font-size: 14.5px; line-height: 1.65; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; max-height: 520px; overflow: auto; color: #2d2340; }
+#ch22 .c22-prompt .ph { color: #b0a6bf; }
+#ch22 .c22-acts { gap: 8px; }

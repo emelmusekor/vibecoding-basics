@@ -1,0 +1,215 @@
+<section class="chapter" id="ch20" data-part="6" data-title="장르 맛보기">
+  <div class="ch-head">
+    <div class="ch-num">20</div>
+    <div>
+      <h2>장르 맛보기</h2>
+      <div class="meta">비유 <b>규칙 한두 개가 장르를 정한다</b> · 용어 핵심 규칙, 중력, 충돌 판정, 상태, 분기</div>
+    </div>
+  </div>
+
+  <p>19장에서 여러 장르를 글로 보았습니다. 이번 장에서는 그중 네 가지를 작게 만들어 직접 해 봅니다. 모두 이 사이트에서 새로 만든 연습용 게임이라 그림이 단순합니다.</p>
+  <p>직접 해 보면 그림보다 <strong>규칙 한두 개</strong>가 장르를 정한다는 것을 알 수 있습니다. 동그라미가 아무 데나 나타나고 시간이 흐르면 반응 속도 게임이 되고, 아래로 끌어당기는 힘과 발판이 있으면 점프 게임이 됩니다. 이 규칙을 말로 정확히 전하면 AI 조수가 그 장르의 게임을 만들어 줍니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 880 300" role="img" aria-label="네 장르의 핵심 규칙: 반응 속도는 무작위 위치와 타이머, 발판 점프는 중력과 충돌 판정, 짝 맞추기는 카드 상태와 판정, 선택형 이야기는 장면과 선택지 연결">
+      <!-- 1 반응 속도 -->
+      <g class="reveal d1">
+        <rect x="10" y="20" width="200" height="200" rx="14" fill="#fff" stroke="#e2c3cf" stroke-width="2"/>
+        <text x="110" y="46" font-size="16" font-weight="800" text-anchor="middle" fill="#b8406a">반응 속도</text>
+        <rect x="30" y="60" width="160" height="10" rx="5" fill="#efede6"/>
+        <rect x="30" y="60" width="160" height="10" rx="5" fill="#d89a1c">
+          <animate attributeName="width" values="160;0" dur="6s" repeatCount="indefinite"/>
+        </rect>
+        <text x="110" y="88" font-size="13" text-anchor="middle" fill="#8a93a6">남은 시간</text>
+        <rect x="30" y="96" width="160" height="110" rx="8" fill="#f7f6f2"/>
+        <circle cx="62" cy="130" r="16" fill="#b8406a" opacity="0"><animate attributeName="opacity" values="1;1;0;0;0;0" keyTimes="0;0.3;0.33;0.6;0.9;1" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="150" cy="176" r="16" fill="#b8406a" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.33;0.34;0.63;0.66;1" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="120" cy="122" r="16" fill="#b8406a" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.66;0.67;0.97;1" dur="3s" repeatCount="indefinite"/></circle>
+      </g>
+      <text x="110" y="248" font-size="15" font-weight="700" text-anchor="middle" fill="#1d2433">무작위 위치 + 타이머</text>
+      <text x="110" y="270" font-size="13" text-anchor="middle" fill="#4a5468">어디에 나올지 모르고</text>
+      <text x="110" y="288" font-size="13" text-anchor="middle" fill="#4a5468">시간은 계속 줄어듭니다</text>
+
+      <!-- 2 발판 점프 -->
+      <g class="reveal d2">
+        <rect x="230" y="20" width="200" height="200" rx="14" fill="#fff" stroke="#e2c3cf" stroke-width="2"/>
+        <text x="330" y="46" font-size="16" font-weight="800" text-anchor="middle" fill="#b8406a">발판 점프</text>
+        <rect x="270" y="172" width="120" height="14" rx="4" fill="#6b8f5e"/>
+        <line x1="270" y1="172" x2="390" y2="172" stroke="#d89a1c" stroke-width="4" opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.85;1" dur="2.4s" repeatCount="indefinite"/>
+        </line>
+        <rect x="316" y="0" width="24" height="28" rx="5" fill="#2f6fb0">
+          <animate attributeName="y" values="64;144;144;64" keyTimes="0;0.5;0.85;1" dur="2.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.55 0 1 0.6;0 0 1 1;0.2 0.6 0.4 1"/>
+        </rect>
+        <g fill="#b8406a">
+          <line x1="404" y1="70" x2="404" y2="126" stroke="#b8406a" stroke-width="4"/>
+          <path d="M394 122 L404 140 L414 122 Z"/>
+        </g>
+        <text x="404" y="62" font-size="13" font-weight="700" text-anchor="middle" fill="#b8406a">중력</text>
+        <text x="330" y="208" font-size="13" text-anchor="middle" fill="#8a6312">닿으면 멈춤</text>
+      </g>
+      <text x="330" y="248" font-size="15" font-weight="700" text-anchor="middle" fill="#1d2433">중력 + 충돌 판정</text>
+      <text x="330" y="270" font-size="13" text-anchor="middle" fill="#4a5468">늘 아래로 끌리다가</text>
+      <text x="330" y="288" font-size="13" text-anchor="middle" fill="#4a5468">발판에 닿으면 멈춥니다</text>
+
+      <!-- 3 짝 맞추기 -->
+      <g class="reveal d3">
+        <rect x="450" y="20" width="200" height="200" rx="14" fill="#fff" stroke="#e2c3cf" stroke-width="2"/>
+        <text x="550" y="46" font-size="16" font-weight="800" text-anchor="middle" fill="#b8406a">짝 맞추기</text>
+        <rect x="468" y="66" width="50" height="66" rx="7" fill="#b8406a"/>
+        <text x="493" y="104" font-size="18" font-weight="800" text-anchor="middle" fill="#fff">?</text>
+        <rect x="525" y="66" width="50" height="66" rx="7" fill="#fff" stroke="#2f6fb0" stroke-width="2"/>
+        <rect x="537" y="86" width="26" height="26" rx="3" fill="#2f6fb0"/>
+        <rect x="582" y="66" width="50" height="66" rx="7" fill="#fff" stroke="#2f6fb0" stroke-width="2"/>
+        <rect x="594" y="86" width="26" height="26" rx="3" fill="#2f6fb0"/>
+        <text x="493" y="150" font-size="13" text-anchor="middle" fill="#4a5468">뒷면</text>
+        <text x="578" y="150" font-size="13" text-anchor="middle" fill="#4a5468">앞면 두 장</text>
+        <rect x="490" y="166" width="120" height="32" rx="16" fill="#e4f3e8">
+          <animate attributeName="fill" values="#efede6;#efede6;#e4f3e8;#e4f3e8" keyTimes="0;0.5;0.55;1" dur="3s" repeatCount="indefinite"/>
+        </rect>
+        <text x="550" y="187" font-size="14" font-weight="700" text-anchor="middle" fill="#2b8a4a">같다 → 짝 찾음</text>
+      </g>
+      <text x="550" y="248" font-size="15" font-weight="700" text-anchor="middle" fill="#1d2433">상태 + 판정</text>
+      <text x="550" y="270" font-size="13" text-anchor="middle" fill="#4a5468">카드마다 지금 상태를 기억하고</text>
+      <text x="550" y="288" font-size="13" text-anchor="middle" fill="#4a5468">두 장이 같은지 봅니다</text>
+
+      <!-- 4 선택형 이야기 -->
+      <g class="reveal d4">
+        <rect x="670" y="20" width="200" height="200" rx="14" fill="#fff" stroke="#e2c3cf" stroke-width="2"/>
+        <text x="770" y="46" font-size="16" font-weight="800" text-anchor="middle" fill="#b8406a">선택형 이야기</text>
+        <g stroke="#c9ccd3" stroke-width="3" fill="none">
+          <path d="M716 130 L770 90"/><path d="M716 130 L770 170"/>
+          <path d="M770 90 L830 70"/><path d="M770 90 L830 110"/><path d="M770 170 L830 170"/>
+        </g>
+        <g stroke="#b8406a" stroke-width="4" fill="none" stroke-dasharray="80" stroke-dashoffset="80">
+          <path d="M716 130 L770 90"><animate attributeName="stroke-dashoffset" values="80;0;0;80" keyTimes="0;0.3;0.9;1" dur="4s" repeatCount="indefinite"/></path>
+          <path d="M770 90 L830 110"><animate attributeName="stroke-dashoffset" values="80;80;0;0;80" keyTimes="0;0.3;0.6;0.9;1" dur="4s" repeatCount="indefinite"/></path>
+        </g>
+        <circle cx="716" cy="130" r="13" fill="#b8406a"/>
+        <circle cx="770" cy="90" r="12" fill="#fff" stroke="#b8406a" stroke-width="3"/>
+        <circle cx="770" cy="170" r="12" fill="#fff" stroke="#c9ccd3" stroke-width="3"/>
+        <circle cx="830" cy="70" r="10" fill="#fff" stroke="#c9ccd3" stroke-width="3"/>
+        <circle cx="830" cy="110" r="10" fill="#fff" stroke="#b8406a" stroke-width="3"/>
+        <circle cx="830" cy="170" r="10" fill="#fff" stroke="#c9ccd3" stroke-width="3"/>
+        <text x="716" y="164" font-size="13" text-anchor="middle" fill="#4a5468">처음</text>
+        <text x="830" y="204" font-size="13" text-anchor="middle" fill="#4a5468">결말</text>
+      </g>
+      <text x="770" y="248" font-size="15" font-weight="700" text-anchor="middle" fill="#1d2433">장면 + 연결</text>
+      <text x="770" y="270" font-size="13" text-anchor="middle" fill="#4a5468">선택지마다 다음 장면이</text>
+      <text x="770" y="288" font-size="13" text-anchor="middle" fill="#4a5468">정해져 있습니다</text>
+    </svg>
+    <figcaption>네 장르를 정하는 규칙입니다. 그림과 소리는 나중에 바꿔도 이 규칙이 그대로면 같은 장르입니다.</figcaption>
+  </figure>
+
+  <p>아래 체험에서 탭을 골라 하나씩 해 보세요. 한 번에 한 게임만 돌아갑니다. 반응 속도와 발판 점프는 18장에서 본 게임 루프가 1초에 약 60번 화면을 새로 그리며 움직입니다. 짝 맞추기와 이야기는 누를 때만 화면이 바뀝니다.</p>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 네 장르 맛보기<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">탭을 고르고 [시작]을 누르세요. 게임마다 아래에 그 장르의 핵심 규칙과 AI에게 할 말이 있습니다.</p>
+      <div class="c20-tabs" role="tablist" aria-label="게임 고르기">
+        <button type="button" role="tab" data-g="0" aria-selected="true"><b>1</b> 반응 속도</button>
+        <button type="button" role="tab" data-g="1" aria-selected="false"><b>2</b> 발판 점프</button>
+        <button type="button" role="tab" data-g="2" aria-selected="false"><b>3</b> 짝 맞추기</button>
+        <button type="button" role="tab" data-g="3" aria-selected="false"><b>4</b> 선택형 이야기</button>
+      </div>
+
+      <!-- 1 반응 속도 -->
+      <div class="c20-panel" data-g="0" role="tabpanel">
+        <div class="c20-stage c20-react" tabindex="0" aria-label="반응 속도 게임 화면">
+          <canvas width="640" height="360"></canvas>
+          <div class="c20-ov"><p class="c20-ov-t">20초 동안 나타나는 동그라미를 눌러 보세요.</p><button class="btn primary c20-go" type="button">시작</button></div>
+        </div>
+        <div class="slider"><label for="c20-stay">머무는 시간</label><input id="c20-stay" class="c20-stay" type="range" min="0.4" max="2" step="0.1" value="1.1"><output class="c20-stay-out">1.1초</output></div>
+        <div class="lab-msg c20-msg">[시작]을 누르면 동그라미가 하나씩 나타납니다. 사라지기 전에 누르면 1점입니다.</div>
+        <div class="c20-info">
+          <div class="c20-card c20-rule"><h5>이 장르의 핵심 규칙</h5><p>동그라미가 <b>정해지지 않은 자리</b>에 나타나고, <b>남은 시간</b>이 계속 줄어듭니다. 위치를 미리 알 수 없고 시간이 쫓아오니 긴장감이 생깁니다.</p></div>
+          <div class="c20-card c20-say"><h5>AI에게 이렇게 말하면</h5><p class="c20-prompt">화면 여기저기에 동그라미가 하나씩 나타났다가 1초 뒤 사라지는 게임을 만들어 줘. 동그라미를 누르면 1점이야. 20초가 지나면 끝나고 점수를 보여 줘. 휴대폰에서도 손가락으로 누를 수 있게 해 줘.</p><button class="btn c20-copy" type="button">복사</button></div>
+          <div class="c20-card c20-more"><h5>더 해 볼 것</h5><ul><li>최고 점수를 남겨 두기: 장부에 적어 두어야 다음에 열어도 남습니다. <a href="#ch12">12장</a></li><li>친구와 점수 겨루기: 서로의 점수가 보이려면 다시 물어봐야 합니다. <a href="#ch13">13장</a>, <a href="#ch21">21장</a></li></ul></div>
+        </div>
+      </div>
+
+      <!-- 2 발판 점프 -->
+      <div class="c20-panel" data-g="1" role="tabpanel" hidden>
+        <div class="c20-stage c20-plat" tabindex="0" aria-label="발판 점프 게임 화면. 방향키로 움직이고 스페이스로 점프합니다">
+          <canvas width="640" height="360"></canvas>
+          <div class="c20-ov"><p class="c20-ov-t">발판을 밟고 올라가 왼쪽 위 깃발에 닿아 보세요.</p><button class="btn primary c20-go" type="button">시작</button></div>
+          <div class="c20-focus" hidden>키보드로 하려면 게임 화면을 한 번 누르세요</div>
+        </div>
+        <div class="c20-pad" aria-label="화면 단추">
+          <button type="button" class="c20-k" data-k="left" aria-label="왼쪽">←</button>
+          <button type="button" class="c20-k" data-k="right" aria-label="오른쪽">→</button>
+          <button type="button" class="c20-k c20-jump" data-k="jump">점프</button>
+        </div>
+        <p class="c20-keys">키보드: <kbd>←</kbd> <kbd>→</kbd> 이동, <kbd>Space</kbd> 또는 <kbd>↑</kbd> 점프</p>
+        <div class="slider"><label for="c20-grav">중력 세기</label><input id="c20-grav" class="c20-grav" type="range" min="0.4" max="2" step="0.1" value="1"><output class="c20-grav-out">보통 1.0</output></div>
+        <div class="lab-msg c20-msg">[시작]을 누르고 깃발까지 가 보세요. 그다음 중력 세기를 바꿔 다시 해 보세요.</div>
+        <div class="c20-info">
+          <div class="c20-card c20-rule"><h5>이 장르의 핵심 규칙</h5><p>캐릭터는 늘 <b>아래로 끌립니다</b>(중력). 그리고 매번 화면을 그릴 때마다 <b>발판과 겹쳤는지</b> 확인해서 겹치면 그 위에 세웁니다(충돌 판정). 중력 숫자 하나만 바꿔도 게임 느낌이 달라집니다.</p></div>
+          <div class="c20-card c20-say"><h5>AI에게 이렇게 말하면</h5><p class="c20-prompt">한 화면짜리 점프 게임을 만들어 줘. 네모 캐릭터가 왼쪽·오른쪽 방향키로 움직이고 스페이스로 점프해. 중력이 있어서 떨어지고, 발판 위에는 서 있을 수 있어. 깃발에 닿으면 성공이야. 중력 세기와 점프 힘은 코드 맨 위에 숫자로 모아 줘. 휴대폰용 화면 단추도 넣어 줘.</p><button class="btn c20-copy" type="button">복사</button></div>
+          <div class="c20-card c20-more"><h5>더 해 볼 것</h5><ul><li>발판을 하나 더 놓거나 움직이는 발판 만들기</li><li>가장 빨리 도착한 기록 남기기: <a href="#ch12">12장</a> 장부</li><li>둘이 같은 화면에서 달리기: <a href="#ch21">21장</a></li></ul></div>
+        </div>
+      </div>
+
+      <!-- 3 짝 맞추기 -->
+      <div class="c20-panel" data-g="2" role="tabpanel" hidden>
+        <div class="c20-memwrap">
+          <div class="c20-mem" aria-label="카드 12장"></div>
+          <div class="c20-state">
+            <h5>게임이 기억하고 있는 것</h5>
+            <dl>
+              <dt>먼저 뒤집은 카드</dt><dd class="c20-first">없음</dd>
+              <dt>뒤집은 횟수</dt><dd class="c20-tries">0번</dd>
+              <dt>찾은 짝</dt><dd class="c20-pairs">0 / 6</dd>
+            </dl>
+            <div class="c20-legend"><span><i class="down"></i>뒷면</span><span><i class="up"></i>앞면</span><span><i class="done"></i>짝 찾음</span></div>
+          </div>
+        </div>
+        <div class="lab-msg c20-msg">카드를 두 장씩 뒤집어 같은 그림을 찾으세요. 카드는 키보드 <kbd>Tab</kbd>과 <kbd>Enter</kbd>로도 고를 수 있습니다.</div>
+        <div class="c20-info">
+          <div class="c20-card c20-rule"><h5>이 장르의 핵심 규칙</h5><p>카드 12장이 저마다 <b>뒷면·앞면·짝 찾음</b> 중 하나의 상태를 가집니다. 두 장이 앞면이 되면 <b>같은지 판정</b>해서 상태를 바꿉니다. "게임이 기억하고 있는 것" 칸에 그 상태가 보입니다.</p></div>
+          <div class="c20-card c20-say"><h5>AI에게 이렇게 말하면</h5><p class="c20-prompt">카드 12장으로 짝 맞추기 게임을 만들어 줘. 가로 4장, 세로 3줄로 놓고 처음엔 모두 뒷면이야. 누르면 뒤집혀서 색깔 도형이 보여. 두 장이 같으면 그대로 두고, 다르면 1초 뒤 다시 덮어 줘. 다 맞추면 몇 번 만에 맞췄는지 보여 줘.</p><button class="btn c20-copy" type="button">복사</button></div>
+          <div class="c20-card c20-more"><h5>더 해 볼 것</h5><ul><li>카드를 16장, 20장으로 늘려 어렵게 하기</li><li>가장 적게 뒤집은 기록 남기기: <a href="#ch12">12장</a></li><li>둘이 번갈아 뒤집으며 겨루기: <a href="#ch13">13장</a>, <a href="#ch21">21장</a></li></ul></div>
+        </div>
+      </div>
+
+      <!-- 4 선택형 이야기 -->
+      <div class="c20-panel" data-g="3" role="tabpanel" hidden>
+        <div class="c20-story">
+          <div class="c20-scene">
+            <div class="c20-sc-tag"></div>
+            <h5 class="c20-sc-title"></h5>
+            <p class="c20-sc-text"></p>
+            <div class="c20-choices"></div>
+          </div>
+          <div class="c20-tree">
+            <svg viewBox="0 0 470 270" role="img" aria-label="이야기 가지 그림. 지나간 장면과 길이 색으로 표시됩니다"></svg>
+            <p class="c20-swipe">그림을 옆으로 밀면 결말 쪽이 보입니다.</p>
+            <p class="c20-ends">결말 3개 중 <b>0</b>개를 보았습니다.</p>
+          </div>
+        </div>
+        <div class="lab-msg c20-msg">선택지를 골라 이야기를 진행하세요. 오른쪽 가지 그림에 지나온 길이 표시됩니다.</div>
+        <div class="c20-info">
+          <div class="c20-card c20-rule"><h5>이 장르의 핵심 규칙</h5><p>이야기는 <b>장면</b> 여러 개로 나뉘고, 선택지마다 <b>다음 장면이 연결</b>되어 있습니다. 가지 그림이 곧 게임 전체입니다. 다른 길에서 같은 장면으로 다시 모이기도 합니다.</p></div>
+          <div class="c20-card c20-say"><h5>AI에게 이렇게 말하면</h5><p class="c20-prompt">선택형 이야기 게임을 만들어 줘. 장면마다 짧은 글과 선택지 두 개가 있고, 고르면 다음 장면으로 가. 장면 글과 연결은 표 하나에 모아 두어서 나중에 내가 글만 고칠 수 있게 해 줘. 결말은 세 개, 지나온 길은 옆에 가지 그림으로 보여 줘.</p><button class="btn c20-copy" type="button">복사</button></div>
+          <div class="c20-card c20-more"><h5>더 해 볼 것</h5><ul><li>장면마다 그림 한 장씩 넣기</li><li>본 결말을 남겨 두었다가 다음에 이어 보기: <a href="#ch12">12장</a></li><li>여럿이 투표로 선택지 고르기: <a href="#ch13">13장</a>, <a href="#ch21">21장</a></li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>캐릭터가 바닥을 뚫고 떨어져요.</dt>
+      <dd>충돌 판정이 빠졌거나 어긋난 경우입니다. 떨어지는 속도가 너무 빠르면 한 번 그리는 사이에 발판을 건너뛰어 버리기도 합니다. 고치는 방법을 몰라도 됩니다. "점프하고 내려올 때 캐릭터가 발판을 뚫고 떨어져"처럼 본 그대로 AI에게 말하면 됩니다.</dd>
+      <dt>키를 눌러도 반응이 없어요.</dt>
+      <dd>키보드 입력은 지금 선택된 곳 한 군데로만 갑니다. 게임 화면이 아니라 다른 곳이 선택되어 있으면 키를 받지 못합니다. 게임 화면을 한 번 누른 뒤 키를 눌러 보세요. 위 발판 점프도 같습니다.</dd>
+      <dt>휴대폰에서 조작이 안 돼요.</dt>
+      <dd>휴대폰에는 방향키가 없습니다. 키보드로만 움직이게 만들었다면 휴대폰에서는 할 방법이 없습니다. AI에게 "휴대폰에서도 할 수 있게 화면에 왼쪽, 오른쪽, 점프 단추를 넣어 줘"라고 요청합니다.</dd>
+      <dt>게임이 너무 어렵거나 너무 쉬워요.</dt>
+      <dd>대개 숫자 하나의 문제입니다. 속도, 중력, 제한 시간 같은 값입니다. 위 체험에서 중력과 머무는 시간을 바꿔 본 것과 같습니다. AI에게 "동그라미가 조금 더 천천히 사라지게 해 줘"처럼 느낌으로 말해도 그 숫자를 찾아 바꿔 줍니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">장르는 규칙 한두 개로 정해집니다. 그 규칙을 말로 정확히 전하면 AI 조수가 게임을 만들고, 숫자 하나를 바꾸면 느낌이 달라집니다.</p>
+</section>

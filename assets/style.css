@@ -13,6 +13,7 @@
   --p2: #2b8a6c;   /* 2부 길 밖으로 */
   --p3: #c2692a;   /* 3부 가게 */
   --p4: #7650aa;   /* 4부 AI 조수 */
+  --p6: #b8406a;   /* 심화 게임 */
   --ok: #2b8a4a;
   --bad: #c43d3d;
   --warn: #d89a1c;
@@ -324,3 +325,7 @@ body.paged footer { display: none; }
   .brand { font-size: 15px; }
   .parts a { padding: 5px 7px; font-size: 12.5px; }
 }
+
+.part-head[data-part="6"] { background: var(--p6); }
+.chapter[data-part="6"] { --accent: var(--p6); }
+.parts a[data-part="6"].on { background: var(--p6); }

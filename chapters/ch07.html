@@ -1,0 +1,170 @@
+<section class="chapter" id="ch07" data-part="1" data-title="고쳤는데 그대로예요">
+  <div class="ch-head">
+    <div class="ch-num">7</div>
+    <div>
+      <h2>고쳤는데 그대로예요</h2>
+      <div class="meta">비유 <b>책상에 펼쳐 둔 서류</b> · 용어 저장, 새로고침, 캐시</div>
+    </div>
+  </div>
+
+  <p>브라우저가 웹페이지를 보여 줄 때는 서랍장에서 서류를 꺼내 책상 위에 펼쳐 놓고 봅니다. 한번 펼친 뒤에는 서랍 속 서류가 바뀌어도 책상 위 화면은 그대로입니다. 브라우저는 서랍을 계속 들여다보지 않습니다.</p>
+  <p>그래서 서류가 바뀌었으면 다시 꺼내 와야 합니다. 이것이 <strong>새로고침</strong>입니다. 주소창 옆의 ↻ 단추를 누르거나 <kbd>F5</kbd>를 누릅니다. AI가 "파일을 고쳤어요"라고 하면 서랍 속 서류가 바뀌었다는 뜻입니다. 내 화면이 바뀌었다는 뜻은 아닙니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 290" role="img" aria-label="서랍 속 서류가 바뀌어도 화면은 그대로이고, 새로고침을 누르면 서류가 다시 날아와 화면이 바뀐다">
+      <!-- 서랍장 -->
+      <text x="130" y="24" font-size="15" font-weight="700" text-anchor="middle" fill="#4a5468">서랍 속 서류</text>
+      <rect x="50" y="112" width="160" height="130" rx="6" fill="#d9b88c" stroke="#9a7449" stroke-width="2"/>
+      <rect x="60" y="176" width="140" height="56" rx="4" fill="#e8cda7" stroke="#9a7449"/>
+      <rect x="120" y="198" width="20" height="6" rx="3" fill="#9a7449"/>
+      <rect x="42" y="92" width="176" height="32" rx="4" fill="#e8cda7" stroke="#9a7449" stroke-width="2"/>
+      <g>
+        <rect x="76" y="36" width="108" height="70" rx="3" fill="#fff" stroke="#8a93a6" stroke-width="1.5"/>
+        <text x="130" y="62" font-size="15" font-weight="700" text-anchor="middle" fill="#2f6fb0" class="f7-old">가을 운동회</text>
+        <text x="130" y="62" font-size="15" font-weight="700" text-anchor="middle" fill="#c43d3d" class="f7-new">봄 운동회</text>
+        <rect x="90" y="74" width="80" height="5" rx="2" fill="#d6dae2"/>
+        <rect x="90" y="85" width="62" height="5" rx="2" fill="#d6dae2"/>
+      </g>
+      <g class="f7-pencil">
+        <path d="M188 40 l22 -22 l9 9 l-22 22 l-12 3 z" fill="#f2c14e" stroke="#8a6312"/>
+        <text x="236" y="30" font-size="14" font-weight="700" fill="#7650aa">AI가 고침</text>
+      </g>
+
+      <!-- 날아가는 서류 -->
+      <g class="f7-fly">
+        <rect x="150" y="120" width="40" height="30" rx="2" fill="#fff" stroke="#c43d3d" stroke-width="2"/>
+        <rect x="156" y="128" width="26" height="4" rx="2" fill="#c43d3d"/>
+        <rect x="156" y="137" width="20" height="3" rx="1.5" fill="#d6dae2"/>
+      </g>
+
+      <!-- 브라우저 -->
+      <rect x="440" y="36" width="290" height="206" rx="10" fill="#fff" stroke="#cfd3db" stroke-width="2"/>
+      <path d="M440 46 a10 10 0 0 1 10 -10 H720 a10 10 0 0 1 10 10 V70 H440 Z" fill="#eceef2"/>
+      <g class="f7-reload">
+        <circle cx="470" cy="53" r="13" fill="#eceef2"/>
+        <path d="M477 49 a8 8 0 1 0 1 7" fill="none" stroke="#1d2433" stroke-width="2"/>
+        <path d="M479 43 v7 h-7" fill="none" stroke="#1d2433" stroke-width="2"/>
+      </g>
+      <rect x="492" y="44" width="226" height="18" rx="9" fill="#fff"/>
+      <text x="504" y="58" font-size="13" fill="#8a93a6" font-family="Consolas, monospace">index.html</text>
+      <text x="585" y="128" font-size="26" font-weight="800" text-anchor="middle" fill="#2f6fb0" class="f7-sold">가을 운동회</text>
+      <text x="585" y="128" font-size="26" font-weight="800" text-anchor="middle" fill="#c43d3d" class="f7-snew">봄 운동회</text>
+      <rect x="490" y="150" width="190" height="8" rx="4" fill="#e2e5ea"/>
+      <rect x="490" y="168" width="150" height="8" rx="4" fill="#e2e5ea"/>
+      <rect x="490" y="186" width="170" height="8" rx="4" fill="#e2e5ea"/>
+      <text x="585" y="24" font-size="15" font-weight="700" text-anchor="middle" fill="#4a5468">책상 위 화면 (브라우저)</text>
+
+      <!-- 단계 설명 -->
+      <text x="380" y="276" font-size="16" font-weight="700" text-anchor="middle" fill="#7650aa" class="f7-t1">1. AI가 서랍 속 서류를 고쳤습니다</text>
+      <text x="380" y="276" font-size="16" font-weight="700" text-anchor="middle" fill="#c43d3d" class="f7-t2">2. 화면은 아직 옛것 그대로입니다</text>
+      <text x="380" y="276" font-size="16" font-weight="700" text-anchor="middle" fill="#2b8a4a" class="f7-t3">3. 새로고침하면 다시 꺼내 와서 바뀝니다</text>
+    </svg>
+    <figcaption>서랍 속 서류가 바뀌는 것과 화면이 바뀌는 것은 따로 일어납니다.</figcaption>
+  </figure>
+
+  <h3>새로고침해도 그대로일 때</h3>
+  <p>브라우저는 자주 보는 서류를 책상 옆에 복사본으로 두고, 서랍까지 가지 않고 그 복사본을 보여 주기도 합니다. 그림이나 꾸미기 서류(<code>.css</code>)처럼 잘 바뀌지 않을 것 같은 서류가 주로 그렇습니다. 이 복사본을 <strong>캐시</strong>라고 합니다. 화면을 빨리 띄우려고 하는 일이지만, 방금 고친 서류 대신 옛 복사본이 보이는 원인이 됩니다.</p>
+  <p>이럴 때는 <strong>강력 새로고침</strong>을 합니다. <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>을 함께 누르면 복사본을 쓰지 않고 모든 서류를 서랍에서 새로 꺼내 옵니다. 맥에서는 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>입니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 250" role="img" aria-label="일반 새로고침은 일부 서류를 책상 옆 복사본에서 가져오고, 강력 새로고침은 모든 서류를 서랍에서 새로 가져온다">
+      <defs>
+        <marker id="ch07-arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#2b8a4a"/></marker>
+        <marker id="ch07-arr-w" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#b98a2a"/></marker>
+      </defs>
+      <!-- 1줄: 새로고침 -->
+      <g class="reveal d1">
+        <text x="20" y="56" font-size="16" font-weight="800" fill="#1d2433">새로고침</text>
+        <text x="20" y="78" font-size="14" fill="#4a5468" font-family="Consolas, monospace">F5</text>
+        <rect x="150" y="26" width="150" height="80" rx="8" fill="#f4ead9" stroke="#9a7449" stroke-width="2"/>
+        <text x="225" y="46" font-size="13" font-weight="700" text-anchor="middle" fill="#7d5a35">서랍 (새 서류)</text>
+        <rect x="166" y="56" width="36" height="40" rx="2" fill="#fff" stroke="#e3632b" stroke-width="1.5"/><text x="184" y="81" font-size="13" text-anchor="middle" fill="#e3632b" font-weight="700">html</text>
+        <rect x="208" y="56" width="36" height="40" rx="2" fill="#fff" stroke="#2f6fb0" stroke-width="1.5"/><text x="226" y="81" font-size="13" text-anchor="middle" fill="#2f6fb0" font-weight="700">css</text>
+        <rect x="250" y="56" width="36" height="40" rx="2" fill="#fff" stroke="#2b8a6c" stroke-width="1.5"/><text x="268" y="81" font-size="13" text-anchor="middle" fill="#2b8a6c" font-weight="700">png</text>
+        <rect x="380" y="46" width="130" height="60" rx="8" fill="#fdf1d8" stroke="#b98a2a" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="445" y="40" font-size="13" font-weight="700" text-anchor="middle" fill="#8a6312">책상 옆 복사본 (옛것)</text>
+        <rect x="400" y="56" width="36" height="40" rx="2" fill="#fffaf0" stroke="#b98a2a" stroke-width="1.5"/><text x="418" y="81" font-size="13" text-anchor="middle" fill="#8a6312">css</text>
+        <rect x="454" y="56" width="36" height="40" rx="2" fill="#fffaf0" stroke="#b98a2a" stroke-width="1.5"/><text x="472" y="81" font-size="13" text-anchor="middle" fill="#8a6312">png</text>
+        <rect x="600" y="26" width="140" height="80" rx="8" fill="#fff" stroke="#cfd3db" stroke-width="2"/>
+        <text x="670" y="62" font-size="14" font-weight="700" text-anchor="middle" fill="#1d2433">화면</text>
+        <text x="670" y="84" font-size="13" text-anchor="middle" fill="#c43d3d">일부만 바뀜</text>
+        <path d="M184 26 C 260 0, 520 0, 598 40" fill="none" stroke="#2b8a4a" stroke-width="2.5" marker-end="url(#ch07-arr-g)"/>
+        <line x1="514" y1="76" x2="596" y2="76" stroke="#b98a2a" stroke-width="2.5" marker-end="url(#ch07-arr-w)"/>
+      </g>
+      <!-- 2줄: 강력 새로고침 -->
+      <g class="reveal d2">
+        <text x="20" y="176" font-size="16" font-weight="800" fill="#1d2433">강력 새로고침</text>
+        <text x="20" y="198" font-size="14" fill="#4a5468" font-family="Consolas, monospace">Ctrl+Shift+R</text>
+        <rect x="150" y="146" width="150" height="80" rx="8" fill="#f4ead9" stroke="#9a7449" stroke-width="2"/>
+        <text x="225" y="166" font-size="13" font-weight="700" text-anchor="middle" fill="#7d5a35">서랍 (새 서류)</text>
+        <rect x="166" y="176" width="36" height="40" rx="2" fill="#fff" stroke="#e3632b" stroke-width="1.5"/><text x="184" y="201" font-size="13" text-anchor="middle" fill="#e3632b" font-weight="700">html</text>
+        <rect x="208" y="176" width="36" height="40" rx="2" fill="#fff" stroke="#2f6fb0" stroke-width="1.5"/><text x="226" y="201" font-size="13" text-anchor="middle" fill="#2f6fb0" font-weight="700">css</text>
+        <rect x="250" y="176" width="36" height="40" rx="2" fill="#fff" stroke="#2b8a6c" stroke-width="1.5"/><text x="268" y="201" font-size="13" text-anchor="middle" fill="#2b8a6c" font-weight="700">png</text>
+        <g opacity=".45">
+          <rect x="380" y="166" width="130" height="60" rx="8" fill="#fdf1d8" stroke="#b98a2a" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="445" y="201" font-size="13" text-anchor="middle" fill="#8a6312">복사본 안 씀</text>
+        </g>
+        <rect x="600" y="146" width="140" height="80" rx="8" fill="#fff" stroke="#2b8a4a" stroke-width="2"/>
+        <text x="670" y="182" font-size="14" font-weight="700" text-anchor="middle" fill="#1d2433">화면</text>
+        <text x="670" y="204" font-size="13" text-anchor="middle" fill="#2b8a4a">모두 바뀜</text>
+        <path d="M300 186 C 380 140, 520 140, 598 176" fill="none" stroke="#2b8a4a" stroke-width="2.5" marker-end="url(#ch07-arr-g)"/>
+      </g>
+    </svg>
+  </figure>
+
+  <p>강력 새로고침을 해도 그대로라면 서랍 속 서류 자체가 안 바뀐 것입니다. 이때는 두 가지를 확인합니다. 먼저 고친 파일이 <strong>저장</strong>되었는지 봅니다. 안티그래비티나 VS Code 같은 편집기는 고친 뒤 아직 저장하지 않은 파일의 탭에 <b>●</b> 표시를 붙입니다. 이 점이 있으면 고친 내용은 편집기 화면에만 있고 서랍에는 들어가지 않은 상태입니다. <kbd>Ctrl</kbd>+<kbd>S</kbd>로 저장하면 점이 사라집니다. 다음으로 브라우저 주소창을 보고, 고친 그 파일을 열어 놓은 것이 맞는지 확인합니다. 이름이 같은 다른 폴더의 파일을 보고 있는 경우도 흔합니다.</p>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 고치고, 저장하고, 새로고침하기<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body" tabindex="0">
+      <p class="lab-guide">왼쪽 편집기에서 제목이나 색을 바꾸고 오른쪽 화면의 ↻을 눌러 보세요. 저장을 했을 때와 안 했을 때를 비교합니다. 이 칸 안을 한 번 누른 뒤에는 <kbd>F5</kbd>, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>, <kbd>Ctrl</kbd>+<kbd>S</kbd>도 이 체험 안에서만 동작합니다.</p>
+      <div class="cols ed-wrap">
+        <div class="editor">
+          <div class="ed-tabs">
+            <span class="tab" data-k="title">index.html<i>●</i></span>
+            <span class="tab" data-k="color">style.css<i>●</i></span>
+            <span class="tab" data-k="pic">logo.png<i>●</i></span>
+          </div>
+          <div class="ed-body">
+            <label class="fld"><span class="fl">index.html · 제목 문구</span><input class="in-title" type="text" maxlength="16" aria-label="제목 문구"></label>
+            <div class="fld"><span class="fl">style.css · 제목 글자색</span><div class="sw" data-k="color"></div></div>
+            <div class="fld"><span class="fl">logo.png · 그림</span><div class="sw" data-k="pic"></div></div>
+          </div>
+          <div class="ed-foot"><button class="btn primary save" type="button">저장 (Ctrl+S)</button><span class="ed-state"></span></div>
+        </div>
+        <div class="br-side">
+          <div class="browser">
+            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><button class="reload" type="button" aria-label="새로고침">↻</button><span class="addr">file:///C:/우리반앱/index.html</span></div>
+            <div class="browser-view"><div class="page"></div></div>
+          </div>
+          <div class="row br-btns">
+            <button class="btn r-soft" type="button">새로고침 <kbd>F5</kbd></button>
+            <button class="btn r-hard" type="button">강력 새로고침 <kbd>Ctrl+Shift+R</kbd></button>
+          </div>
+          <label class="switch cache-sw"><input type="checkbox" class="in-cache"><span class="track"></span>캐시 상황 (책상 옆 복사본을 쓰는 브라우저)</label>
+        </div>
+      </div>
+      <div class="where3">
+        <div class="w-box w-ed"><div class="w-h">편집기에 쓴 것</div><div class="w-v"></div></div>
+        <div class="w-arrow">저장 →</div>
+        <div class="w-box w-disk"><div class="w-h">서랍 속 서류 (저장된 것)</div><div class="w-v"></div></div>
+        <div class="w-arrow">새로고침 →</div>
+        <div class="w-box w-cache"><div class="w-h">책상 옆 복사본 (캐시)</div><div class="w-v"></div></div>
+      </div>
+      <div class="lab-msg msg1">편집기에서 제목 문구를 바꿔 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>AI가 고쳤다는데 화면이 그대로예요.</dt>
+      <dd>AI는 서랍 속 서류를 고쳤고, 화면은 그 전에 꺼내 펼쳐 둔 것입니다. 브라우저에서 <kbd>F5</kbd>를 눌러 다시 꺼내 와야 바뀐 화면이 보입니다.</dd>
+      <dt>새로고침했는데도 그대로예요.</dt>
+      <dd>브라우저가 책상 옆 복사본(캐시)을 보여 주고 있을 수 있습니다. <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>로 강력 새로고침을 합니다. 그래도 같으면 편집기 탭에 ● 표시가 남아 있는지, 주소창의 파일이 고친 그 파일인지 확인합니다.</dd>
+      <dt>고친 게 다른 컴퓨터나 휴대폰에서는 반영이 안 돼요.</dt>
+      <dd>그쪽 책상에도 예전에 꺼내 둔 화면이나 복사본이 있습니다. 거기서도 새로고침을 해야 합니다. 그리고 내 서랍에서 고친 파일은 내 컴퓨터에만 있습니다. 다른 사람이 보는 곳까지 새 서류를 보내는 일(배포)은 11장에서 다룹니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">고쳤다 = 서랍 속 서류가 바뀜. 화면을 바꾸려면 저장(● 없애기) 후 새로고침 <kbd>F5</kbd>, 그래도 그대로면 강력 새로고침 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>.</p>
+</section>

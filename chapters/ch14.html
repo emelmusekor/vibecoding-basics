@@ -1,0 +1,148 @@
+<section class="chapter" id="ch14" data-part="3" data-title="금고 열쇠">
+  <div class="ch-head">
+    <div class="ch-num">14</div>
+    <div>
+      <h2>금고 열쇠</h2>
+      <div class="meta">비유 <b>남의 가게에서 받은 열쇠</b> · 용어 API 키, .env</div>
+    </div>
+  </div>
+
+  <p>내 앱에서 AI(ChatGPT, Gemini)에게 질문하거나, 지도를 띄우거나, 번역을 하려면 남의 가게 서비스를 빌려 써야 합니다. 그 가게는 회원에게 <strong>열쇠</strong>를 하나 내어 줍니다. 이 열쇠를 <strong>API 키</strong>라고 합니다. <code>sk-</code>나 <code>AIza</code>처럼 시작하는 길고 복잡한 글자 줄입니다.</p>
+  <p>열쇠를 보여 주며 주문하면 가게는 누가 주문했는지 묻지 않습니다. 요금은 <b>열쇠 주인</b>에게 청구됩니다. 그래서 열쇠를 남이 가져가면, 남이 쓴 요금이 내게 나옵니다.</p>
+
+  <h3>열쇠는 주방에 둡니다</h3>
+  <p>12장에서 홀(화면 코드, HTML과 JS)은 손님의 브라우저로 통째로 배달된다고 했습니다. 홀에 열쇠를 두면 손님 누구나 볼 수 있습니다. 크롬에서 <kbd>Ctrl</kbd>+<kbd>U</kbd>(페이지 소스 보기)나 <kbd>F12</kbd>(개발자 도구)를 누르면 화면 코드가 그대로 보입니다. 주방(서버)에 둔 열쇠는 손님에게 배달되지 않습니다. 홀은 주방에 주문만 넣고, 주방이 열쇠를 꺼내 남의 가게에 주문합니다.</p>
+  <p>깃허브에 올린 코드에 열쇠가 들어 있어도 마찬가지입니다. 공개 저장소를 쉬지 않고 훑어서 열쇠처럼 생긴 글자를 찾아 가는 프로그램이 있습니다. 올리고 몇 분 안에 도용되는 일도 있습니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 880 300" role="img" aria-label="왼쪽은 홀 진열대에 놓인 열쇠를 지나가던 사람이 집어 가는 모습, 오른쪽은 주방 금고 안 열쇠는 지나가는 사람이 가져갈 수 없는 모습">
+      <defs>
+        <g id="c14-key">
+          <circle cx="0" cy="0" r="9" fill="none" stroke="#d89a1c" stroke-width="5"/>
+          <rect x="8" y="-3" width="26" height="6" rx="2" fill="#d89a1c"/>
+          <rect x="24" y="2" width="5" height="8" fill="#d89a1c"/><rect x="30" y="2" width="4" height="6" fill="#d89a1c"/>
+        </g>
+        <g id="c14-man">
+          <circle cx="0" cy="-58" r="12" fill="#6d778b"/>
+          <rect x="-11" y="-44" width="22" height="34" rx="8" fill="#6d778b"/>
+          <rect x="-9" y="-12" width="7" height="24" rx="3" fill="#6d778b"/>
+          <rect x="2" y="-12" width="7" height="24" rx="3" fill="#6d778b"/>
+        </g>
+      </defs>
+
+      <!-- 왼쪽: 홀에 둔 열쇠 -->
+      <rect x="10" y="10" width="420" height="280" rx="14" fill="#fdf0f0" stroke="#c43d3d" stroke-width="2"/>
+      <text x="220" y="40" font-size="18" font-weight="800" text-anchor="middle" fill="#c43d3d">열쇠를 홀에 두면</text>
+      <text x="220" y="62" font-size="14" text-anchor="middle" fill="#4a5468">화면 코드(HTML · JS) 안</text>
+      <rect x="120" y="150" width="200" height="16" rx="3" fill="#b98a5a"/>
+      <rect x="132" y="166" width="10" height="70" fill="#7d5a35"/><rect x="298" y="166" width="10" height="70" fill="#7d5a35"/>
+      <text x="220" y="196" font-size="14" text-anchor="middle" fill="#4a5468">진열대</text>
+      <line x1="20" y1="256" x2="420" y2="256" stroke="#d8c4c4" stroke-width="2"/>
+      <g>
+        <use href="#c14-key"/>
+        <animateTransform attributeName="transform" type="translate" values="205,138;205,138;225,212;460,212" keyTimes="0;0.45;0.5;1" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;1" keyTimes="0;0.85;0.86;1" dur="7s" repeatCount="indefinite"/>
+      </g>
+      <g>
+        <use href="#c14-man"/>
+        <animateTransform attributeName="transform" type="translate" values="-30,262;460,262" dur="7s" repeatCount="indefinite"/>
+      </g>
+      <text x="220" y="282" font-size="14" font-weight="700" text-anchor="middle" fill="#c43d3d" class="reveal d2">지나가던 사람이 집어 갈 수 있음</text>
+
+      <!-- 오른쪽: 주방 금고 -->
+      <rect x="450" y="10" width="420" height="280" rx="14" fill="#eef7f1" stroke="#2b8a4a" stroke-width="2"/>
+      <text x="660" y="40" font-size="18" font-weight="800" text-anchor="middle" fill="#2b8a4a">열쇠를 주방에 두면</text>
+      <text x="660" y="62" font-size="14" text-anchor="middle" fill="#4a5468">서버 안 금고 (.env)</text>
+      <rect x="470" y="150" width="140" height="16" rx="3" fill="#b98a5a"/>
+      <rect x="480" y="166" width="10" height="70" fill="#7d5a35"/><rect x="590" y="166" width="10" height="70" fill="#7d5a35"/>
+      <rect x="500" y="124" width="80" height="26" rx="4" fill="#fff" stroke="#8a93a6"/>
+      <text x="540" y="142" font-size="13" text-anchor="middle" fill="#4a5468">주문 받기</text>
+      <text x="540" y="196" font-size="14" text-anchor="middle" fill="#4a5468">진열대</text>
+      <line x1="640" y1="80" x2="640" y2="256" stroke="#2b8a4a" stroke-width="4"/>
+      <rect x="680" y="110" width="100" height="100" rx="8" fill="#5d6576" stroke="#1d2433" stroke-width="2"/>
+      <rect x="692" y="122" width="76" height="76" rx="4" fill="#4a5468"/>
+      <circle cx="755" cy="160" r="9" fill="none" stroke="#c9ccd3" stroke-width="3"/>
+      <use href="#c14-key" transform="translate(708,160) scale(.8)"/>
+      <text x="730" y="232" font-size="14" text-anchor="middle" fill="#4a5468">주방 금고</text>
+      <path d="M 780 140 Q 830 110 840 84" fill="none" stroke="#2b8a4a" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="790" y="66" width="70" height="24" rx="6" fill="#fff" stroke="#2b8a4a"/>
+      <text x="825" y="83" font-size="13" text-anchor="middle" fill="#2b8a4a">AI 가게</text>
+      <line x1="460" y1="256" x2="860" y2="256" stroke="#c4d8cb" stroke-width="2"/>
+      <g>
+        <use href="#c14-man"/>
+        <animateTransform attributeName="transform" type="translate" values="420,262;660,262" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="7s" repeatCount="indefinite"/>
+      </g>
+      <text x="660" y="282" font-size="14" font-weight="700" text-anchor="middle" fill="#2b8a4a" class="reveal d3">손님 쪽에서는 보이지도 닿지도 않음</text>
+    </svg>
+  </figure>
+
+  <h3>열쇠 안전 수칙</h3>
+  <ul class="c14-rules">
+    <li><b>코드에 직접 쓰지 않습니다.</b> 열쇠는 <code>.env</code>라는 따로 보관하는 서류에 적고, 이 서류는 배포하거나 깃허브에 올리거나 남에게 보내지 않습니다. AI에게 <span class="c14-say">"API 키는 .env에 두고 깃허브에 올라가지 않게 해 줘"</span>라고 말하면 됩니다.</li>
+    <li><b>AI 채팅창에 붙여 넣을 때도 조심합니다.</b> 대화 기록에 그대로 남습니다. AI가 <code>.env</code> 서류를 만들어 주면 열쇠 값은 내가 직접 그 서류에 적어 넣는 편이 안전합니다.</li>
+    <li><b>사용 한도를 걸어 둡니다.</b> 서비스 관리 화면에서 한 달 예산 상한을 정해 두면, 열쇠가 새어 나가도 피해가 그 금액 안에서 멈춥니다.</li>
+    <li><b>새어 나갔다면 열쇠를 바꿉니다.</b> 그 서비스 관리 화면에서 열쇠를 폐기하고 새로 발급합니다. 코드에서 지우는 것만으로는 부족합니다. 이미 복사해 간 사람은 계속 쓸 수 있기 때문입니다.</li>
+  </ul>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 열쇠는 어디서 보일까<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">가짜 AI 챗봇 앱입니다. 질문을 보내 본 뒤 아래 버튼을 1, 2, 3 순서로 눌러 보세요. 열쇠와 금액은 모두 체험용 가짜입니다.</p>
+      <div class="c14-top">
+        <div class="browser c14-app">
+          <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="reload" aria-hidden="true">↻</span><span class="addr">my-chatbot.example.com</span></div>
+          <div class="browser-view">
+            <div class="c14-chat-head">우리 반 질문 도우미</div>
+            <div class="c14-chat"></div>
+            <div class="c14-ask"><input class="c14-q" type="text" maxlength="40" aria-label="질문 쓰기"><button class="btn primary c14-send" type="button">보내기</button></div>
+          </div>
+        </div>
+        <div class="c14-kitchen" hidden>
+          <div class="c14-k-head">주방(서버) 안 <small>손님에게 배달되지 않음</small></div>
+          <div class="c14-file"><div class="c14-fname">.env</div><pre>AI_API_KEY=sk-test-0000-0000-0000-FAKEKEY</pre></div>
+          <div class="c14-file"><div class="c14-fname">.gitignore</div><pre>.env</pre></div>
+          <p>.gitignore에 적힌 서류는 깃허브에 올라가지 않습니다.</p>
+        </div>
+      </div>
+
+      <div class="row c14-steps">
+        <button class="btn c14-src" type="button">1. 페이지 소스 보기</button>
+        <button class="btn danger c14-steal" type="button">2. 모르는 사람이 이 열쇠를 가져가면</button>
+        <button class="btn primary c14-move" type="button">3. 열쇠를 주방으로 옮기기</button>
+      </div>
+
+      <div class="c14-source" hidden>
+        <div class="c14-src-bar">view-source:my-chatbot.example.com</div>
+        <pre class="code c14-code"></pre>
+      </div>
+
+      <div class="c14-abuse" hidden>
+        <div class="cols">
+          <div class="term c14-term"></div>
+          <div class="c14-meter">
+            <div class="c14-m-label">이번 달 요금 <small>(체험용 가상 금액)</small></div>
+            <div class="c14-money">0원</div>
+            <div class="bar"><i></i></div>
+            <div class="c14-calls">주문 0회</div>
+            <label class="switch"><input type="checkbox" class="c14-cap"><span class="track"></span>사용 한도 5만 원 걸기</label>
+          </div>
+        </div>
+      </div>
+      <div class="lab-msg c14-msg">아래 입력칸에 질문을 써서 보내 보세요. 그다음 [1. 페이지 소스 보기]를 누릅니다.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>갑자기 AI 사용 요금이 많이 나왔어요.</dt>
+      <dd>열쇠가 화면 코드나 공개된 곳에 들어 있어 누군가 가져다 쓴 경우가 많습니다. 서비스 관리 화면에서 사용 내역을 확인하고, 열쇠를 폐기한 뒤 새로 발급합니다. 다음부터는 사용 한도를 걸어 둡니다.</dd>
+      <dt>깃허브에서 "비밀 정보가 노출되었다"는 경고 메일이 왔어요.</dt>
+      <dd>올린 코드 안에서 열쇠처럼 생긴 글자를 깃허브가 찾아낸 것입니다. 저장소에서 지워도 이전 기록에 남아 있을 수 있으니, 먼저 그 열쇠를 서비스에서 폐기하고 새로 발급합니다. 그다음 AI에게 "API 키를 .env로 옮기고 깃허브에 올라가지 않게 해 줘"라고 말합니다.</dd>
+      <dt>AI가 API 키를 달라고 해요.</dt>
+      <dd>AI가 남의 가게 서비스를 연결하려는 것입니다. 채팅창에 바로 붙여 넣기 전에 "이 키를 어디에 둘 거야? 화면 코드가 아니라 .env에 둬 줘"라고 확인합니다. 키 값은 AI가 만든 <code>.env</code> 서류에 내가 직접 적어 넣습니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">API 키 = 요금이 나에게 청구되는 열쇠. 홀(화면 코드)에 두면 누구나 볼 수 있으니 주방(서버)의 .env에 두고, 한도를 걸고, 새면 바로 바꿉니다.</p>
+</section>

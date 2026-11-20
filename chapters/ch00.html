@@ -1,0 +1,150 @@
+<section class="chapter" id="ch00" data-part="0" data-title="전체 지도">
+  <div class="cover">
+    <div class="eyebrow">바이브코딩 연수 · 사전 학습</div>
+    <h1>파일 한 장의 여행</h1>
+    <p class="lead">바이브코딩은 만들고 싶은 것을 말로 설명하면 AI가 코드를 써 주는 방식입니다. 코드를 직접 쓸 줄 몰라도 됩니다. 다만 AI가 "파일을 만들었어요", "새로고침해 보세요", "배포했어요"라고 말할 때 무슨 뜻인지는 알아야 합니다.</p>
+    <p class="lead">이 페이지는 그 말들을 알아듣기 위한 기초만 모았습니다. 컴퓨터에서 일어나는 일은 결국 <b>파일이 어디에 있고, 어디로 옮겨 가는가</b>의 이야기입니다. 파일 한 장이 내 책상에서 출발해 다른 사람의 화면에 도착하기까지 따라가 봅니다.</p>
+    <ul class="howto">
+      <li><b>읽는 시간</b> 30~40분</li>
+      <li><b>직접 해 보기</b> 칸은 눌러 봐도 아무것도 망가지지 않습니다</li>
+      <li><b>겪는 일 · 이유</b> 칸에서 평소 궁금했던 현상을 찾아보세요</li>
+    </ul>
+  </div>
+
+  <h3>먼저 지도 한 장</h3>
+  <p>앞으로 나오는 모든 내용은 아래 지도 위의 어느 한 곳입니다. 장소를 누르면 그 내용으로 바로 이동합니다.</p>
+
+  <div class="map-wrap fig">
+    <svg viewBox="0 0 1000 520" role="img" aria-label="내 방, 도로, 창고, 가게, 친구 집으로 이루어진 지도">
+      <defs>
+        <path id="road-path" d="M 400 262 L 640 262 L 640 330 L 640 262 L 880 262 L 880 330 L 880 262 L 640 262 L 640 200 L 640 262 Z"/>
+      </defs>
+
+      <!-- 내 방 -->
+      <rect x="18" y="28" width="384" height="466" rx="18" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+      <text x="40" y="62" font-size="20" font-weight="800" fill="#2f6fb0">내 방 = 내 컴퓨터</text>
+
+      <!-- 서랍장 -->
+      <a href="#ch02" class="place">
+        <rect class="pl-bg" x="44" y="90" width="120" height="170" rx="8" fill="#d9b88c" stroke="#9a7449" stroke-width="2"/>
+        <rect x="54" y="102" width="100" height="44" rx="4" fill="#e8cda7" stroke="#9a7449"/>
+        <rect x="54" y="154" width="100" height="44" rx="4" fill="#e8cda7" stroke="#9a7449"/>
+        <rect x="54" y="206" width="100" height="44" rx="4" fill="#e8cda7" stroke="#9a7449"/>
+        <rect x="94" y="120" width="20" height="6" rx="3" fill="#9a7449"/>
+        <rect x="94" y="172" width="20" height="6" rx="3" fill="#9a7449"/>
+        <rect x="94" y="224" width="20" height="6" rx="3" fill="#9a7449"/>
+        <text x="104" y="284" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">서랍장</text>
+        <text x="104" y="304" font-size="13" text-anchor="middle" fill="#4a5468">저장공간</text>
+      </a>
+
+      <!-- 책상 + 모니터 -->
+      <a href="#ch03" class="place">
+        <rect class="pl-bg" x="200" y="176" width="180" height="16" rx="4" fill="#b98a5a" stroke="#7d5a35" stroke-width="2"/>
+        <rect x="212" y="192" width="10" height="70" fill="#7d5a35"/>
+        <rect x="358" y="192" width="10" height="70" fill="#7d5a35"/>
+        <rect x="216" y="160" width="40" height="16" rx="2" fill="#fff" stroke="#8a93a6" transform="rotate(-6 236 168)"/>
+        <text x="290" y="290" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">책상</text>
+        <text x="290" y="310" font-size="13" text-anchor="middle" fill="#4a5468">메모리</text>
+      </a>
+      <a href="#ch06" class="place">
+        <rect class="pl-bg" x="282" y="100" width="88" height="60" rx="6" fill="#1d2433"/>
+        <rect x="288" y="106" width="76" height="48" rx="3" fill="#fff"/>
+        <rect x="294" y="112" width="40" height="6" rx="3" fill="#2f6fb0"/>
+        <rect x="294" y="124" width="62" height="5" rx="2" fill="#c9ccd3"/>
+        <rect x="294" y="134" width="50" height="5" rx="2" fill="#c9ccd3"/>
+        <rect x="320" y="160" width="12" height="16" fill="#1d2433"/>
+        <text x="326" y="92" font-size="13" text-anchor="middle" fill="#4a5468">브라우저</text>
+      </a>
+
+      <!-- 들고 다니는 서랍 -->
+      <a href="#ch05" class="place">
+        <rect class="pl-bg" x="50" y="350" width="36" height="16" rx="3" fill="#2f6fb0"/>
+        <rect x="86" y="354" width="12" height="8" fill="#c9ccd3"/>
+        <rect x="112" y="340" width="56" height="40" rx="6" fill="#4a5468"/>
+        <circle cx="140" cy="360" r="11" fill="#6d778b"/>
+        <text x="108" y="410" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">들고 다니는 서랍</text>
+        <text x="108" y="430" font-size="13" text-anchor="middle" fill="#4a5468">USB · 외장하드</text>
+      </a>
+
+      <!-- AI 조수 -->
+      <a href="#ch15" class="place">
+        <circle class="pl-bg" cx="300" cy="370" r="22" fill="#e8def5" stroke="#7650aa" stroke-width="2"/>
+        <rect x="270" y="394" width="60" height="44" rx="14" fill="#e8def5" stroke="#7650aa" stroke-width="2"/>
+        <text x="300" y="376" font-size="14" font-weight="800" text-anchor="middle" fill="#7650aa">AI</text>
+        <text x="300" y="462" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">AI 조수</text>
+      </a>
+
+      <!-- 문 -->
+      <rect x="396" y="238" width="10" height="48" fill="#2f6fb0"/>
+
+      <!-- 도로 -->
+      <a href="#ch08" class="place">
+        <rect class="pl-bg" x="406" y="238" width="580" height="48" fill="#5d6576"/>
+        <line x1="410" y1="262" x2="980" y2="262" stroke="#fff" stroke-width="3" stroke-dasharray="16 14"/>
+        <rect x="616" y="140" width="48" height="98" fill="#5d6576"/>
+        <rect x="616" y="286" width="48" height="40" fill="#5d6576"/>
+        <rect x="856" y="286" width="48" height="40" fill="#5d6576"/>
+        <text x="500" y="226" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">도로 = 인터넷</text>
+      </a>
+
+      <!-- 택배 트럭 -->
+      <g>
+        <g>
+          <rect x="-22" y="-12" width="30" height="22" rx="3" fill="#f2c14e" stroke="#8a6312"/>
+          <rect x="8" y="-6" width="14" height="16" rx="3" fill="#fff" stroke="#8a6312"/>
+          <circle cx="-12" cy="12" r="4" fill="#1d2433"/><circle cx="14" cy="12" r="4" fill="#1d2433"/>
+          <animateMotion dur="9s" repeatCount="indefinite" rotate="0">
+            <mpath href="#road-path"/>
+          </animateMotion>
+        </g>
+      </g>
+
+      <!-- 창고 -->
+      <a href="#ch10" class="place">
+        <polygon class="pl-bg" points="540,80 640,30 740,80" fill="#2b8a6c"/>
+        <rect x="550" y="80" width="180" height="62" fill="#d6ece4" stroke="#2b8a6c" stroke-width="2"/>
+        <rect x="610" y="96" width="60" height="46" fill="#a9d4c4" stroke="#2b8a6c"/>
+        <line x1="610" y1="108" x2="670" y2="108" stroke="#2b8a6c"/><line x1="610" y1="120" x2="670" y2="120" stroke="#2b8a6c"/>
+        <text x="806" y="74" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">빌린 창고</text>
+        <text x="806" y="94" font-size="13" text-anchor="middle" fill="#4a5468">클라우드</text>
+      </a>
+
+      <!-- 가게 -->
+      <a href="#ch12" class="place">
+        <rect class="pl-bg" x="560" y="326" width="160" height="120" fill="#fbe7d6" stroke="#c2692a" stroke-width="2"/>
+        <path d="M552 326 h176 l-10 -26 h-156 z" fill="#c2692a"/>
+        <path d="M562 300 h30 v26 h-30z M622 300 h30 v26 h-30z M682 300 h30 v26 h-30z" fill="#e89a5e"/>
+        <line x1="640" y1="336" x2="640" y2="446" stroke="#c2692a" stroke-dasharray="5 4"/>
+        <text x="600" y="392" font-size="14" font-weight="700" text-anchor="middle" fill="#c2692a">홀</text>
+        <text x="680" y="392" font-size="14" font-weight="700" text-anchor="middle" fill="#c2692a">주방</text>
+        <text x="640" y="474" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">가게 = 서버</text>
+      </a>
+
+      <!-- 친구 집 -->
+      <a href="#ch11" class="place">
+        <polygon class="pl-bg" points="820,346 880,310 940,346" fill="#7a8396"/>
+        <rect x="830" y="346" width="100" height="90" fill="#eef0f4" stroke="#7a8396" stroke-width="2"/>
+        <rect x="864" y="370" width="32" height="50" rx="5" fill="#1d2433"/>
+        <rect x="868" y="376" width="24" height="36" rx="2" fill="#fff"/>
+        <text x="880" y="464" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">친구 집</text>
+        <text x="880" y="484" font-size="13" text-anchor="middle" fill="#4a5468">다른 사람의 화면</text>
+      </a>
+    </svg>
+  </div>
+
+  <div class="map-legend">
+    <div><b>서류</b><span>파일</span></div>
+    <div><b>서류철</b><span>폴더</span></div>
+    <div><b>주소</b><span>경로</span></div>
+    <div><b>서랍장</b><span>저장공간 (SSD, 하드디스크)</span></div>
+    <div><b>책상</b><span>메모리 (지금 일하는 공간)</span></div>
+    <div><b>들고 다니는 서랍</b><span>USB 메모리, 외장하드</span></div>
+    <div><b>읽어 주는 사람</b><span>브라우저, 파이썬</span></div>
+    <div><b>도로</b><span>인터넷</span></div>
+    <div><b>택배 주문과 배송</b><span>요청과 응답</span></div>
+    <div><b>빌린 창고</b><span>클라우드</span></div>
+    <div><b>가게</b><span>서버</span></div>
+    <div><b>AI 조수</b><span>안티그래비티 속 AI</span></div>
+  </div>
+  <p class="remember">이 비유는 끝까지 똑같이 씁니다. 헷갈리면 이 지도로 돌아오세요.</p>
+</section>

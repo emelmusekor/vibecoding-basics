@@ -1,0 +1,74 @@
+/* 6장 코드도 서류일 뿐 */
+
+/* 그림: 서류가 읽는 사람에게 건너가고 결과가 나타남 */
+#ch06 .f6-sheet { animation: ch06-sheet 3.6s ease-in-out infinite; }
+#ch06 .f6-sheet.s2 { animation-delay: 1.2s; }
+#ch06 .f6-sheet.s3 { animation-delay: 2.4s; }
+@keyframes ch06-sheet {
+  0% { transform: translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  55% { transform: translateX(110px); opacity: 1; }
+  70%, 100% { transform: translateX(120px); opacity: 0; }
+}
+#ch06 .f6-press { transform-box: fill-box; transform-origin: center; animation: ch06-press 3s ease-in-out infinite; }
+@keyframes ch06-press { 0%, 30% { transform: scale(1); } 36% { transform: scale(.9); } 42%, 100% { transform: scale(1); } }
+#ch06 .f6-done { animation: ch06-done 3s ease-in-out infinite; }
+@keyframes ch06-done { 0%, 40% { opacity: 0; } 48%, 90% { opacity: 1; } 100% { opacity: 0; } }
+#ch06 .f6-old { animation: ch06-old 4s ease-in-out infinite; }
+#ch06 .f6-new { animation: ch06-new 4s ease-in-out infinite; }
+#ch06 .f6-old.o2, #ch06 .f6-new.n2 { animation-delay: .5s; }
+@keyframes ch06-old { 0%, 30% { opacity: 1; } 40%, 88% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes ch06-new { 0%, 30% { opacity: 0; } 40%, 88% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  #ch06 .f6-sheet, #ch06 .f6-old { animation: none; opacity: 0; }
+  #ch06 .f6-press, #ch06 .f6-done, #ch06 .f6-new { animation: none; opacity: 1; }
+}
+
+/* 체험 1: 메모장 / 크롬 */
+#ch06 .seg { margin-bottom: 12px; }
+#ch06 .op-view { min-height: 270px; }
+#ch06 .notepad { border: 1px solid #cfd3db; border-radius: 8px; overflow: hidden; background: #fff; }
+#ch06 .np-bar { background: #eceef2; padding: 5px 12px; font-size: 13px; color: var(--ink-2); border-bottom: 1px solid #d8dbe2; }
+#ch06 .np-menu { font-size: 13px; color: var(--ink-2); padding: 3px 12px; border-bottom: 1px solid #eef0f3; }
+#ch06 .np-text { margin: 0; padding: 10px 14px; font-family: var(--mono); font-size: 14px; line-height: 1.55; color: #1d2433; white-space: pre; overflow-x: auto; }
+#ch06 .tabname { background: #fff; border-radius: 6px 6px 0 0; padding: 2px 10px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+#ch06 .notice h1 { font-size: 24px; margin: 0 0 8px; }
+#ch06 .notice p { margin: 4px 0; font-size: 15px; }
+#ch06 .notice button { margin-top: 8px; font-size: 14px; }
+@media (max-width: 560px) { #ch06 .tabname { display: none; } }
+
+/* 체험 2: 버튼 만들기 */
+#ch06 .steps { margin-bottom: 12px; }
+#ch06 .codes { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+#ch06 .cf .code { transition: box-shadow .3s; }
+#ch06 .cf.new .code { box-shadow: 0 0 0 3px #f2c14e; }
+#ch06 .cf.new { opacity: 1; animation: ch06-in .45s ease-out; }
+@keyframes ch06-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+#ch06 .code-title { font-size: 13.5px; font-weight: 700; color: var(--ink-2); margin: 0 0 4px; display: flex; align-items: center; gap: 6px; }
+#ch06 .code-title small { font-weight: 500; color: var(--ink-3); }
+#ch06 .code-title .ext { font-family: var(--mono); font-size: 11px; color: #fff; padding: 0 5px; border-radius: 4px; }
+#ch06 .ext.html { background: #e3632b; } #ch06 .ext.css { background: #2f6fb0; } #ch06 .ext.js { background: #c9a400; }
+#ch06 .codes .code { font-size: 13px; }
+#ch06 .build .browser { align-self: start; }
+#ch06 .att h2 { margin: 0 0 10px; font-size: 20px; }
+#ch06 .att p { margin: 12px 0 0; min-height: 28px; font-size: 18px; font-weight: 700; color: var(--ok); }
+#ch06 .att button { font-size: 14px; cursor: pointer; }
+#ch06 .att.styled button { background: #2f6fb0; color: #fff; border: 0; border-radius: 12px; padding: 10px 24px; font-size: 16px; font-weight: 700; box-shadow: 0 2px 6px rgba(47,111,176,.3); transition: background .2s; }
+#ch06 .att.styled button.done { background: #2b8a4a; }
+#ch06 .att button.nudge { animation: ch06-nudge .35s; }
+@keyframes ch06-nudge { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+#ch06 .att p.pop { animation: ch06-pop .4s ease-out; }
+@keyframes ch06-pop { from { transform: scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* 체험 3: 파이썬 */
+#ch06 .py .code { font-size: 13px; }
+#ch06 .py-run { margin: 10px 0; }
+#ch06 .py-hint { font-size: 14px; color: var(--ink-3); }
+#ch06 .py .term { min-height: 120px; font-size: 13px; }
+#ch06 .py .explorer { align-self: start; }
+#ch06 .pics li { padding: 4px 12px; transition: background .2s; }
+#ch06 .pics .pn { font-family: var(--mono); font-size: 14px; }
+#ch06 .pics li.work { background: #fdf1d8; }
+#ch06 .pics li.done { background: #e4f3e8; }
+#ch06 .pics li.done .pn { font-family: inherit; font-weight: 700; color: var(--ok); }
+#ch06 .cols > * { min-width: 0; }

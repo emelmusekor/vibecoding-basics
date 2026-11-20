@@ -1,0 +1,134 @@
+<section class="chapter" id="ch06" data-part="1" data-title="코드도 서류일 뿐">
+  <div class="ch-head">
+    <div class="ch-num">6</div>
+    <div>
+      <h2>코드도 서류일 뿐</h2>
+      <div class="meta">비유 <b>서류를 읽어 주는 사람</b> · 용어 코드, HTML, 자바스크립트, 파이썬</div>
+    </div>
+  </div>
+
+  <p>바이브코딩을 하면 AI가 <code>index.html</code>, <code>app.js</code>, <code>정리하기.py</code> 같은 파일을 만들어 줍니다. 이런 파일 안에 적힌 글을 <strong>코드</strong>라고 합니다. 코드 파일도 다른 서류와 똑같이 글자가 적힌 서류 한 장입니다. 메모장으로 열면 그냥 글자가 보입니다. 무섭게 볼 필요가 없습니다.</p>
+  <p>다만 코드는 혼자서는 아무 일도 하지 않습니다. 그 서류를 읽고 적힌 대로 해 주는 사람이 있어야 합니다. 웹페이지 서류는 크롬 같은 <strong>브라우저</strong>가 읽고, 파이썬 서류는 <strong>파이썬</strong>이라는 프로그램이 읽습니다. 코드를 직접 쓸 줄 몰라도 됩니다. 어떤 서류가 무슨 일을 하는지 알아보기만 하면 충분합니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 310" role="img" aria-label="html과 js 서류는 브라우저가 읽어 화면과 움직임을 만들고, py 서류는 파이썬이 읽어 파일 정리 같은 일을 한다">
+      <g aria-hidden="true"><line x1="200" y1="52" x2="340" y2="52" stroke="#d6dae2" stroke-width="2" stroke-dasharray="5 5"/><line x1="400" y1="52" x2="508" y2="52" stroke="#d6dae2" stroke-width="2" stroke-dasharray="5 5"/><path d="M502 47 l8 5 l-8 5" fill="none" stroke="#c9ccd3" stroke-width="2"/><line x1="200" y1="152" x2="340" y2="152" stroke="#d6dae2" stroke-width="2" stroke-dasharray="5 5"/><line x1="400" y1="152" x2="508" y2="152" stroke="#d6dae2" stroke-width="2" stroke-dasharray="5 5"/><path d="M502 147 l8 5 l-8 5" fill="none" stroke="#c9ccd3" stroke-width="2"/><line x1="200" y1="252" x2="340" y2="252" stroke="#d6dae2" stroke-width="2" stroke-dasharray="5 5"/><line x1="400" y1="252" x2="508" y2="252" stroke="#d6dae2" stroke-width="2" stroke-dasharray="5 5"/><path d="M502 247 l8 5 l-8 5" fill="none" stroke="#c9ccd3" stroke-width="2"/></g>
+      <!-- 1줄: html -->
+      <g class="reveal d1">
+        <path d="M30 14 h42 l14 14 v58 h-56 z" fill="#fff" stroke="#e3632b" stroke-width="2"/>
+        <rect x="38" y="66" width="40" height="14" rx="3" fill="#e3632b"/><text x="58" y="77" font-size="11" font-weight="700" text-anchor="middle" fill="#fff" font-family="Consolas, monospace">.html</text>
+        <text x="100" y="46" font-size="15" font-weight="700" fill="#1d2433">index.html</text>
+        <text x="100" y="68" font-size="13" fill="#4a5468">화면의 뼈대</text>
+        <g class="f6-sheet"><rect x="210" y="38" width="22" height="28" rx="2" fill="#fff" stroke="#e3632b" stroke-width="1.5"/></g>
+        <circle cx="370" cy="38" r="12" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+        <rect x="356" y="52" width="28" height="24" rx="9" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+        <text x="370" y="96" font-size="13" text-anchor="middle" fill="#2f6fb0" font-weight="700">브라우저</text>
+        <rect x="520" y="12" width="200" height="80" rx="6" fill="#fff" stroke="#cfd3db" stroke-width="1.5"/>
+        <rect x="520" y="12" width="200" height="14" rx="6" fill="#eceef2"/>
+        <rect x="534" y="36" width="90" height="10" rx="3" fill="#1d2433"/>
+        <rect x="534" y="54" width="150" height="6" rx="3" fill="#c9ccd3"/>
+        <rect x="534" y="68" width="60" height="16" rx="4" fill="none" stroke="#8a93a6" stroke-width="1.5"/>      </g>
+      <!-- 2줄: js -->
+      <g class="reveal d2">
+        <path d="M30 114 h42 l14 14 v58 h-56 z" fill="#fff" stroke="#c9a400" stroke-width="2"/>
+        <rect x="42" y="166" width="32" height="14" rx="3" fill="#c9a400"/><text x="58" y="177" font-size="11" font-weight="700" text-anchor="middle" fill="#fff" font-family="Consolas, monospace">.js</text>
+        <text x="100" y="146" font-size="15" font-weight="700" fill="#1d2433">app.js</text>
+        <text x="100" y="168" font-size="13" fill="#4a5468">화면 속 움직임</text>
+        <g class="f6-sheet s2"><rect x="210" y="138" width="22" height="28" rx="2" fill="#fff" stroke="#c9a400" stroke-width="1.5"/></g>
+        <circle cx="370" cy="138" r="12" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+        <rect x="356" y="152" width="28" height="24" rx="9" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+        <text x="370" y="196" font-size="13" text-anchor="middle" fill="#2f6fb0" font-weight="700">브라우저</text>
+        <rect x="520" y="112" width="200" height="80" rx="6" fill="#fff" stroke="#cfd3db" stroke-width="1.5"/>
+        <g class="f6-press"><rect x="540" y="132" width="76" height="26" rx="6" fill="#2f6fb0"/><text x="578" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">출석하기</text></g>
+        <text x="540" y="180" font-size="14" font-weight="700" fill="#2b8a4a" class="f6-done">출석 완료!</text>
+      </g>
+      <!-- 3줄: py -->
+      <g class="reveal d3">
+        <path d="M30 214 h42 l14 14 v58 h-56 z" fill="#fff" stroke="#3a6fa8" stroke-width="2"/>
+        <rect x="42" y="266" width="32" height="14" rx="3" fill="#3a6fa8"/><text x="58" y="277" font-size="11" font-weight="700" text-anchor="middle" fill="#fff" font-family="Consolas, monospace">.py</text>
+        <text x="100" y="246" font-size="15" font-weight="700" fill="#1d2433">정리하기.py</text>
+        <text x="100" y="268" font-size="13" fill="#4a5468">컴퓨터 안의 조수 일</text>
+        <g class="f6-sheet s3"><rect x="210" y="238" width="22" height="28" rx="2" fill="#fff" stroke="#3a6fa8" stroke-width="1.5"/></g>
+        <circle cx="370" cy="238" r="12" fill="#e7f3ec" stroke="#2b8a6c" stroke-width="2"/>
+        <rect x="356" y="252" width="28" height="24" rx="9" fill="#e7f3ec" stroke="#2b8a6c" stroke-width="2"/>
+        <text x="370" y="296" font-size="13" text-anchor="middle" fill="#2b8a6c" font-weight="700">파이썬</text>
+        <rect x="520" y="212" width="200" height="80" rx="6" fill="#fff" stroke="#cfd3db" stroke-width="1.5"/>
+        <text x="534" y="240" font-size="13" fill="#8a93a6" font-family="Consolas, monospace" class="f6-old">IMG_0001.jpg</text>
+        <text x="534" y="240" font-size="13" fill="#2b8a6c" font-weight="700" class="f6-new">운동회_001.jpg</text>
+        <text x="534" y="264" font-size="13" fill="#8a93a6" font-family="Consolas, monospace" class="f6-old o2">IMG_0002.jpg</text>
+        <text x="534" y="264" font-size="13" fill="#2b8a6c" font-weight="700" class="f6-new n2">운동회_002.jpg</text>
+        <text x="534" y="284" font-size="13" fill="#8a93a6">...</text>
+      </g>
+    </svg>
+    <figcaption>같은 글자 서류라도 누가 읽느냐에 따라 화면이 되기도 하고, 파일 정리가 되기도 합니다.</figcaption>
+  </figure>
+
+  <div class="pair">
+    <div><b>.html · 화면의 뼈대</b>제목은 여기, 글은 여기, 버튼은 여기처럼 화면에 무엇이 어디에 있는지 적은 서류입니다. 브라우저가 읽습니다.</div>
+    <div><b>.js · 화면 속 움직임</b>자바스크립트 서류입니다. 버튼을 누르면 글자가 바뀌는 것처럼 화면이 반응하게 합니다. 이것도 브라우저가 읽습니다.</div>
+    <div><b>.py · 컴퓨터 안의 조수 일</b>파이썬 서류입니다. 파일 이름 100개 바꾸기, 엑셀 숫자 계산처럼 화면 밖에서 하는 일을 적습니다. 파이썬이 읽습니다.</div>
+  </div>
+  <p>가끔 <code>.css</code> 파일도 보입니다. 글자색, 크기, 버튼 모양처럼 화면을 꾸미는 서류이고 브라우저가 읽습니다.</p>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 누가 읽느냐에 따라<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">같은 <code>index.html</code> 서류를 메모장으로 열었을 때와 크롬으로 열었을 때를 번갈아 눌러 비교해 보세요.</p>
+      <div class="row seg" role="group" aria-label="여는 프로그램 고르기">
+        <button class="btn primary op-note" type="button">메모장으로 열기</button>
+        <button class="btn op-chrome" type="button">크롬으로 열기</button>
+      </div>
+      <div class="op-view"></div>
+      <div class="lab-msg msg1">메모장으로 열면 적힌 글자가 그대로 보입니다. 크롬으로도 열어 보세요.</div>
+
+      <h4 class="sub">버튼 하나가 만들어지는 순서</h4>
+      <p class="lab-guide">1, 2, 3 단계를 차례로 누르고, 단계마다 오른쪽 화면의 <b>출석하기</b> 버튼을 직접 눌러 보세요.</p>
+      <div class="row steps" role="group" aria-label="단계 고르기">
+        <button class="btn primary" type="button" data-step="1">1. HTML만</button>
+        <button class="btn" type="button" data-step="2">2. CSS 더하기</button>
+        <button class="btn" type="button" data-step="3">3. JS 더하기</button>
+      </div>
+      <div class="cols build">
+        <div class="codes"></div>
+        <div class="browser">
+          <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><button class="reload" type="button" aria-label="새로고침">↻</button><span class="addr">file:///C:/출석앱/index.html</span></div>
+          <div class="browser-view"><div class="att"><h2>오늘의 출석</h2><button id="ch06-check" type="button">출석하기</button><p class="att-result"></p></div></div>
+        </div>
+      </div>
+      <div class="lab-msg msg2">1단계입니다. 오른쪽 화면의 버튼을 눌러 보세요.</div>
+
+      <h4 class="sub">파이썬 조수에게 이름 바꾸기 시키기</h4>
+      <p class="lab-guide">운동회 사진 이름이 <code>IMG_0001.jpg</code>처럼 되어 있습니다. <b>실행</b>을 누르면 파이썬이 왼쪽 서류를 읽고 이름을 차례로 바꿉니다.</p>
+      <div class="cols py">
+        <div>
+          <div class="code-title">이름바꾸기.py</div>
+<pre class="code"><span class="k">import</span> os
+<span class="c"># 운동회 폴더의 사진 이름을 차례로 바꿉니다</span>
+files = sorted(os.listdir(<span class="s">"운동회"</span>))
+<span class="k">for</span> i, name <span class="k">in</span> enumerate(files, start=<span class="t">1</span>):
+    os.rename(<span class="s">f"운동회/{name}"</span>, <span class="s">f"운동회/운동회_{i:03d}.jpg"</span>)</pre>
+          <div class="row py-run"><button class="btn primary run" type="button">실행</button><span class="py-hint">파이썬이 이 서류를 읽습니다</span></div>
+          <div class="term"></div>
+        </div>
+        <div class="explorer">
+          <div class="explorer-bar">C:\사진\운동회</div>
+          <ul class="pics"></ul>
+        </div>
+      </div>
+      <div class="lab-msg msg3">실행을 눌러 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>코드 파일을 더블클릭했더니 글자만 잔뜩 나와요.</dt>
+      <dd>그 서류를 메모장이나 편집기가 열었기 때문입니다. 편집기는 서류를 읽어 주는 사람이 아니라 글자를 보여 주고 고치게 해 주는 프로그램입니다. 화면으로 보려면 <code>.html</code> 파일을 크롬으로 열어야 합니다.</dd>
+      <dt><code>.py</code> 파일을 더블클릭하면 까만 창이 떴다가 바로 사라져요.</dt>
+      <dd>파이썬이 서류에 적힌 일을 다 하고 창을 닫은 경우가 많습니다. 일이 금방 끝나면 결과를 볼 틈도 없이 닫힙니다. 중간에 문제가 생겨 멈춘 경우에도 창이 바로 사라집니다. 컴퓨터에 파이썬이 아예 없으면 까만 창 대신 "이 파일을 어떻게 여시겠습니까?" 창이 뜹니다. 이럴 때는 AI에게 "어떻게 실행하면 결과를 볼 수 있느냐"고 물어보면 됩니다.</dd>
+      <dt><code>.html</code> 파일이 메모장으로 열려요.</dt>
+      <dd>그 양식을 맡을 프로그램(연결 프로그램)이 메모장으로 정해져 있는 경우입니다. 파일을 마우스 오른쪽 단추로 누르고 <b>연결 프로그램 → Google Chrome</b>을 고르면 크롬으로 열립니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">코드 = 글자로 적힌 서류. .html은 화면의 뼈대, .js는 화면 속 움직임으로 브라우저가 읽고, .py는 조수 일로 파이썬이 읽습니다.</p>
+</section>

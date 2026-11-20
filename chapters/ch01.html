@@ -1,0 +1,66 @@
+<section class="chapter" id="ch01" data-part="1" data-title="서류와 양식">
+  <div class="ch-head">
+    <div class="ch-num">1</div>
+    <div>
+      <h2>서류와 양식</h2>
+      <div class="meta">비유 <b>서류 한 장</b> · 용어 파일, 확장자</div>
+    </div>
+  </div>
+
+  <p>컴퓨터 안에 있는 것은 모두 <strong>파일</strong>입니다. 사진 한 장, 한글 문서 하나, 노래 한 곡, 심지어 프로그램도 파일입니다. 사무실 서류 한 장 한 장과 같다고 생각하면 됩니다.</p>
+  <p>서류마다 양식이 있듯 파일에도 종류가 있습니다. 파일 이름 끝에 점(.) 뒤로 붙은 글자가 그 종류를 알려 줍니다. 이것을 <strong>확장자</strong>라고 합니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 170" role="img" aria-label="파일 이름은 이름과 확장자로 나뉜다">
+      <rect x="40" y="40" width="680" height="70" rx="12" fill="#fff" stroke="#cfd3db" stroke-width="2"/>
+      <text x="380" y="88" font-size="34" font-weight="700" text-anchor="middle" font-family="Consolas, monospace" fill="#1d2433">
+        <tspan>운동회사진</tspan><tspan fill="#2f6fb0">.jpg</tspan>
+      </text>
+      <g class="reveal d1">
+        <line x1="300" y1="118" x2="300" y2="140" stroke="#8a93a6" stroke-width="2"/>
+        <text x="300" y="160" font-size="16" text-anchor="middle" fill="#4a5468">이름 · 내가 마음대로 짓는 부분</text>
+      </g>
+      <g class="reveal d2">
+        <line x1="530" y1="118" x2="530" y2="140" stroke="#2f6fb0" stroke-width="2"/>
+        <text x="560" y="160" font-size="16" font-weight="700" text-anchor="middle" fill="#2f6fb0">확장자 · 서류 양식 이름</text>
+      </g>
+      <text x="380" y="26" font-size="15" text-anchor="middle" fill="#8a93a6">파일 이름은 두 부분으로 되어 있습니다</text>
+    </svg>
+  </figure>
+
+  <p>컴퓨터는 확장자를 보고 "이 서류는 누구에게 맡길까"를 정합니다. <code>.hwp</code>는 한글 프로그램에, <code>.jpg</code>는 사진 보기 프로그램에 넘깁니다. 바이브코딩에서 AI가 만드는 파일도 마찬가지입니다. <code>.html</code>, <code>.js</code>, <code>.py</code> 같은 이름을 보게 되는데, 지금은 "이런 양식도 있구나" 정도로만 보고 넘어가면 됩니다. 6장에서 다시 다룹니다.</p>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 양식 알아맞히기<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">서류를 하나씩 눌러 보세요. 어떤 종류이고 누가 여는지 알려 줍니다.</p>
+      <div class="filegrid"></div>
+      <div class="lab-msg msg1">서류를 눌러 보세요.</div>
+
+      <h4 class="sub">이번에는 양식 이름만 바꿔 보겠습니다</h4>
+      <p class="lab-guide"><code>운동회사진.jpg</code>의 확장자를 바꾸면 어떻게 될까요? 내용은 그대로 두고 이름표만 바꿉니다.</p>
+      <div class="rename">
+        <div class="rn-file">
+          <div class="fileicon" data-ext="jpg"><b>.jpg</b></div>
+          <div class="rn-name"><span>운동회사진</span><select aria-label="확장자 고르기"><option value="jpg">.jpg</option><option value="txt">.txt</option><option value="mp3">.mp3</option><option value="">(확장자 지움)</option></select></div>
+        </div>
+        <button class="btn primary rn-open" type="button">더블클릭해서 열기</button>
+        <div class="rn-view"></div>
+      </div>
+      <div class="lab-msg msg2">확장자를 골라 보고 열어 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>더블클릭했더니 엉뚱한 프로그램이 열려요.</dt>
+      <dd>컴퓨터는 내용을 보지 않고 확장자만 보고 열 프로그램을 고릅니다. 확장자가 잘못 붙었거나, 그 양식을 맡을 프로그램이 다르게 정해져 있으면 엉뚱한 곳에서 열립니다.</dd>
+      <dt>파일 이름에 확장자가 안 보여요.</dt>
+      <dd>윈도우는 처음 설정에서 확장자를 숨겨 둡니다. 파일 탐색기 위쪽 <b>보기 → 표시 → 파일 확장명</b>에 체크하면 보입니다. 바이브코딩을 할 때는 켜 두는 것이 좋습니다.</dd>
+      <dt>이름을 바꿨더니 파일이 안 열려요.</dt>
+      <dd>이름을 고치다가 확장자까지 지우거나 바꾼 경우입니다. 내용은 멀쩡하니 확장자를 원래대로 돌려놓으면 다시 열립니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">파일 = 서류 한 장. 끝의 확장자 = 서류 양식. 컴퓨터는 양식을 보고 누구에게 맡길지 정합니다.</p>
+</section>

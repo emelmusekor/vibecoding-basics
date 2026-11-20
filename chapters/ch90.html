@@ -1,0 +1,131 @@
+<section class="chapter" id="ch90" data-part="5" data-title="안티그래비티 화면 지도">
+  <div class="ch-head">
+    <div class="ch-num">끝</div>
+    <div>
+      <h2>안티그래비티 화면 지도</h2>
+      <div class="meta">처음 지도의 장소들이 실제 화면의 어디에 있는지 봅니다</div>
+    </div>
+  </div>
+
+  <p>구글 안티그래비티의 편집기 화면은 몇 개의 칸으로 나뉩니다. 처음 보면 복잡해 보이지만, 칸마다 지금까지 본 장소 하나씩입니다. 아래 배치도는 실제 화면을 단순하게 그린 것입니다. 칸을 누르면 어느 장에서 다뤘는지 알려 줍니다.</p>
+
+  <figure class="fig ch90-fig">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="안티그래비티 편집기 화면 배치도. 왼쪽 탐색기, 가운데 편집기, 아래 터미널, 오른쪽 에이전트 패널, 옆에 크롬 창">
+      <!-- 편집기 창 -->
+      <rect x="10" y="10" width="760" height="520" rx="12" fill="#fff" stroke="#8a93a6" stroke-width="2"/>
+      <rect x="10" y="10" width="760" height="36" rx="12" fill="#e9ebf0"/>
+      <rect x="10" y="34" width="760" height="12" fill="#e9ebf0"/>
+      <circle cx="32" cy="28" r="5" fill="#c9ccd3"/><circle cx="50" cy="28" r="5" fill="#c9ccd3"/><circle cx="68" cy="28" r="5" fill="#c9ccd3"/>
+      <text x="390" y="33" font-size="16" text-anchor="middle" fill="#4a5468">안티그래비티 · seat-app</text>
+
+      <!-- 탐색기 -->
+      <g class="ch90-zone" data-k="explorer" tabindex="0" role="button" aria-label="탐색기">
+        <rect class="z-bg" x="12" y="46" width="186" height="482" fill="#f4ecdf" stroke="#d6a43a" stroke-width="2"/>
+        <text x="28" y="74" font-size="18" font-weight="800" fill="#9a7449">탐색기</text>
+        <g font-size="16" fill="#1d2433">
+          <rect x="28" y="92" width="14" height="11" rx="2" fill="#e7b84f"/><text x="50" y="103">seat-app</text>
+          <rect x="44" y="116" width="14" height="11" rx="2" fill="#e7b84f"/><text x="66" y="127">images</text>
+          <rect x="46" y="138" width="10" height="13" rx="1" fill="#fff" stroke="#e3632b"/><text x="66" y="150">index.html</text>
+          <rect x="46" y="161" width="10" height="13" rx="1" fill="#fff" stroke="#c9a400"/><text x="66" y="173">app.js</text>
+          <rect x="46" y="184" width="10" height="13" rx="1" fill="#fff" stroke="#8a93a6"/><text x="66" y="196">style.css</text>
+        </g>
+        <text x="105" y="470" font-size="18" font-weight="700" text-anchor="middle" fill="#9a7449">서랍장 · 서류철</text>
+        <text x="105" y="490" font-size="16" text-anchor="middle" fill="#4a5468">1·2장</text>
+      </g>
+
+      <!-- 편집기 -->
+      <g class="ch90-zone" data-k="editor" tabindex="0" role="button" aria-label="편집기">
+        <rect class="z-bg" x="200" y="46" width="356" height="300" fill="#fbfaf7" stroke="#2f6fb0" stroke-width="2"/>
+        <rect x="200" y="46" width="110" height="28" fill="#fff" stroke="#2f6fb0"/>
+        <text x="216" y="65" font-size="16" fill="#1d2433">index.html</text>
+        <g>
+          <rect x="222" y="94" width="120" height="8" rx="4" fill="#7aa2f7"/>
+          <rect x="238" y="114" width="200" height="8" rx="4" fill="#c9ccd3"/>
+          <rect x="238" y="134" width="160" height="8" rx="4" fill="#9ece6a"/>
+          <rect x="238" y="154" width="230" height="8" rx="4" fill="#c9ccd3"/>
+          <rect x="216" y="172" width="330" height="22" fill="#e4f3e8"/>
+          <rect x="238" y="179" width="190" height="8" rx="4" fill="#2b8a4a"/>
+          <rect x="238" y="204" width="140" height="8" rx="4" fill="#c9ccd3"/>
+          <rect x="222" y="224" width="100" height="8" rx="4" fill="#7aa2f7"/>
+        </g>
+        <text x="378" y="292" font-size="18" font-weight="700" text-anchor="middle" fill="#2f6fb0">편집기 · 책상 위에 펼친 서류</text>
+        <text x="378" y="312" font-size="16" text-anchor="middle" fill="#4a5468">3·6장 · 조수가 고친 줄은 색으로 표시</text>
+      </g>
+
+      <!-- 터미널 -->
+      <g class="ch90-zone" data-k="terminal" tabindex="0" role="button" aria-label="터미널">
+        <rect class="z-bg" x="200" y="348" width="356" height="180" fill="#0f1115" stroke="#0f1115" stroke-width="2"/>
+        <text x="214" y="372" font-size="16" font-weight="700" fill="#a9b0bd">터미널</text>
+        <g font-family="Consolas, monospace" font-size="16">
+          <text x="214" y="398" fill="#6fcf97">seat-app&gt; <tspan fill="#d7dae0">npm run dev</tspan></text>
+          <text x="214" y="420" fill="#7aa2f7">  Local: http://localhost:5173/</text>
+        </g>
+        <text x="378" y="486" font-size="18" font-weight="700" text-anchor="middle" fill="#fff">터미널 · 조수가 글자로 일하는 창</text>
+        <text x="378" y="506" font-size="16" text-anchor="middle" fill="#a9b0bd">15장</text>
+      </g>
+
+      <!-- 에이전트 패널 -->
+      <g class="ch90-zone" data-k="agent" tabindex="0" role="button" aria-label="에이전트 패널">
+        <rect class="z-bg" x="558" y="46" width="210" height="482" fill="#f3eefa" stroke="#7650aa" stroke-width="2"/>
+        <text x="574" y="74" font-size="18" font-weight="800" fill="#7650aa">에이전트</text>
+        <rect x="620" y="92" width="136" height="46" rx="10" fill="#e8def5"/>
+        <text x="630" y="112" font-size="16" fill="#1d2433">자리 바꾸기 앱</text>
+        <text x="630" y="129" font-size="16" fill="#1d2433">만들어 줘</text>
+        <rect x="570" y="150" width="150" height="66" rx="10" fill="#fff" stroke="#ddd3ec"/>
+        <text x="580" y="172" font-size="16" fill="#1d2433">파일 3개를</text>
+        <text x="580" y="190" font-size="16" fill="#1d2433">만들었습니다.</text>
+        <rect x="580" y="198" width="54" height="12" rx="3" fill="#7650aa" opacity=".35"/>
+        <rect x="570" y="420" width="186" height="40" rx="10" fill="#fff" stroke="#7650aa"/>
+        <text x="582" y="445" font-size="16" fill="#8a93a6">조수에게 부탁하기</text>
+        <text x="663" y="490" font-size="18" font-weight="700" text-anchor="middle" fill="#7650aa">AI 조수</text>
+        <text x="663" y="510" font-size="16" text-anchor="middle" fill="#4a5468">4부 · 15~17장</text>
+      </g>
+
+      <!-- 크롬 창 -->
+      <g class="ch90-zone" data-k="browser" tabindex="0" role="button" aria-label="크롬 창 미리보기">
+        <rect class="z-bg" x="790" y="150" width="200" height="300" rx="10" fill="#fff" stroke="#2b8a6c" stroke-width="2"/>
+        <rect x="790" y="150" width="200" height="34" rx="10" fill="#d6ece4"/>
+        <rect x="790" y="172" width="200" height="12" fill="#d6ece4"/>
+        <rect x="802" y="158" width="176" height="20" rx="10" fill="#fff"/>
+        <text x="890" y="173" font-size="16" text-anchor="middle" font-family="Consolas, monospace" fill="#4a5468">localhost:5173</text>
+        <text x="808" y="212" font-size="16" font-weight="700" fill="#1d2433">우리 반 자리</text>
+        <g fill="#e8def5" stroke="#d8cbea">
+          <rect x="808" y="226" width="52" height="26" rx="4"/><rect x="866" y="226" width="52" height="26" rx="4"/><rect x="924" y="226" width="52" height="26" rx="4"/>
+          <rect x="808" y="258" width="52" height="26" rx="4"/><rect x="866" y="258" width="52" height="26" rx="4"/><rect x="924" y="258" width="52" height="26" rx="4"/>
+        </g>
+        <text x="890" y="400" font-size="18" font-weight="700" text-anchor="middle" fill="#2b8a6c">크롬 창 · 진열장</text>
+        <text x="890" y="420" font-size="16" text-anchor="middle" fill="#4a5468">localhost · 11장</text>
+      </g>
+    </svg>
+  </figure>
+  <div class="lab-msg ch90-info">칸을 하나 눌러 보세요.</div>
+
+  <p>안티그래비티는 이 편집기 화면 말고도, 조수와의 대화를 가운데에 크게 두는 화면도 제공합니다. 그 화면에서는 같은 것들이 대화 옆 칸의 탭(파일, 터미널, 브라우저, 바뀐 내용 확인)으로 열립니다. 모양은 달라도 장소는 같습니다. 화면 구성은 업데이트에 따라 조금씩 바뀔 수 있습니다.</p>
+
+  <h3>시작하기 전에 확인할 것</h3>
+  <div class="ch90-check"></div>
+  <div class="lab-msg ch90-count"></div>
+
+  <h3>첫 요청 예시</h3>
+  <p>처음 부탁은 무엇을, 누가, 어떻게 쓰는지 구체적으로 적을수록 좋습니다. 그대로 복사해서 써 봐도 됩니다.</p>
+  <div class="ch90-asks">
+    <div class="ch90-ask">
+      <div class="ch90-tag">혼자 쓰는 앱</div>
+      <p class="ch90-q">이 폴더에 index.html 하나로 된 우리 반 자리 바꾸기 프로그램을 만들어 줘. 학생 이름 25명을 입력하면 무작위로 자리를 배치해 줘. 5줄 5칸으로 보여 주고, 다시 섞기 버튼도 넣어 줘.</p>
+      <button class="btn ch90-copy" type="button">복사</button>
+    </div>
+    <div class="ch90-ask">
+      <div class="ch90-tag">혼자 쓰는 앱</div>
+      <p class="ch90-q">이 폴더에 index.html 하나로 된 발표 타이머를 만들어 줘. 시간을 분 단위로 정하고 시작을 누르면 큰 숫자로 남은 시간이 줄어들고, 1분 남으면 글자가 빨간색으로 바뀌게 해 줘.</p>
+      <button class="btn ch90-copy" type="button">복사</button>
+    </div>
+    <div class="ch90-ask multi">
+      <div class="ch90-tag">여럿이 쓰는 앱</div>
+      <p class="ch90-q">학생들이 각자 휴대폰으로 접속해서 오늘 기분을 하나 고르면, 선생님 화면에 반 전체 결과가 모여 보이는 앱을 만들고 싶어. 어떤 방법이 있는지 먼저 설명해 주고, 필요한 준비물을 알려 줘.</p>
+      <button class="btn ch90-copy" type="button">복사</button>
+      <p class="ch90-note">여러 사람의 입력이 한곳에 모여야 하므로 가게의 장부(12장)와 다시 물어보는 호출(13장)이 필요합니다. 조수가 온라인 장부 서비스에 가입하거나 열쇠(14장)를 넣자고 할 수 있습니다. 그래서 바로 만들라고 하기보다 방법을 먼저 물었습니다.</p>
+    </div>
+  </div>
+
+  <p class="ch90-back"><a href="#ch00">처음 지도로 돌아가기</a></p>
+</section>

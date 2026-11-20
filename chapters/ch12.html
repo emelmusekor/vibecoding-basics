@@ -1,0 +1,175 @@
+<section class="chapter" id="ch12" data-part="3" data-title="홀과 주방, 그리고 장부">
+  <div class="ch-head">
+    <div class="ch-num">12</div>
+    <div>
+      <h2>홀과 주방, 그리고 장부</h2>
+      <div class="meta">비유 <b>가게의 홀 · 주방 · 장부</b> · 용어 프론트엔드, 백엔드, 데이터베이스</div>
+    </div>
+  </div>
+
+  <p>11장에서 앱을 가게 앞에 내놓았습니다. 이제 가게 안으로 들어가 봅니다. 식당은 보통 세 곳으로 나뉩니다. 손님이 앉아서 메뉴를 보고 주문하는 <b>홀</b>, 손님 눈에 보이지 않는 곳에서 요리하는 <b>주방</b>, 그리고 주문과 손님 기록을 적어 두는 <b>장부</b>입니다. 앱도 똑같이 나뉩니다.</p>
+
+  <div class="pair">
+    <div><b>홀 = 프론트엔드</b>손님이 보고 누르는 화면입니다. 6장에서 본 HTML과 JS가 여기에 해당합니다. 손님의 브라우저로 배달되어 손님 책상 위에서 돌아갑니다.</div>
+    <div><b>주방 = 백엔드</b>가게 안쪽 컴퓨터에서 돌아가는 처리입니다. 주문서를 받아 확인하고, 장부에 적고, 결과를 홀로 내보냅니다.</div>
+    <div><b>장부 = 데이터베이스</b>기록을 모아 두는 곳입니다. 가게의 서랍장이라서 화면을 닫거나 새로고침해도 남고, 누가 와서 물어봐도 같은 기록을 보여 줍니다.</div>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="가게 단면도. 홀의 손님이 화면을 누르면 주문서가 주방으로 가고, 주방이 장부에 적은 뒤 결과를 홀로 돌려보낸다">
+      <defs>
+        <path id="c12-order" d="M 215 178 Q 330 110 440 158 L 560 158 Q 680 120 775 150"/>
+        <path id="c12-dish" d="M 560 168 L 440 172 Q 330 150 225 186"/>
+      </defs>
+      <!-- 지붕 -->
+      <path d="M10 56 h880 l-16 -34 h-848 z" fill="#c2692a"/>
+      <path d="M40 56 v18 h40 v-18 M120 56 v18 h40 v-18 M200 56 v18 h40 v-18 M280 56 v18 h40 v-18 M360 56 v18 h40 v-18 M440 56 v18 h40 v-18 M520 56 v18 h40 v-18 M600 56 v18 h40 v-18 M680 56 v18 h40 v-18 M760 56 v18 h40 v-18 M840 56 v18 h40 v-18" fill="#e89a5e"/>
+      <!-- 건물 -->
+      <rect x="20" y="56" width="860" height="246" fill="#fbe7d6" stroke="#c2692a" stroke-width="2"/>
+      <rect x="440" y="56" width="440" height="246" fill="#f6dcc6"/>
+      <rect x="690" y="56" width="190" height="246" fill="#efd6bf"/>
+      <line x1="440" y1="56" x2="440" y2="128" stroke="#c2692a" stroke-width="6"/>
+      <line x1="440" y1="198" x2="440" y2="302" stroke="#c2692a" stroke-width="6"/>
+      <line x1="690" y1="80" x2="690" y2="302" stroke="#c2692a" stroke-width="2" stroke-dasharray="6 5"/>
+      <rect x="20" y="298" width="860" height="6" fill="#c2692a"/>
+
+      <!-- 이름표 -->
+      <text x="40" y="104" font-size="22" font-weight="800" fill="#c2692a">홀</text>
+      <text x="72" y="104" font-size="14" fill="#4a5468">프론트엔드 · 손님이 보는 화면</text>
+      <text x="460" y="104" font-size="22" font-weight="800" fill="#c2692a">주방</text>
+      <text x="512" y="104" font-size="14" fill="#4a5468">백엔드</text>
+      <text x="460" y="124" font-size="14" fill="#4a5468">안 보이는 곳에서 처리</text>
+      <text x="706" y="104" font-size="22" font-weight="800" fill="#c2692a">장부</text>
+      <text x="706" y="124" font-size="14" fill="#4a5468">데이터베이스 · 기록</text>
+
+      <!-- 손님과 테이블 -->
+      <circle cx="110" cy="166" r="17" fill="#2f6fb0"/>
+      <rect x="90" y="186" width="40" height="52" rx="12" fill="#2f6fb0"/>
+      <rect x="150" y="214" width="170" height="12" rx="3" fill="#b98a5a"/>
+      <rect x="164" y="226" width="8" height="64" fill="#7d5a35"/>
+      <rect x="298" y="226" width="8" height="64" fill="#7d5a35"/>
+      <rect x="188" y="168" width="58" height="44" rx="5" fill="#1d2433"/>
+      <rect x="193" y="173" width="48" height="34" rx="2" fill="#fff"/>
+      <rect x="198" y="179" width="28" height="5" rx="2" fill="#c2692a"/>
+      <rect x="198" y="189" width="38" height="4" rx="2" fill="#c9ccd3"/>
+      <rect x="198" y="197" width="30" height="4" rx="2" fill="#c9ccd3"/>
+      <text x="215" y="272" font-size="14" text-anchor="middle" fill="#4a5468">손님 화면</text>
+
+      <!-- 주방 -->
+      <circle cx="560" cy="182" r="15" fill="#fff" stroke="#8a93a6" stroke-width="2"/>
+      <rect x="546" y="160" width="28" height="12" rx="4" fill="#fff" stroke="#8a93a6" stroke-width="2"/>
+      <rect x="470" y="226" width="190" height="16" rx="3" fill="#8a93a6"/>
+      <rect x="480" y="242" width="170" height="48" fill="#a8afbd"/>
+      <rect x="590" y="206" width="40" height="20" rx="4" fill="#4a5468"/>
+      <text x="565" y="276" font-size="14" text-anchor="middle" fill="#fff">처리하는 곳</text>
+
+      <!-- 장부 -->
+      <rect x="732" y="146" width="104" height="96" rx="6" fill="#fff" stroke="#9a7449" stroke-width="2"/>
+      <line x1="784" y1="146" x2="784" y2="242" stroke="#9a7449" stroke-width="2"/>
+      <rect x="742" y="160" width="32" height="4" rx="2" fill="#c9ccd3"/>
+      <rect x="742" y="172" width="28" height="4" rx="2" fill="#c9ccd3"/>
+      <rect x="742" y="184" width="32" height="4" rx="2" fill="#c9ccd3"/>
+      <rect x="794" y="160" width="32" height="4" rx="2" fill="#c9ccd3"/>
+      <rect x="794" y="172" width="0" height="4" rx="2" fill="#c2692a">
+        <animate attributeName="width" values="0;0;30;30;0" keyTimes="0;0.44;0.52;0.97;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+      <text x="784" y="270" font-size="14" text-anchor="middle" fill="#4a5468">끄고 켜도 남음</text>
+
+      <!-- 주문서 -->
+      <g>
+        <rect x="-18" y="-12" width="36" height="24" rx="3" fill="#fff" stroke="#c2692a" stroke-width="2"/>
+        <path d="M-18 -12 L0 2 L18 -12" fill="none" stroke="#c2692a" stroke-width="2"/>
+        <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.45;1"><mpath href="#c12-order"/></animateMotion>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.45;0.47;1" dur="8s" repeatCount="indefinite"/>
+      </g>
+      <!-- 결과 -->
+      <g opacity="0">
+        <ellipse cx="0" cy="4" rx="22" ry="7" fill="#fff" stroke="#2b8a4a" stroke-width="2"/>
+        <path d="M-12 2 a12 10 0 0 1 24 0 z" fill="#2b8a4a"/>
+        <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.55;0.92;1"><mpath href="#c12-dish"/></animateMotion>
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.54;0.55;0.95;1" dur="8s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- 단계 -->
+      <g class="reveal d1"><circle cx="40" cy="338" r="13" fill="#c2692a"/><text x="40" y="343" font-size="14" font-weight="800" text-anchor="middle" fill="#fff">1</text><text x="60" y="343" font-size="14" fill="#1d2433">손님이 화면을 누름</text></g>
+      <g class="reveal d2"><circle cx="260" cy="338" r="13" fill="#c2692a"/><text x="260" y="343" font-size="14" font-weight="800" text-anchor="middle" fill="#fff">2</text><text x="280" y="343" font-size="14" fill="#1d2433">주문서가 주방으로</text></g>
+      <g class="reveal d3"><circle cx="470" cy="338" r="13" fill="#c2692a"/><text x="470" y="343" font-size="14" font-weight="800" text-anchor="middle" fill="#fff">3</text><text x="490" y="343" font-size="14" fill="#1d2433">주방이 장부에 적음</text></g>
+      <g class="reveal d4"><circle cx="690" cy="338" r="13" fill="#2b8a4a"/><text x="690" y="343" font-size="14" font-weight="800" text-anchor="middle" fill="#fff">4</text><text x="710" y="343" font-size="14" fill="#1d2433">결과가 홀 화면으로</text></g>
+    </svg>
+    <figcaption>주문서(요청)가 주방으로 가고, 결과(응답)가 홀로 돌아옵니다. 8장의 택배 주문과 같은 흐름입니다.</figcaption>
+  </figure>
+
+  <h3>모든 앱에 주방과 장부가 필요하지는 않습니다</h3>
+  <p>판단 기준은 두 가지입니다. <strong>기록을 남겨야 하는가</strong>, 그리고 <strong>여러 사람이 같은 내용을 봐야 하는가</strong>입니다. 둘 다 아니라면 홀만 있어도 됩니다. 11장처럼 화면 파일만 배포하면 끝납니다.</p>
+
+  <div class="c12-need">
+    <div class="c12-card hall">
+      <h5>홀만 있어도 되는 앱</h5>
+      <p>혼자 쓰고, 끝나면 기록이 남지 않아도 됩니다.</p>
+      <ul><li>수업 타이머</li><li>발표 순서 룰렛</li><li>혼자 푸는 퀴즈 연습</li></ul>
+      <div class="c12-foot">11장의 배포만으로 충분합니다.</div>
+    </div>
+    <div class="c12-card kitchen">
+      <h5>주방과 장부가 필요한 앱</h5>
+      <p>기록을 모아 두거나, 여러 사람이 같은 내용을 봅니다.</p>
+      <ul><li>학급 점수판</li><li>설문 결과 모으기</li><li>게시판</li></ul>
+      <div class="c12-foot">어딘가에 장부를 마련해야 합니다.</div>
+    </div>
+  </div>
+
+  <p>홀만 있는 앱에서 점수를 올리면 그 기록은 각자의 책상, 곧 내 브라우저 위에만 적힙니다. 3장에서 본 것처럼 책상 위는 새로고침하면 치워집니다. 다른 기기에서 열면 그 기기의 책상은 처음부터 비어 있습니다. 브라우저 안의 작은 저장 칸에 남겨 둘 수는 있지만, 그 기록도 그 기기의 그 브라우저에서만 보입니다.</p>
+  <p>장부가 필요하다고 해서 가게를 통째로 지을 필요는 없습니다. 이미 차려진 주방과 장부를 빌려 쓰는 경우가 많습니다. 구글 시트를 장부로 쓰고 Apps Script로 주방 일을 시키는 방법, Firebase나 Supabase 같은 서비스를 쓰는 방법이 대표적입니다. 지금은 이런 이름이 있다는 것만 알아 두면 됩니다.</p>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 점수는 어디에 적힐까<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">겉모습이 같은 퀴즈 앱 두 개입니다. 양쪽에서 점수를 올린 뒤, 주소창 옆 새로고침(↻)과 [다른 기기에서 보기]를 눌러 비교해 보세요.</p>
+      <div class="cols c12-stage">
+        <div class="c12-app app-a">
+          <div class="c12-tag">A · 홀만 있는 앱</div>
+          <div class="browser">
+            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><button class="reload" type="button" title="새로고침">↻</button><span class="addr">quiz-a.example.com</span></div>
+            <div class="browser-view">
+              <div class="c12-qz"><div class="c12-qz-name">나의 점수</div><div class="c12-score">0</div><button class="btn primary c12-plus" type="button">맞혔어요 +10</button></div>
+            </div>
+          </div>
+          <div class="c12-desk">적힌 곳 <span>내 책상(브라우저) 위</span> <b>0점</b></div>
+          <div class="row c12-acts"><button class="btn c12-other" type="button">다른 기기에서 보기</button></div>
+          <div class="c12-phone" hidden></div>
+        </div>
+        <div class="c12-app app-b">
+          <div class="c12-tag">B · 주방과 장부가 있는 앱</div>
+          <div class="browser">
+            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><button class="reload" type="button" title="새로고침">↻</button><span class="addr">quiz-b.example.com</span></div>
+            <div class="browser-view">
+              <div class="c12-qz"><div class="c12-qz-name">나의 점수</div><div class="c12-score">0</div><button class="btn primary c12-plus" type="button">맞혔어요 +10</button></div>
+            </div>
+          </div>
+          <div class="c12-kitchen">
+            <div class="c12-k-head">주방 · 장부 <small>가게 안, 손님에게는 안 보임</small></div>
+            <div class="c12-ledger-wrap"><table class="c12-ledger"><thead><tr><th>이름</th><th>점수</th><th>적은 시각</th></tr></thead><tbody></tbody></table></div>
+          </div>
+          <div class="row c12-acts">
+            <button class="btn c12-other" type="button">다른 기기에서 보기</button>
+            <button class="btn c12-many" type="button">여러 학생이 동시에</button>
+          </div>
+          <div class="c12-phone" hidden></div>
+        </div>
+      </div>
+      <div class="lab-msg c12-msg">양쪽 앱에서 [맞혔어요 +10]을 몇 번 눌러 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>새로고침하니까 점수가 사라졌어요.</dt>
+      <dd>점수가 화면(홀)에만, 곧 내 책상 위에만 적혀 있었기 때문입니다. 새로고침하면 화면을 가게에서 처음 상태로 다시 받아 오므로 책상 위 기록은 치워집니다. 남겨야 하는 기록이라면 장부가 있어야 합니다.</dd>
+      <dt>내 폰에서 입력한 게 선생님 컴퓨터에는 안 보여요.</dt>
+      <dd>내 폰의 책상에 적은 기록은 선생님 컴퓨터의 책상과 아무 관계가 없습니다. 두 기기가 같은 내용을 보려면 둘 다 같은 장부에 적고, 같은 장부에서 읽어 와야 합니다.</dd>
+      <dt>AI에게 "저장되게 해 줘" 했더니 내 컴퓨터에서만 저장돼요.</dt>
+      <dd>AI가 가장 간단한 방법으로 브라우저 안의 저장 칸, 곧 내 책상 서랍에 적게 만든 경우입니다. 그 기기에서만 보입니다. "여러 사람이 같이 보게 구글 시트에 저장해 줘"처럼 <b>어디에 적을지</b>까지 말해야 합니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">홀(화면)은 보여 주고, 주방(백엔드)은 처리하고, 장부(데이터베이스)는 기록합니다. 기록을 남기거나 여럿이 함께 보려면 장부가 필요합니다.</p>
+</section>

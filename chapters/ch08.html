@@ -1,0 +1,198 @@
+<section class="chapter" id="ch08" data-part="2" data-title="도로와 택배">
+  <div class="ch-head">
+    <div class="ch-num">8</div>
+    <div>
+      <h2>도로와 택배</h2>
+      <div class="meta">비유 <b>도로, 택배 주문과 배송</b> · 용어 온라인, 오프라인, 요청, 응답</div>
+    </div>
+  </div>
+
+  <p>1부에서는 내 방 안에서만 일했습니다. 서랍장에서 서류를 꺼내 책상에 펴고, 다 쓰면 다시 넣었습니다. 이렇게 내 방(내 컴퓨터) 안의 서랍만 쓰는 상태를 <strong>오프라인</strong>이라고 합니다.</p>
+  <p>방 문을 열고 나가면 도로가 있습니다. 이 도로가 <strong>인터넷</strong>입니다. 도로에 연결되어 다른 컴퓨터와 서류를 주고받을 수 있는 상태를 <strong>온라인</strong>이라고 합니다. 와이파이, 랜선, 휴대폰 데이터는 모두 도로로 나가는 문입니다. 문이 하나라도 열려 있으면 온라인이고, 모두 닫혀 있으면 오프라인입니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 250" role="img" aria-label="내 방 안에서만 쓰면 오프라인, 문을 열고 도로로 나가면 온라인">
+      <defs>
+        <path id="ch08-lane" d="M 300 132 L 720 132"/>
+      </defs>
+      <!-- 내 방 -->
+      <rect x="20" y="50" width="240" height="150" rx="14" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+      <text x="36" y="76" font-size="15" font-weight="800" fill="#2f6fb0">내 방 = 내 컴퓨터</text>
+      <rect x="42" y="96" width="70" height="88" rx="6" fill="#d9b88c" stroke="#9a7449" stroke-width="2"/>
+      <rect x="50" y="104" width="54" height="22" rx="3" fill="#e8cda7" stroke="#9a7449"/>
+      <rect x="50" y="132" width="54" height="22" rx="3" fill="#e8cda7" stroke="#9a7449"/>
+      <rect x="50" y="160" width="54" height="18" rx="3" fill="#e8cda7" stroke="#9a7449"/>
+      <text x="77" y="196" font-size="13" text-anchor="middle" fill="#4a5468">서랍장</text>
+      <rect x="140" y="104" width="90" height="58" rx="6" fill="#1d2433"/>
+      <rect x="146" y="110" width="78" height="46" rx="3" fill="#fff"/>
+      <rect x="152" y="117" width="40" height="6" rx="3" fill="#2f6fb0"/>
+      <rect x="152" y="129" width="62" height="5" rx="2" fill="#c9ccd3"/>
+      <rect x="152" y="139" width="50" height="5" rx="2" fill="#c9ccd3"/>
+      <rect x="179" y="162" width="12" height="14" fill="#1d2433"/>
+      <rect x="155" y="176" width="60" height="6" rx="3" fill="#1d2433"/>
+      <!-- 문 -->
+      <rect x="254" y="106" width="14" height="52" rx="2" fill="#2b8a6c"/>
+      <circle cx="264" cy="134" r="2.5" fill="#fff"/>
+      <!-- 도로 -->
+      <rect x="268" y="110" width="472" height="44" fill="#5d6576"/>
+      <line x1="272" y1="132" x2="736" y2="132" stroke="#fff" stroke-width="3" stroke-dasharray="14 12"/>
+      <!-- 다른 컴퓨터들 -->
+      <g>
+        <polygon points="420,76 450,56 480,76" fill="#7a8396"/>
+        <rect x="426" y="76" width="48" height="34" fill="#eef0f4" stroke="#7a8396" stroke-width="2"/>
+        <text x="450" y="46" font-size="13" text-anchor="middle" fill="#4a5468">다른 컴퓨터</text>
+      </g>
+      <g>
+        <path d="M584 110 h96 l-6 -16 h-84 z" fill="#c2692a"/>
+        <rect x="590" y="70" width="84" height="24" fill="#fbe7d6" stroke="#c2692a" stroke-width="2"/>
+        <text x="632" y="60" font-size="13" text-anchor="middle" fill="#4a5468">가게 (서버)</text>
+      </g>
+      <!-- 택배 트럭 -->
+      <g>
+        <rect x="-18" y="-12" width="26" height="18" rx="3" fill="#f2c14e" stroke="#8a6312"/>
+        <rect x="8" y="-7" width="12" height="13" rx="3" fill="#fff" stroke="#8a6312"/>
+        <circle cx="-9" cy="8" r="4" fill="#1d2433"/><circle cx="13" cy="8" r="4" fill="#1d2433"/>
+        <animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;1;1;0;0" keyTimes="0;0.42;0.5;0.92;1" calcMode="linear"><mpath href="#ch08-lane"/></animateMotion>
+      </g>
+      <!-- 문 설명 -->
+      <path d="M261 160 v16 h14" fill="none" stroke="#2b8a6c" stroke-width="1.5"/>
+      <text x="280" y="181" font-size="13" fill="#2b8a6c" font-weight="700">문 = 와이파이 · 랜선 · 휴대폰 데이터</text>
+      <text x="600" y="186" font-size="15" font-weight="700" text-anchor="middle" fill="#1d2433">도로 = 인터넷</text>
+      <!-- 구간 표시 -->
+      <g class="reveal d1">
+        <path d="M20 26 v-8 h240 v8" fill="none" stroke="#2f6fb0" stroke-width="2"/>
+        <text x="140" y="12" font-size="13" font-weight="700" text-anchor="middle" fill="#2f6fb0">오프라인 · 방 안의 서랍만 씀</text>
+      </g>
+      <g class="reveal d2">
+        <path d="M20 224 v8 h720 v-8" fill="none" stroke="#2b8a6c" stroke-width="2"/>
+        <text x="380" y="248" font-size="13" font-weight="700" text-anchor="middle" fill="#2b8a6c">온라인 · 문을 열고 도로로 나가 다른 컴퓨터와 주고받음</text>
+      </g>
+    </svg>
+  </figure>
+
+  <p>웹페이지를 여는 일은 택배 주문과 같습니다. 주소창에 가게 주소를 적고 <kbd>Enter</kbd>를 누르면, 브라우저가 "이 서류를 보내 주세요"라는 주문서를 도로로 내보냅니다. 이 주문서를 <strong>요청</strong>이라고 합니다. 주문을 받은 가게(서버)는 서류를 상자에 담아 돌려보냅니다. 이 상자를 <strong>응답</strong>이라고 합니다. 가게 안의 모습은 3부에서 봅니다.</p>
+  <p>상자가 도착하면 브라우저가 안의 서류를 읽어 화면으로 펼칩니다. 화면에 보이는 웹페이지는 방금 배달된 서류를 읽은 결과입니다. 새로고침은 같은 주문을 한 번 더 보내는 일입니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 260" role="img" aria-label="주소를 적으면 주문서가 가게로 가고, 서류 상자가 돌아와 화면에 펼쳐진다">
+      <defs>
+        <clipPath id="ch08-type"><rect x="58" y="72" width="0" height="20"><animate attributeName="width" dur="8s" repeatCount="indefinite" keyTimes="0;0.02;0.12;0.98;1" values="0;0;130;130;0"/></rect></clipPath>
+      </defs>
+      <!-- 내 방 -->
+      <rect x="10" y="20" width="226" height="220" rx="14" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+      <text x="24" y="44" font-size="15" font-weight="800" fill="#2f6fb0">내 방</text>
+      <rect x="36" y="56" width="176" height="124" rx="8" fill="#1d2433"/>
+      <rect x="44" y="64" width="160" height="108" rx="4" fill="#fff"/>
+      <rect x="52" y="70" width="144" height="20" rx="10" fill="#eceef2"/>
+      <text x="62" y="85" font-size="13" font-family="Consolas, monospace" fill="#1d2433" clip-path="url(#ch08-type)">www.우리학교.kr</text>
+      <g opacity="0">
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;0.82;0.86;0.98;1" values="0;0;1;1;0"/>
+        <rect x="54" y="98" width="80" height="10" rx="3" fill="#2b8a6c"/>
+        <rect x="54" y="114" width="138" height="6" rx="3" fill="#c9ccd3"/>
+        <rect x="54" y="125" width="110" height="6" rx="3" fill="#c9ccd3"/>
+        <rect x="54" y="138" width="60" height="28" rx="3" fill="#bfe0f5"/>
+        <rect x="120" y="138" width="72" height="28" rx="3" fill="#f6dcc3"/>
+      </g>
+      <rect x="116" y="180" width="16" height="16" fill="#1d2433"/>
+      <rect x="92" y="196" width="64" height="7" rx="3" fill="#1d2433"/>
+      <text x="124" y="226" font-size="13" text-anchor="middle" fill="#4a5468">브라우저가 서류를 읽어 펼침</text>
+      <!-- 문, 도로 -->
+      <rect x="236" y="92" width="10" height="92" fill="#2b8a6c"/>
+      <rect x="246" y="92" width="290" height="92" fill="#5d6576"/>
+      <line x1="250" y1="138" x2="532" y2="138" stroke="#fff" stroke-width="3" stroke-dasharray="14 12"/>
+      <text x="391" y="208" font-size="14" font-weight="700" text-anchor="middle" fill="#1d2433">도로 = 인터넷</text>
+      <!-- 가게 -->
+      <path d="M540 74 h210 l-12 -30 h-186 z" fill="#c2692a"/>
+      <rect x="548" y="74" width="194" height="150" fill="#fbe7d6" stroke="#c2692a" stroke-width="2"/>
+      <rect x="566" y="96" width="70" height="56" rx="4" fill="#fff" stroke="#c2692a"/>
+      <rect x="574" y="104" width="38" height="5" rx="2" fill="#c2692a"/>
+      <rect x="574" y="114" width="52" height="4" rx="2" fill="#e0b48d"/>
+      <rect x="574" y="122" width="46" height="4" rx="2" fill="#e0b48d"/>
+      <rect x="652" y="96" width="70" height="56" rx="4" fill="#fff" stroke="#c2692a"/>
+      <rect x="660" y="104" width="38" height="5" rx="2" fill="#c2692a"/>
+      <rect x="660" y="114" width="52" height="4" rx="2" fill="#e0b48d"/>
+      <text x="645" y="250" font-size="15" font-weight="700" text-anchor="middle" fill="#1d2433">가게 = 서버</text>
+      <g opacity="0">
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;0.42;0.44;0.54;0.56;1" values="0;0;1;1;0;0"/>
+        <text x="645" y="182" font-size="13" font-weight="700" text-anchor="middle" fill="#c2692a">주문 확인</text>
+        <text x="645" y="200" font-size="13" text-anchor="middle" fill="#c2692a">서류를 상자에 담는 중</text>
+      </g>
+      <!-- 요청 봉투 -->
+      <g opacity="0">
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;0.14;0.15;0.43;0.44;1" values="0;0;1;1;0;0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" keyTimes="0;0.15;0.42;1" values="0 0;0 0;270 0;270 0"/>
+        <rect x="252" y="100" width="46" height="30" rx="3" fill="#fff" stroke="#2f6fb0" stroke-width="2"/>
+        <path d="M252 100 l23 16 l23 -16" fill="none" stroke="#2f6fb0" stroke-width="2"/>
+        <text x="275" y="84" font-size="13" font-weight="700" text-anchor="middle" fill="#2f6fb0">요청 · 주문서</text>
+      </g>
+      <!-- 응답 상자 -->
+      <g opacity="0">
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;0.53;0.54;0.81;0.82;1" values="0;0;1;1;0;0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" keyTimes="0;0.55;0.8;1" values="0 0;0 0;-266 0;-266 0"/>
+        <rect x="486" y="146" width="44" height="32" rx="3" fill="#d9a865" stroke="#8a6312" stroke-width="2"/>
+        <line x1="508" y1="146" x2="508" y2="178" stroke="#8a6312" stroke-width="2"/>
+        <text x="508" y="200" font-size="13" font-weight="700" text-anchor="middle" fill="#b06d16">응답 · 서류 상자</text>
+      </g>
+    </svg>
+    <figcaption>주소를 적으면 주문서(요청)가 가게로 가고, 서류가 든 상자(응답)가 돌아와 화면에 펼쳐집니다.</figcaption>
+  </figure>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 와이파이를 끄면 무엇이 멈출까<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">아래 화면의 앱을 하나씩 눌러 보세요. 그다음 와이파이 스위치를 끄고 다시 눌러 보세요.</p>
+      <div class="desk">
+        <div class="desk-screen">
+          <div class="apps"></div>
+          <div class="appwin" hidden>
+            <div class="appwin-bar"><b class="appwin-title"></b><button type="button" class="appwin-x" aria-label="닫기">×</button></div>
+            <div class="appwin-body"></div>
+          </div>
+        </div>
+        <div class="taskbar">
+          <label class="switch"><input type="checkbox" class="wifi1" checked><span class="track"></span><span class="wifi-label">와이파이 켜짐</span></label>
+          <span class="net-state on">온라인</span>
+        </div>
+      </div>
+      <div class="lab-msg msg1">앱을 눌러 보세요.</div>
+
+      <h4 class="sub">이번에는 주문을 직접 보내 보겠습니다</h4>
+      <p class="lab-guide">주소를 고르고 <b>이동</b>을 누르거나, 브라우저의 새로고침 단추를 눌러 보세요. 와이파이를 끈 채로도 해 보세요.</p>
+      <div class="row ctl2">
+        <label class="switch"><input type="checkbox" class="wifi2" checked><span class="track"></span><span class="wifi2-label">와이파이 켜짐</span></label>
+        <select class="addr-pick" aria-label="주소 고르기">
+          <option value="www.우리학교.kr">www.우리학교.kr</option>
+          <option value="www.naver.com">www.naver.com</option>
+          <option value="www.youtube.com">www.youtube.com</option>
+        </select>
+        <button class="btn primary go" type="button">이동</button>
+      </div>
+      <div class="browser b2">
+        <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><button class="reload" type="button" title="새로고침" aria-label="새로고침">⟳</button><span class="addr">주소를 고르고 이동을 누르세요</span></div>
+        <div class="browser-view"><div class="bv-empty">아직 아무것도 주문하지 않았습니다.</div></div>
+      </div>
+      <div class="track2" aria-hidden="true">
+        <div class="t-room">내 방</div>
+        <div class="t-door"></div>
+        <div class="t-road"><span>도로 = 인터넷</span></div>
+        <div class="t-shop">가게</div>
+        <div class="t-env"></div>
+        <div class="t-box"></div>
+      </div>
+      <div class="lab-msg msg2">주소를 고르고 이동을 눌러 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>와이파이가 끊기면 메모장은 되는데 유튜브는 안 돼요.</dt>
+      <dd>메모장은 내 서랍장에 있는 서류만 씁니다. 유튜브 영상은 유튜브 가게에 있어서 볼 때마다 택배로 받아 와야 합니다. 도로가 끊기면 택배가 오지 않습니다.</dd>
+      <dt>인터넷이 끊겼다가 돌아왔는데 화면이 그대로예요.</dt>
+      <dd>지금 화면은 도로가 끊겼을 때 받은 "배달 실패" 결과입니다. 도로가 다시 열려도 브라우저는 스스로 주문을 다시 보내지 않는 경우가 많습니다. 새로고침(<kbd>F5</kbd>)을 눌러 주문을 한 번 더 보내야 새 화면이 옵니다.</dd>
+      <dt>카톡은 와이파이가 없어도 옛날 대화는 보여요.</dt>
+      <dd>이미 받은 대화는 휴대폰이나 컴퓨터 서랍에 넣어 두었기 때문입니다. 새 메시지를 보내거나 받는 일은 도로가 있어야 합니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">오프라인 = 내 방 안에서만. 온라인 = 문을 열고 도로로. 웹페이지는 주문(요청)을 보내고 상자(응답)를 받아 펼친 결과입니다.</p>
+</section>

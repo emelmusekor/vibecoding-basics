@@ -1,0 +1,51 @@
+/* 12장 홀과 주방, 그리고 장부 */
+#ch12 .c12-need { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0 20px; }
+@media (max-width: 640px) { #ch12 .c12-need { grid-template-columns: 1fr; } }
+#ch12 .c12-card { border-radius: 12px; padding: 14px 18px; border: 1px solid var(--line); background: #fff; }
+#ch12 .c12-card h5 { margin: 0 0 4px; font-size: 16px; }
+#ch12 .c12-card p { margin: 0 0 6px; font-size: 15px; color: var(--ink-2); }
+#ch12 .c12-card ul { margin: 0 0 8px; padding-left: 20px; font-size: 15px; }
+#ch12 .c12-card.hall { border-top: 4px solid #2f6fb0; }
+#ch12 .c12-card.kitchen { border-top: 4px solid var(--p3); }
+#ch12 .c12-foot { font-size: 14px; font-weight: 700; padding-top: 6px; border-top: 1px dashed var(--line); }
+#ch12 .c12-card.hall .c12-foot { color: #2f6fb0; }
+#ch12 .c12-card.kitchen .c12-foot { color: var(--p3); }
+
+#ch12 .c12-stage { position: relative; align-items: start; }
+#ch12 .c12-app { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+#ch12 .c12-tag { font-weight: 800; font-size: 15px; color: var(--ink); }
+#ch12 .app-b .c12-tag { color: var(--p3); }
+#ch12 .browser-view { min-height: 0; transition: opacity .2s; }
+#ch12 .browser-view.c12-blank { opacity: .15; }
+#ch12 .c12-qz { text-align: center; }
+#ch12 .c12-qz-name { font-size: 14px; color: var(--ink-3); font-weight: 600; }
+#ch12 .c12-score { font-size: 40px; font-weight: 800; line-height: 1.2; margin: 2px 0 10px; font-variant-numeric: tabular-nums; }
+#ch12 .c12-desk { font-size: 14.5px; background: #eaf1f9; border-radius: 9px; padding: 7px 12px; color: var(--ink-2); }
+#ch12 .c12-desk span { color: #2f6fb0; font-weight: 700; }
+#ch12 .c12-desk b { float: right; color: var(--ink); }
+
+#ch12 .c12-kitchen { border: 2px dashed var(--p3); border-radius: 10px; background: #fdf3ea; padding: 8px 10px 10px; }
+#ch12 .c12-k-head { font-weight: 800; color: var(--p3); font-size: 15px; margin-bottom: 4px; }
+#ch12 .c12-k-head small { font-weight: 500; color: var(--ink-3); font-size: 13px; margin-left: 6px; }
+#ch12 .c12-ledger-wrap { max-height: 176px; overflow: auto; background: #fff; border-radius: 6px; border: 1px solid #ecd9c6; }
+#ch12 .c12-ledger { width: 100%; border-collapse: collapse; font-size: 14px; }
+#ch12 .c12-ledger th { position: sticky; top: 0; background: #f6e4d2; text-align: left; padding: 4px 10px; font-weight: 700; }
+#ch12 .c12-ledger td { padding: 3px 10px; border-top: 1px solid #f2e6da; font-variant-numeric: tabular-nums; }
+#ch12 .c12-ledger tr.me td:first-child { font-weight: 800; color: var(--p3); }
+#ch12 .c12-ledger tr.empty td { color: var(--ink-3); text-align: center; padding: 10px; }
+#ch12 .c12-ledger tr.new td { animation: c12-flash 1.2s ease; }
+@keyframes c12-flash { from { background: #ffe1b8; } to { background: transparent; } }
+
+#ch12 .c12-phone { border: 6px solid #1d2433; border-radius: 16px; background: #fff; max-width: 260px; overflow: hidden; }
+#ch12 .c12-ph-bar { background: #eceef2; font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); padding: 3px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#ch12 .c12-ph-body { padding: 10px 14px; text-align: center; }
+#ch12 .c12-ph-body p { margin: 4px 0 0; font-size: 14px; color: var(--ink-3); }
+#ch12 .c12-ph-body .c12-score { font-size: 32px; margin: 0; }
+#ch12 .c12-ph-body ol { list-style: none; margin: 4px 0 0; padding: 0; text-align: left; font-size: 14.5px; }
+#ch12 .c12-ph-body li { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid var(--soft); }
+#ch12 .c12-ph-body li.me { color: var(--p3); font-weight: 800; }
+
+#ch12 .c12-fly { position: absolute; z-index: 6; transform: translate(-50%, -50%); pointer-events: none; background: #fff; border: 2px solid var(--p3); color: var(--p3); border-radius: 6px; padding: 1px 8px; font-size: 13px; font-weight: 700; white-space: nowrap; box-shadow: 0 3px 8px rgba(0,0,0,.15); }
+#ch12 .c12-fly.back { border-color: var(--ok); color: var(--ok); }
+#ch12 .pop { animation: c12-pop .35s ease; }
+@keyframes c12-pop { 40% { transform: scale(1.12); } }

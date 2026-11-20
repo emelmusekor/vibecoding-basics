@@ -1,0 +1,109 @@
+<section class="chapter" id="ch15" data-part="4" data-title="조수에게 글자로 시키는 창">
+  <div class="ch-head">
+    <div class="ch-num">15</div>
+    <div>
+      <h2>조수에게 글자로 시키는 창</h2>
+      <div class="meta">비유 <b>조수가 글자로 일하는 창</b> · 용어 터미널, 명령</div>
+    </div>
+  </div>
+
+  <p>평소에는 마우스로 아이콘을 눌러 컴퓨터에 일을 시킵니다. 같은 일을 글자로 적어서 시킬 수도 있습니다. 그 글자를 적는 까만 창을 <strong>터미널</strong>이라고 하고, 한 줄 한 줄 적는 지시를 <strong>명령</strong>이라고 합니다.</p>
+  <p>AI 조수는 주로 이 창에서 일합니다. 서류철(폴더)을 만들고, 앱에 필요한 도구를 내려받고, 11장에서 본 내 방 진열장(localhost)을 켜는 일을 모두 글자로 시킵니다. 사람이 직접 명령을 칠 일은 거의 없습니다. 조수가 무엇을 하는지 지켜보고, 필요할 때 허락만 하면 됩니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 300" role="img" aria-label="터미널 창에 명령과 결과가 한 줄씩 찍히는 모습">
+      <defs>
+        <clipPath id="ch15-c1"><rect x="40" y="70" height="26" width="0"><animate attributeName="width" dur="12s" repeatCount="indefinite" values="0;0;440;440;0" keyTimes="0;.04;.14;.94;1"/></rect></clipPath>
+        <clipPath id="ch15-c2"><rect x="40" y="100" height="26" width="0"><animate attributeName="width" dur="12s" repeatCount="indefinite" values="0;0;440;440;0" keyTimes="0;.20;.21;.94;1"/></rect></clipPath>
+        <clipPath id="ch15-c3"><rect x="40" y="140" height="26" width="0"><animate attributeName="width" dur="12s" repeatCount="indefinite" values="0;0;440;440;0" keyTimes="0;.30;.40;.94;1"/></rect></clipPath>
+        <clipPath id="ch15-c4"><rect x="40" y="170" height="26" width="0"><animate attributeName="width" dur="12s" repeatCount="indefinite" values="0;0;440;440;0" keyTimes="0;.46;.47;.94;1"/></rect></clipPath>
+        <clipPath id="ch15-c5"><rect x="40" y="200" height="26" width="0"><animate attributeName="width" dur="12s" repeatCount="indefinite" values="0;0;440;440;0" keyTimes="0;.50;.51;.94;1"/></rect></clipPath>
+      </defs>
+
+      <!-- 터미널 창 -->
+      <rect x="20" y="20" width="480" height="260" rx="12" fill="#0f1115"/>
+      <rect x="20" y="20" width="480" height="34" rx="12" fill="#262a33"/>
+      <rect x="20" y="42" width="480" height="12" fill="#262a33"/>
+      <circle cx="42" cy="37" r="5" fill="#ff6b6b"/><circle cx="60" cy="37" r="5" fill="#f2c14e"/><circle cx="78" cy="37" r="5" fill="#6fcf97"/>
+      <text x="260" y="42" font-size="14" text-anchor="middle" fill="#a9b0bd">터미널</text>
+
+      <g font-family="Consolas, monospace" font-size="15">
+        <text x="40" y="90" clip-path="url(#ch15-c1)"><tspan fill="#6fcf97">우리반앱&gt;</tspan><tspan fill="#d7dae0"> npm install</tspan></text>
+        <text x="40" y="120" fill="#8b93a3" clip-path="url(#ch15-c2)">added 87 packages in 4s</text>
+        <text x="40" y="160" clip-path="url(#ch15-c3)"><tspan fill="#6fcf97">우리반앱&gt;</tspan><tspan fill="#d7dae0"> npm run dev</tspan></text>
+        <text x="40" y="190" fill="#8b93a3" clip-path="url(#ch15-c4)">  ready in 312 ms</text>
+        <text x="40" y="220" fill="#7aa2f7" clip-path="url(#ch15-c5)">  Local: http://localhost:5173/</text>
+      </g>
+      <rect x="40" y="236" width="9" height="17" fill="#d7dae0"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+
+      <!-- 설명 -->
+      <g font-size="15">
+        <line x1="505" y1="84" x2="530" y2="84" stroke="#7650aa" stroke-width="2"/>
+        <text x="538" y="80" font-weight="700" fill="#7650aa">조수가 적은 명령</text>
+        <text x="538" y="100" font-size="13.5" fill="#4a5468">재료(부품)를 사 오라는 지시</text>
+
+        <line x1="505" y1="116" x2="530" y2="116" stroke="#8a93a6" stroke-width="2"/>
+        <text x="538" y="122" font-size="13.5" fill="#4a5468">컴퓨터가 돌려준 결과</text>
+
+        <line x1="505" y1="156" x2="530" y2="156" stroke="#7650aa" stroke-width="2"/>
+        <text x="538" y="152" font-weight="700" fill="#7650aa">두 번째 명령</text>
+        <text x="538" y="172" font-size="13.5" fill="#4a5468">진열장을 켜라는 지시</text>
+
+        <line x1="505" y1="215" x2="530" y2="215" stroke="#2f6fb0" stroke-width="2"/>
+        <text x="538" y="211" font-weight="700" fill="#2f6fb0">진열장 주소</text>
+        <text x="538" y="231" font-size="13.5" fill="#4a5468">이 창이 켜져 있는 동안만 열림</text>
+      </g>
+    </svg>
+    <figcaption>왼쪽의 <code>우리반앱&gt;</code>는 지금 어느 서류철 안에서 일하고 있는지 알려 주는 표시입니다.</figcaption>
+  </figure>
+
+  <h3>자주 보는 명령</h3>
+  <p>외울 필요는 없습니다. 조수가 이런 글자를 적을 때 "대략 이런 일을 하는구나" 하고 알아볼 정도면 충분합니다.</p>
+  <div class="pair ch15-cmds">
+    <div><b><code>cd 폴더이름</code></b>그 서류철 안으로 들어갑니다. 이후 명령은 그 서류철 안에서 이루어집니다.</div>
+    <div><b><code>ls</code> 또는 <code>dir</code></b>지금 서랍 안에 무엇이 있는지 목록을 봅니다.</div>
+    <div><b><code>npm install</code></b>재료를 사 옵니다. 앱에 필요한 부품을 인터넷에서 내려받아 <code>node_modules</code> 서류철에 넣습니다.</div>
+    <div><b><code>npm run dev</code> · <code>python -m http.server</code></b>내 방 진열장(localhost)을 켭니다. 켜 둔 동안 이 창은 계속 일하는 중입니다.</div>
+    <div><b><code>git commit</code></b>지금 상태를 세이브 포인트로 남깁니다. 17장에서 다룹니다.</div>
+  </div>
+
+  <h3>실행하기 전에 허락을 구합니다</h3>
+  <p>안티그래비티는 설정에서 조수가 터미널 명령을 실행하기 전에 매번 허락을 받을지, 일부 명령은 묻지 않고 실행할지 정할 수 있습니다. 허락을 받도록 해 두면 명령이 화면에 먼저 나타나고, 사람이 승인해야 실행됩니다. 처음에는 매번 묻도록 두는 것이 안전합니다.</p>
+  <p>무슨 일을 하는 명령인지 모르겠으면 승인하기 전에 조수에게 "이 명령이 뭘 하는 거야?"라고 물어보면 됩니다. 특히 <code>rm</code>, <code>del</code>, <code>rmdir</code>, <code>format</code>, <code>--force</code> 같은 글자나 "삭제"라는 말이 보이면 멈추고 무엇을 지우는지 확인합니다. 터미널에서 지운 파일은 휴지통을 거치지 않아 되살리기 어렵습니다.</p>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 조수의 명령에 허락하기<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">AI 조수가 명령을 하나씩 제안합니다. <b>허락</b>, <b>거절</b>, <b>이게 뭐야?</b> 중 하나를 눌러 보세요. 허락하면 터미널에 결과가 찍히고 오른쪽 서랍에 반영됩니다.</p>
+      <div class="ch15-ask"></div>
+      <div class="ch15-grid">
+        <div class="term ch15-term" aria-live="polite"></div>
+        <div class="ch15-side">
+          <div class="explorer">
+            <div class="explorer-bar">C:\연수\우리반앱</div>
+            <ul class="ch15-tree"></ul>
+          </div>
+          <div class="browser ch15-prev">
+            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="addr">localhost:5173</span></div>
+            <div class="browser-view ch15-pv"></div>
+          </div>
+          <button class="btn ch15-close" type="button" disabled>터미널 창 닫기</button>
+        </div>
+      </div>
+      <div class="lab-msg">조수의 첫 제안을 보고 골라 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>까만 창이 떴는데 뭘 해야 할지 모르겠어요.</dt>
+      <dd>조수가 일하려고 연 창입니다. 사람이 무언가를 입력할 필요는 없습니다. 지켜보다가 허락을 구하는 명령이 나오면 확인하고 승인하면 됩니다.</dd>
+      <dt>터미널을 닫았더니 미리보기가 안 나와요.</dt>
+      <dd>진열장(localhost)은 그 터미널 창이 켜 두고 있던 것입니다. 창을 닫으면 가게 불을 끈 것과 같아서 주소로 가도 아무것도 없습니다. 조수에게 "미리보기 다시 켜 줘"라고 하면 됩니다.</dd>
+      <dt>"command not found", "'npm'은(는) 내부 또는 외부 명령... 이 아닙니다"라고 나와요.</dt>
+      <dd>그 명령을 알아듣는 도구가 이 컴퓨터에 설치되어 있지 않다는 뜻입니다. 오류 글자를 그대로 복사해 조수에게 보여 주면 무엇을 설치해야 하는지 알려 줍니다. 설치한 뒤에는 터미널을 새로 열어야 알아듣는 경우가 많습니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">터미널 = 조수가 글자로 일하는 창. 모르는 명령은 물어보고, 지우는 명령은 멈추고 확인합니다.</p>
+</section>

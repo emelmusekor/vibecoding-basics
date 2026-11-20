@@ -1,0 +1,151 @@
+<section class="chapter" id="ch10" data-part="2" data-title="창고를 빌리다">
+  <div class="ch-head">
+    <div class="ch-num">10</div>
+    <div>
+      <h2>창고를 빌리다</h2>
+      <div class="meta">비유 <b>멀리 있는 빌린 창고</b> · 용어 클라우드, 저장 용량, 동기화</div>
+    </div>
+  </div>
+
+  <p><strong>클라우드</strong>는 남의 커다란 창고를 빌려 쓰는 것입니다. 창고는 데이터센터라는 건물에 있는 아주 많은 컴퓨터입니다. 구글 드라이브, 네이버 MYBOX, 원드라이브가 모두 이런 창고입니다.</p>
+  <p>5장의 USB는 들고 다니는 서랍이라 직접 챙겨 가야 합니다. 창고는 도로만 있으면 집에서도, 학교에서도, 휴대폰으로도 같은 서류를 꺼낼 수 있습니다. 대신 도로(인터넷)가 없으면 창고에 갈 수 없어 꺼내지 못합니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 290" role="img" aria-label="노트북에서 고친 서류가 창고로 올라가고, 학교 PC로 내려와 같은 상태가 된다">
+      <defs>
+        <path id="ch10-up" d="M 150 222 L 380 222 L 380 100"/>
+        <path id="ch10-down" d="M 380 100 L 380 222 L 612 222"/>
+      </defs>
+      <!-- 도로 -->
+      <rect x="150" y="204" width="462" height="36" fill="#5d6576"/>
+      <rect x="362" y="112" width="36" height="92" fill="#5d6576"/>
+      <line x1="154" y1="222" x2="608" y2="222" stroke="#fff" stroke-width="2.5" stroke-dasharray="12 10"/>
+      <line x1="380" y1="116" x2="380" y2="200" stroke="#fff" stroke-width="2.5" stroke-dasharray="12 10"/>
+      <text x="265" y="262" font-size="13" text-anchor="middle" fill="#4a5468">도로 = 인터넷</text>
+      <!-- 창고 -->
+      <polygon points="270,58 380,14 490,58" fill="#2b8a6c"/>
+      <rect x="282" y="58" width="196" height="56" fill="#d6ece4" stroke="#2b8a6c" stroke-width="2"/>
+      <rect x="300" y="68" width="34" height="40" rx="2" fill="#a9d4c4" stroke="#2b8a6c"/>
+      <rect x="426" y="68" width="34" height="40" rx="2" fill="#a9d4c4" stroke="#2b8a6c"/>
+      <rect x="364" y="76" width="32" height="38" fill="#2b8a6c" opacity=".25"/>
+      <g opacity=".3">
+        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.38;0.4;0.9;1" values=".3;.3;1;1;.3"/>
+        <rect x="372" y="80" width="18" height="24" rx="2" fill="#fff" stroke="#2b8a6c" stroke-width="1.5"/>
+      </g>
+      <text x="560" y="40" font-size="15" font-weight="700" text-anchor="middle" fill="#1d2433">빌린 창고 = 클라우드</text>
+      <text x="560" y="60" font-size="13" text-anchor="middle" fill="#4a5468">구글 드라이브 같은 곳</text>
+      <!-- 노트북 방 -->
+      <rect x="10" y="150" width="140" height="120" rx="12" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+      <text x="80" y="174" font-size="14" font-weight="800" text-anchor="middle" fill="#2f6fb0">집 · 노트북</text>
+      <rect x="40" y="186" width="80" height="50" rx="4" fill="#1d2433"/>
+      <rect x="45" y="191" width="70" height="40" rx="2" fill="#fff"/>
+      <rect x="30" y="236" width="100" height="7" rx="3" fill="#1d2433"/>
+      <rect x="52" y="198" width="30" height="5" rx="2" fill="#2f6fb0"/>
+      <rect x="52" y="208" width="54" height="4" rx="2" fill="#c9ccd3"/>
+      <text x="80" y="262" font-size="13" text-anchor="middle" fill="#4a5468">여기서 고침</text>
+      <!-- 학교 PC 방 -->
+      <rect x="612" y="150" width="140" height="120" rx="12" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+      <text x="682" y="174" font-size="14" font-weight="800" text-anchor="middle" fill="#2f6fb0">학교 · PC</text>
+      <rect x="642" y="186" width="80" height="50" rx="4" fill="#1d2433"/>
+      <rect x="647" y="191" width="70" height="40" rx="2" fill="#fff"/>
+      <rect x="676" y="236" width="12" height="8" fill="#1d2433"/>
+      <rect x="654" y="198" width="30" height="5" rx="2" fill="#2f6fb0"/>
+      <rect x="654" y="208" width="54" height="4" rx="2" fill="#c9ccd3"/>
+      <g opacity="0">
+        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.84;0.86;0.98;1" values="0;0;1;1;0"/>
+        <rect x="654" y="216" width="40" height="10" rx="3" fill="#2b8a6c"/>
+        <text x="682" y="262" font-size="13" font-weight="700" text-anchor="middle" fill="#2b8a6c">똑같이 맞춰짐</text>
+      </g>
+      <!-- 서류 올라감 -->
+      <g opacity="0">
+        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.06;0.07;0.38;0.39;1" values="0;0;1;1;0;0"/>
+        <g><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.07;0.38;1" calcMode="linear"><mpath href="#ch10-up"/></animateMotion>
+          <rect x="-11" y="-14" width="22" height="28" rx="2" fill="#fff" stroke="#2f6fb0" stroke-width="2"/>
+          <line x1="-6" y1="-6" x2="6" y2="-6" stroke="#2f6fb0" stroke-width="2"/><line x1="-6" y1="0" x2="6" y2="0" stroke="#c9ccd3" stroke-width="2"/>
+          <text x="0" y="-20" font-size="13" font-weight="700" text-anchor="middle" fill="#2f6fb0">올리기</text>
+        </g>
+      </g>
+      <!-- 서류 내려옴 -->
+      <g opacity="0">
+        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.48;0.49;0.84;0.85;1" values="0;0;1;1;0;0"/>
+        <g><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.49;0.84;1" calcMode="linear"><mpath href="#ch10-down"/></animateMotion>
+          <rect x="-11" y="-14" width="22" height="28" rx="2" fill="#fff" stroke="#2b8a6c" stroke-width="2"/>
+          <line x1="-6" y1="-6" x2="6" y2="-6" stroke="#2b8a6c" stroke-width="2"/><line x1="-6" y1="0" x2="6" y2="0" stroke="#c9ccd3" stroke-width="2"/>
+          <text x="0" y="-20" font-size="13" font-weight="700" text-anchor="middle" fill="#2b8a6c">내려받기</text>
+        </g>
+      </g>
+      <text x="475" y="262" font-size="13" text-anchor="middle" fill="#4a5468">동기화 = 서류를 같은 상태로 맞추는 일</text>
+    </svg>
+    <figcaption>집에서 고친 서류가 창고로 올라가고, 창고에서 학교 PC로 내려와 세 곳이 같은 상태가 됩니다.</figcaption>
+  </figure>
+
+  <h3>창고에는 크기 제한이 있습니다</h3>
+  <p>무료로 빌리는 창고는 크기가 정해져 있습니다. 구글 드라이브는 무료로 약 15GB를 주는데, 지메일과 구글 포토도 이 15GB를 함께 씁니다. 바이브코딩으로 만든 웹사이트를 무료로 올리는 GitHub 저장소는 전체 약 1GB 이하를 권장하고, 파일 하나는 100MB를 넘으면 올라가지 않습니다.</p>
+  <p>바이브코딩에서 실제로 지킬 기준은 다음과 같습니다.</p>
+  <ul class="plain">
+    <li>웹에 올릴 사진은 줄여서 넣습니다. 휴대폰 사진 원본 약 5MB를 약 0.3MB로 줄여도 화면에서는 거의 차이가 없습니다.</li>
+    <li>영상은 프로젝트 폴더에 직접 넣지 않습니다. 유튜브에 올리고 링크로 연결합니다.</li>
+    <li>쓰지 않는 원본 사진과 백업 파일은 프로젝트 폴더에 두지 않습니다.</li>
+  </ul>
+  <p>창고에 넣은 짐이 무거울수록 9장의 로딩도 느려집니다. 창고에 들어간 사진은 결국 보는 사람에게 택배로 가기 때문입니다.</p>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 사진 100장을 어떻게 올릴까<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">같은 사진 100장을 왼쪽은 원본 그대로, 오른쪽은 줄여서 올립니다. 양쪽 버튼을 눌러 창고가 얼마나 차는지, 그 사진으로 만든 페이지가 얼마나 걸리는지 비교해 보세요. 여러 번 눌러도 됩니다.</p>
+      <div class="cols up">
+        <div class="upcol" data-mb="5">
+          <div class="up-h"><b>원본 그대로</b><span>한 장 약 5MB</span></div>
+          <button type="button" class="btn primary up-btn">사진 100장 올리기</button>
+          <div class="g"><div class="g-l"><span>구글 드라이브 (15GB)</span><b class="g-drive">-</b></div><div class="gauge drive"><i class="base"></i><i class="add"></i></div></div>
+          <div class="g"><div class="g-l"><span>GitHub 저장소 (권장 약 1GB)</span><b class="g-gh">-</b></div><div class="gauge gh"><i class="add"></i></div></div>
+          <div class="g-load"><span>이 사진으로 만든 페이지 로딩<br><small>집 와이파이 기준</small></span><b class="g-time">-</b></div>
+        </div>
+        <div class="upcol" data-mb="0.3">
+          <div class="up-h"><b>줄여서 올리기</b><span>한 장 약 0.3MB</span></div>
+          <button type="button" class="btn primary up-btn">사진 100장 올리기</button>
+          <div class="g"><div class="g-l"><span>구글 드라이브 (15GB)</span><b class="g-drive">-</b></div><div class="gauge drive"><i class="base"></i><i class="add"></i></div></div>
+          <div class="g"><div class="g-l"><span>GitHub 저장소 (권장 약 1GB)</span><b class="g-gh">-</b></div><div class="gauge gh"><i class="add"></i></div></div>
+          <div class="g-load"><span>이 사진으로 만든 페이지 로딩<br><small>집 와이파이 기준</small></span><b class="g-time">-</b></div>
+        </div>
+      </div>
+      <p class="legend"><i class="lg-base"></i>지메일·사진이 이미 쓰고 있는 양 (예: 약 4GB) <i class="lg-add"></i>이번에 올린 사진</p>
+      <div class="row vid">
+        <span class="vid-t">수업 영상은 어떻게 넣을까요?</span>
+        <button type="button" class="btn vid-file">영상 파일을 폴더에 넣기 (약 300MB)</button>
+        <button type="button" class="btn vid-link">유튜브에 올리고 링크로 넣기</button>
+      </div>
+      <div class="lab-msg msg1">양쪽의 "사진 100장 올리기"를 눌러 보세요.</div>
+
+      <h4 class="sub">동기화가 엇갈리는 장면</h4>
+      <p class="lab-guide">노트북과 학교 PC에서 같은 계획서를 고칩니다. 둘 다 인터넷이 끊긴 상태에서 고치면 어떻게 될까요? <b>다음</b>을 눌러 한 단계씩 진행해 보세요.</p>
+      <div class="sync">
+        <div class="dev" data-d="a"><div class="dev-h"><b>노트북</b><span class="st"></span></div><ul class="files"></ul></div>
+        <div class="link la"></div>
+        <div class="dev cloud" data-d="c"><div class="dev-h"><b>창고</b><span class="st">구글 드라이브</span></div><ul class="files"></ul></div>
+        <div class="link lb"></div>
+        <div class="dev" data-d="b"><div class="dev-h"><b>학교 PC</b><span class="st"></span></div><ul class="files"></ul></div>
+      </div>
+      <div class="row sync-ctl">
+        <button type="button" class="btn primary next-step">다음</button>
+        <span class="step-n"></span>
+      </div>
+      <div class="lab-msg msg2"></div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>드라이브에 같은 파일이 두 개로 갈라졌어요.</dt>
+      <dd>두 곳에서 같은 서류를 따로 고친 뒤 창고에 올리면, 창고는 어느 쪽이 맞는지 모릅니다. 둘 다 버리지 않으려고 하나를 사본으로 남깁니다. 이름 뒤에 <code>(1)</code>이나 컴퓨터 이름이 붙은 파일이 생깁니다. 두 장을 열어 비교하고 하나로 합친 뒤 남은 것을 지우면 됩니다.</dd>
+      <dt>인터넷이 없는 곳에서 드라이브 파일이 안 열려요.</dt>
+      <dd>파일 탐색기에 이름은 보여도 실제 서류는 창고에만 있는 "온라인 전용" 파일입니다. 내 서랍에는 이름표만 있습니다. 미리 쓸 파일은 <b>오프라인에서 사용 가능</b>으로 설정해 두면 내 서랍에도 한 장 받아 둡니다.</dd>
+      <dt>저장공간이 꽉 찼다고 하더니 메일이 안 와요.</dt>
+      <dd>지메일, 구글 포토, 구글 드라이브는 같은 창고(무료 약 15GB)를 함께 씁니다. 드라이브에 큰 파일을 잔뜩 넣으면 메일을 넣을 자리가 없어져 새 메일을 받지 못합니다.</dd>
+      <dt>사진을 원본으로 잔뜩 올린 페이지가 느려요.</dt>
+      <dd>창고에 넣은 사진은 보는 사람에게 그대로 택배로 갑니다. 원본 사진 100장이면 짐이 약 500MB입니다. 웹용으로 줄여서 넣으면 약 30MB로 줄어듭니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">클라우드 = 도로만 있으면 어디서든 꺼내는 빌린 창고. 크기 제한이 있으니 사진은 줄이고 영상은 링크로 넣습니다.</p>
+</section>

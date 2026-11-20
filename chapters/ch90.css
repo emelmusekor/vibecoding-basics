@@ -1,0 +1,36 @@
+#ch90 .ch-num { font-size: 16px; }
+#ch90 .ch90-fig svg { max-height: none; }
+#ch90 .ch90-fig { padding: 10px; }
+#ch90 .ch90-zone { cursor: pointer; outline: none; }
+#ch90 .ch90-zone .z-bg { transition: filter .15s, stroke-width .15s; }
+#ch90 .ch90-zone:hover .z-bg, #ch90 .ch90-zone:focus .z-bg { filter: brightness(.96); stroke-width: 4; }
+#ch90 .ch90-zone.on .z-bg { stroke-width: 5; }
+#ch90 .ch90-info { margin: -8px 0 20px; }
+#ch90 .ch90-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+#ch90 .ch90-links a { font-size: 14px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; text-decoration: none; font-weight: 600; }
+#ch90 .ch90-links a:hover { border-color: var(--ink); }
+
+#ch90 .ch90-check { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px; }
+#ch90 .ch90-item { display: flex; gap: 10px; align-items: flex-start; background: var(--soft); border-radius: 10px; padding: 10px 12px; cursor: pointer; }
+#ch90 .ch90-item input { width: 18px; height: 18px; margin-top: 4px; flex: none; accent-color: var(--ink); }
+#ch90 .ch90-item > span > b { display: block; font-size: 15px; line-height: 1.5; }
+#ch90 .ch90-item small { display: block; font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+#ch90 .ch90-item small a { color: var(--p1); }
+#ch90 .ch90-item:has(input:checked) { background: #e4f3e8; }
+
+#ch90 .ch90-asks { display: grid; gap: 12px; }
+#ch90 .ch90-ask { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: #fff; }
+#ch90 .ch90-ask.multi { border-color: var(--p3); }
+#ch90 .ch90-tag { display: inline-block; font-size: 12.5px; font-weight: 700; color: #fff; background: var(--p4); border-radius: 5px; padding: 1px 8px; }
+#ch90 .ch90-ask.multi .ch90-tag { background: var(--p3); }
+#ch90 .ch90-q { margin: 8px 0 10px; background: #f3eefa; border-radius: 8px; padding: 10px 12px; font-size: 15.5px; }
+#ch90 .ch90-ask.multi .ch90-q { background: #fbe7d6; }
+#ch90 .ch90-ask .btn { font-size: 14px; padding: 4px 14px; }
+#ch90 .ch90-note { margin: 10px 0 0; font-size: 14.5px; color: var(--ink-2); }
+#ch90 .ch90-back { margin: 26px 0 0; text-align: center; }
+#ch90 .ch90-back a { display: inline-block; font-weight: 700; text-decoration: none; border: 2px solid var(--ink); border-radius: 999px; padding: 6px 20px; }
+#ch90 .ch90-back a:hover { background: var(--ink); color: #fff; }
+@media (max-width: 640px) {
+  #ch90 .ch90-fig { overflow-x: auto; }
+  #ch90 .ch90-fig svg { width: 680px; max-width: none; }
+}

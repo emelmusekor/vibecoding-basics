@@ -1,0 +1,94 @@
+/* 5장 들고 다니는 서랍 */
+
+/* 그림 1: 꽂기 애니메이션 (8초 반복) */
+#ch05 .f1-stick { animation: ch05-stick 8s ease-in-out infinite; }
+#ch05 .f1-row { animation: ch05-row 8s ease-in-out infinite; }
+#ch05 .f1-cap-in { animation: ch05-capin 8s ease-in-out infinite; }
+#ch05 .f1-cap-out { animation: ch05-capout 8s ease-in-out infinite; }
+@keyframes ch05-stick {
+  0% { transform: translateX(40px); opacity: 0; }
+  8% { transform: translateX(40px); opacity: 1; }
+  22%, 74% { transform: translateX(0); opacity: 1; }
+  88% { transform: translateX(40px); opacity: 1; }
+  100% { transform: translateX(40px); opacity: 0; }
+}
+@keyframes ch05-row {
+  0%, 24% { opacity: 0; transform: translateY(-10px); }
+  32%, 76% { opacity: 1; transform: translateY(0); }
+  84%, 100% { opacity: 0; transform: translateY(0); }
+}
+@keyframes ch05-capin {
+  0%, 20% { opacity: 0; } 30%, 70% { opacity: 1; } 76%, 100% { opacity: 0; }
+}
+@keyframes ch05-capout {
+  0%, 76% { opacity: 0; } 82%, 96% { opacity: 1; } 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ch05 .f1-stick, #ch05 .f1-row, #ch05 .f1-cap-in { animation: none; opacity: 1; transform: none; }
+  #ch05 .f1-cap-out { animation: none; opacity: 0; }
+}
+
+/* 체험 1: 꽂기 */
+#ch05 .plug { display: grid; grid-template-columns: 220px 1fr; gap: 16px; align-items: start; }
+#ch05 .devs { display: flex; flex-direction: column; gap: 10px; }
+#ch05 .dev { display: grid; grid-template-columns: 90px 1fr; grid-template-rows: auto auto; gap: 4px 10px; align-items: center; border: 1px dashed #cfd3db; border-radius: 10px; padding: 10px; transition: border-color .2s, background .2s; }
+#ch05 .dev svg { grid-row: 1 / 3; transition: transform .35s; transform: translateX(10px); }
+#ch05 .dev.in { border-style: solid; border-color: var(--accent); background: #eef4fb; }
+#ch05 .dev.in svg { transform: translateX(-6px); }
+#ch05 .dev-name { font-weight: 700; font-size: 15px; line-height: 1.3; }
+#ch05 .dev-name small { display: block; font-weight: 500; color: var(--ink-3); font-size: 13px; }
+#ch05 .dev .btn { justify-self: start; padding: 4px 14px; font-size: 14px; }
+#ch05 .mypc { border: 1px solid #cfd3db; border-radius: 10px; overflow: hidden; background: #fff; }
+#ch05 .mypc-bar { background: #eceef2; padding: 6px 12px; font-weight: 700; font-size: 14px; border-bottom: 1px solid #d8dbe2; }
+#ch05 .drives { list-style: none; margin: 0; padding: 6px; min-height: 196px; }
+#ch05 .drives li { display: grid; grid-template-columns: 40px 1fr auto; gap: 8px; align-items: center; padding: 7px 8px; border-radius: 8px; font-size: 15px; }
+#ch05 .drives li .ic { display: grid; place-items: center; }
+#ch05 .drives li .dd { color: var(--ink-3); font-size: 13px; }
+#ch05 .drives li.ext { background: #f3f7fc; margin-top: 2px; }
+#ch05 .drives li.fresh { animation: ch05-slidein .5s ease-out, ch05-glow 1.4s ease-out; }
+#ch05 .drives .cap { display: block; height: 6px; background: #e2e5ea; border-radius: 4px; margin-top: 4px; max-width: 220px; overflow: hidden; }
+#ch05 .drives .cap i { display: block; height: 100%; border-radius: 4px; }
+@keyframes ch05-slidein { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+@keyframes ch05-glow { 0%, 40% { box-shadow: 0 0 0 2px var(--accent); } 100% { box-shadow: 0 0 0 2px transparent; } }
+@media (max-width: 640px) {
+  #ch05 .plug { grid-template-columns: 1fr; }
+  #ch05 .devs { flex-direction: row; flex-wrap: wrap; }
+  #ch05 .dev { flex: 1 1 200px; }
+}
+
+/* 체험 2: 복사 중 뽑기 */
+#ch05 .copy { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 14px; align-items: center; margin-bottom: 12px; }
+#ch05 .cp-box { border: 1px solid #cfd3db; border-radius: 10px; padding: 10px 12px; min-height: 118px; background: #fff; transition: opacity .3s, border-color .3s, background .3s; }
+#ch05 .cp-desk { background: #f8f5ec; }
+#ch05 .cp-usb { border-color: var(--accent); background: #f3f7fc; }
+#ch05 .cp-usb.out { opacity: .45; border-style: dashed; border-color: #cfd3db; background: #fff; }
+#ch05 .cp-usb.safe { border-color: var(--ok); background: #eef8f1; }
+#ch05 .cp-label { font-size: 13px; font-weight: 700; color: var(--ink-3); margin-bottom: 6px; }
+#ch05 .cp-file { display: flex; align-items: center; gap: 10px; font-size: 14px; line-height: 1.35; }
+#ch05 .cp-file small { color: var(--ink-3); }
+#ch05 .cp-file small.bad { color: var(--bad); font-weight: 700; }
+#ch05 .cp-file.ing { animation: ch05-blink 1s ease-in-out infinite; }
+@keyframes ch05-blink { 50% { opacity: .45; } }
+#ch05 .cp-empty { color: var(--ink-3); font-size: 14px; padding: 18px 0; text-align: center; }
+#ch05 .cp-mid { text-align: center; }
+#ch05 .cp-state { font-size: 14px; font-weight: 700; color: var(--ink-2); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+#ch05 .fileicon.torn { clip-path: polygon(0 0, 100% 0, 100% 34%, 76% 46%, 92% 58%, 66% 70%, 80% 84%, 58% 100%, 0 100%); transform: rotate(-4deg); }
+@media (max-width: 640px) {
+  #ch05 .copy { grid-template-columns: 1fr; }
+}
+
+/* 체험 3: 다른 컴퓨터 */
+#ch05 .other-btns { margin-bottom: 12px; }
+#ch05 .other-btns .switch { margin-left: 4px; }
+#ch05 .ot-info { display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+#ch05 .ot-where { background: var(--soft); border-radius: 10px; padding: 10px 14px; line-height: 1.6; }
+#ch05 .ot-where .lt { font-family: var(--mono); font-weight: 700; color: var(--accent); }
+#ch05 .ot-where .lt.bad { color: var(--bad); }
+#ch05 .ot-note { border: 1px solid #e3d6b0; background: #fffaf0; border-radius: 10px; padding: 10px 14px; }
+#ch05 .ot-note-h { font-size: 13px; color: #8a6312; font-weight: 700; margin-bottom: 4px; }
+#ch05 .ot-note code { font-size: 14px; word-break: break-all; }
+#ch05 .ot-view { min-height: 190px; }
+#ch05 .ot-blank { color: var(--ink-3); font-size: 14px; text-align: center; padding-top: 60px; }
+#ch05 .ot-page h5 { margin: 0 0 8px; font-size: 18px; }
+#ch05 .ot-page p { margin: 8px 0 0; font-size: 14px; color: var(--ink-2); }
+#ch05 .ot-broken { width: 120px; height: 80px; border: 1px solid #cfd3db; display: flex; align-items: flex-start; gap: 4px; padding: 4px; font-size: 12px; color: var(--ink-3); }

@@ -1,0 +1,139 @@
+<section class="chapter" id="ch04" data-part="1" data-title="상자 크기">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div>
+      <h2>상자 크기</h2>
+      <div class="meta">비유 <b>서류가 차지하는 상자 크기</b> · 용어 용량, B, KB, MB, GB, TB</div>
+    </div>
+  </div>
+
+  <p>서류마다 차지하는 부피가 다릅니다. 글자만 적힌 한 쪽짜리 서류는 얇은 봉투에 들어가지만, 사진이나 영상은 큰 상자가 필요합니다. 파일이 차지하는 크기를 <strong>용량</strong>이라고 하고, 서랍장에 얼마나 들어가는지도 같은 단위로 셉니다.</p>
+  <p>가장 작은 단위는 <strong>바이트(B)</strong>입니다. 영어 글자 한 자가 약 1바이트입니다. 1,000바이트가 모이면 1킬로바이트(KB), 다시 1,000배가 되면 1메가바이트(MB)입니다. 이렇게 약 1,000배씩 커지면서 GB, TB로 올라갑니다. 정확히는 1,024배씩이지만 1,000배로 생각해도 충분합니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="B, KB, MB, GB, TB 상자가 약 1000배씩 커지는 모습과 예시">
+      <defs><marker id="ch04-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#8a93a6"/></marker></defs>
+      <line x1="20" y1="220" x2="880" y2="220" stroke="#e2e0d8" stroke-width="2"/>
+      <!-- 상자: 앞면 + 윗면 -->
+      <g class="box b1 reveal">
+        <rect x="80" y="206" width="14" height="14" fill="#c9ddf1" stroke="#2f6fb0" stroke-width="1.5"/>
+        <text x="87" y="252" font-size="20" font-weight="800" text-anchor="middle" fill="#1d2433">B</text>
+        <text x="87" y="272" font-size="13" text-anchor="middle" fill="#8a93a6">바이트</text>
+      </g>
+      <g class="box b2 reveal d1">
+        <rect x="210" y="192" width="28" height="28" fill="#c9ddf1" stroke="#2f6fb0" stroke-width="1.5"/>
+        <path d="M210 192 l8 -8 h28 l-8 8z M238 192 l8 -8 v28 l-8 8z" fill="#a9c6e6" stroke="#2f6fb0" stroke-width="1.2"/>
+        <text x="226" y="252" font-size="20" font-weight="800" text-anchor="middle" fill="#1d2433">KB</text>
+        <text x="226" y="272" font-size="13" text-anchor="middle" fill="#8a93a6">킬로바이트</text>
+      </g>
+      <g class="box b3 reveal d2">
+        <rect x="350" y="168" width="52" height="52" fill="#c9ddf1" stroke="#2f6fb0" stroke-width="1.5"/>
+        <path d="M350 168 l12 -12 h52 l-12 12z M402 168 l12 -12 v52 l-12 12z" fill="#a9c6e6" stroke="#2f6fb0" stroke-width="1.2"/>
+        <text x="380" y="252" font-size="20" font-weight="800" text-anchor="middle" fill="#1d2433">MB</text>
+        <text x="380" y="272" font-size="13" text-anchor="middle" fill="#8a93a6">메가바이트</text>
+      </g>
+      <g class="box b4 reveal d3">
+        <rect x="510" y="130" width="90" height="90" fill="#c9ddf1" stroke="#2f6fb0" stroke-width="1.5"/>
+        <path d="M510 130 l18 -18 h90 l-18 18z M600 130 l18 -18 v90 l-18 18z" fill="#a9c6e6" stroke="#2f6fb0" stroke-width="1.2"/>
+        <text x="560" y="252" font-size="20" font-weight="800" text-anchor="middle" fill="#1d2433">GB</text>
+        <text x="560" y="272" font-size="13" text-anchor="middle" fill="#8a93a6">기가바이트</text>
+      </g>
+      <g class="box b5 reveal d4">
+        <rect x="700" y="74" width="146" height="146" fill="#c9ddf1" stroke="#2f6fb0" stroke-width="1.5"/>
+        <path d="M700 74 l24 -24 h146 l-24 24z M846 74 l24 -24 v146 l-24 24z" fill="#a9c6e6" stroke="#2f6fb0" stroke-width="1.2"/>
+        <text x="776" y="252" font-size="20" font-weight="800" text-anchor="middle" fill="#1d2433">TB</text>
+        <text x="776" y="272" font-size="13" text-anchor="middle" fill="#8a93a6">테라바이트</text>
+      </g>
+      <!-- 1000배 화살표 -->
+      <g font-size="14" font-weight="700" fill="#8a93a6" text-anchor="middle">
+        <path class="reveal d1" d="M110 170 Q 150 140 196 170" fill="none" stroke="#8a93a6" stroke-width="1.5" marker-end="url(#ch04-arr)"/>
+        <text class="reveal d1" x="153" y="140">약 1,000배</text>
+        <path class="reveal d2" d="M256 150 Q 296 116 338 140" fill="none" stroke="#8a93a6" stroke-width="1.5" marker-end="url(#ch04-arr)"/>
+        <text class="reveal d2" x="296" y="116">약 1,000배</text>
+        <path class="reveal d3" d="M424 120 Q 462 80 500 104" fill="none" stroke="#8a93a6" stroke-width="1.5" marker-end="url(#ch04-arr)"/>
+        <text class="reveal d3" x="462" y="80">약 1,000배</text>
+        <path class="reveal d4" d="M630 80 Q 662 34 694 56" fill="none" stroke="#8a93a6" stroke-width="1.5" marker-end="url(#ch04-arr)"/>
+        <text class="reveal d4" x="660" y="34">약 1,000배</text>
+      </g>
+      <!-- 예시 -->
+      <g font-size="14" text-anchor="middle" fill="#4a5468">
+        <g class="reveal"><text x="87" y="306">영어 글자</text><text x="87" y="324">한 자</text></g>
+        <g class="reveal d1"><text x="226" y="306">글자만 있는</text><text x="226" y="324">한 쪽 약 수 KB</text></g>
+        <g class="reveal d2"><text x="380" y="306">휴대폰 사진 1장 약 3~10MB</text><text x="380" y="324">3분 노래 약 3~5MB</text></g>
+        <g class="reveal d3"><text x="560" y="306">영화 한 편</text><text x="560" y="324">약 수 GB</text></g>
+        <g class="reveal d4"><text x="776" y="306">요즘 노트북 서랍장 전체</text><text x="776" y="324">약 256GB~1TB</text></g>
+      </g>
+      <text x="450" y="364" font-size="13" text-anchor="middle" fill="#8a93a6">상자 크기는 실제 비율이 아닙니다. 실제로는 한 칸 갈 때마다 약 1,000배씩 커집니다.</text>
+    </svg>
+  </figure>
+
+  <h3>사진 한 장은 글자 몇 쪽일까</h3>
+  <p>글자는 아주 작은 상자에 들어갑니다. 글자만 적힌 한 쪽이 약 3~5KB이니, 약 5MB인 휴대폰 사진 한 장이면 글자만 적힌 문서 약 1,000쪽과 맞먹습니다. 그래서 사진과 영상이 서랍장을 가장 빨리 채웁니다.</p>
+
+  <figure class="fig">
+    <svg class="pages-fig" viewBox="0 0 900 300" role="img" aria-label="휴대폰 사진 한 장이 글자만 있는 문서 약 1000쪽과 같은 크기라는 그림">
+      <g>
+        <rect x="30" y="70" width="170" height="128" rx="8" fill="#bfe0f5" stroke="#2b8a6c" stroke-width="3"/>
+        <circle cx="168" cy="100" r="14" fill="#f6c945"/>
+        <path d="M30 170 Q 80 140 120 162 T 200 156 V 198 H 30z" fill="#7cc47f"/>
+        <text x="115" y="230" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433">휴대폰 사진 1장</text>
+        <text x="115" y="252" font-size="14" text-anchor="middle" fill="#4a5468">약 5MB</text>
+      </g>
+      <text x="240" y="146" font-size="34" font-weight="800" text-anchor="middle" fill="#8a93a6">≈</text>
+      <g class="pages" transform="translate(280 30)"></g>
+      <text x="580" y="270" font-size="16" font-weight="700" text-anchor="middle" fill="#1d2433"><tspan class="pcount">0</tspan>쪽</text>
+      <text x="580" y="292" font-size="14" text-anchor="middle" fill="#4a5468">글자만 적힌 한 쪽 약 5KB × 1,000쪽 = 약 5MB</text>
+    </svg>
+  </figure>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 서랍장 채우기<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">아래 묶음을 서랍장 막대로 끌어다 놓거나 + 버튼을 눌러 담아 보세요. 256GB 서랍장이 언제 꽉 차는지 봅니다. 크기는 대략적인 예시입니다.</p>
+      <div class="drop" tabindex="-1">
+        <div class="drop-top"><b>노트북 서랍장 256GB</b><span class="free"></span></div>
+        <div class="gauge"></div>
+        <div class="legend"></div>
+        <div class="drop-hint">여기에 끌어다 놓기</div>
+        <div class="full-dlg" role="alert"><b>용량이 부족합니다</b><span class="full-text"></span><button class="btn full-ok" type="button">확인</button></div>
+      </div>
+      <div class="items"></div>
+      <div class="lab-msg msg1">처음에는 윈도우와 기본 프로그램이 서랍장 일부를 쓰고 있습니다.</div>
+
+      <h4 class="sub">사진 상자 줄이기</h4>
+      <p class="lab-guide">휴대폰으로 찍은 원본 사진을 웹페이지에 쓰기 좋은 크기로 줄여 보세요. 화면에서 볼 때 차이가 있는지 비교합니다.</p>
+      <div class="shrink">
+        <div class="ph-card orig">
+          <div class="ph-frame"><canvas class="cv-orig" width="1200" height="900" aria-label="원본 사진"></canvas></div>
+          <div class="ph-info"><b>원본</b> 4000×3000 점 · <span class="sz">약 5MB</span></div>
+        </div>
+        <div class="ph-card small">
+          <div class="ph-frame"><canvas class="cv-small" width="320" height="240" aria-label="줄인 사진"></canvas><div class="ph-wait">아직 줄이지 않았습니다</div></div>
+          <div class="ph-info"><b>웹용</b> 1280×960 점 · <span class="sz sz-small">-</span></div>
+        </div>
+        <div class="boxes">
+          <div class="bx-wrap"><div class="bx bx-orig"></div><span>원본 상자</span></div>
+          <div class="bx-wrap"><div class="bx bx-small"></div><span>웹용 상자</span></div>
+        </div>
+      </div>
+      <div class="row shrink-acts">
+        <button class="btn primary do-shrink" type="button">사진 줄이기</button>
+        <label class="switch"><input type="checkbox" class="zoom"><span class="track"></span>아주 크게 확대해 보기</label>
+      </div>
+      <div class="lab-msg msg2">"사진 줄이기"를 눌러 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>"용량이 부족합니다"라고 떠요.</dt>
+      <dd>서랍장이 꽉 찼다는 뜻입니다. 대부분 사진과 영상, 큰 프로그램이 자리를 차지합니다. 안 쓰는 큰 파일을 지우거나, 들고 다니는 서랍(외장하드)이나 클라우드로 옮기면 자리가 생깁니다.</dd>
+      <dt>카톡으로 보낸 사진은 화질이 떨어져요.</dt>
+      <dd>카카오톡은 사진을 빨리 보내려고 보낼 때 상자를 줄입니다. 휴대폰 화면에서는 비슷해 보여도 크게 확대하거나 인쇄하면 차이가 납니다. 원본이 필요하면 "원본으로 보내기"를 고르거나 파일로 보냅니다.</dd>
+      <dt>메일에 첨부가 안 돼요.</dt>
+      <dd>메일에는 한 번에 넣을 수 있는 상자 크기 한도가 있습니다. 보통 약 25MB 정도이며 서비스마다 다릅니다. 그보다 크면 대용량 첨부나 클라우드 링크로 보냅니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">B → KB → MB → GB → TB, 약 1,000배씩 커집니다. 사진과 영상은 큰 상자이고, 보는 데 지장이 없으면 줄여서 쓰면 됩니다.</p>
+</section>

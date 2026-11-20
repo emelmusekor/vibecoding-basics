@@ -1,0 +1,75 @@
+/* 4장 상자 크기 */
+#ch04 .fig .box rect, #ch04 .fig .box path { transform-box: fill-box; transform-origin: center bottom; }
+#ch04 .fig.in-view .box rect, #ch04 .fig.in-view .box path { animation: ch04-pop .7s ease-out backwards; }
+#ch04 .fig.in-view .b2 rect, #ch04 .fig.in-view .b2 path { animation-delay: .15s; }
+#ch04 .fig.in-view .b3 rect, #ch04 .fig.in-view .b3 path { animation-delay: .3s; }
+#ch04 .fig.in-view .b4 rect, #ch04 .fig.in-view .b4 path { animation-delay: .45s; }
+#ch04 .fig.in-view .b5 rect, #ch04 .fig.in-view .b5 path { animation-delay: .6s; }
+@keyframes ch04-pop { from { transform: scale(.2); } 70% { transform: scale(1.06); } }
+
+#ch04 .pages-fig { cursor: pointer; }
+#ch04 .pages rect { fill: #fff; stroke: #b8bfcc; stroke-width: .8; }
+#ch04 .prow { opacity: 0; transition: opacity .25s; }
+#ch04 .prow.on { opacity: 1; }
+#ch04 .prow.on rect { animation: ch04-page .5s ease-out; }
+@keyframes ch04-page { from { fill: #c9ddf1; } }
+
+/* 서랍장 채우기 */
+#ch04 .drop { position: relative; border: 2px solid #9a7449; background: #f1e6d4; border-radius: 12px; padding: 12px 14px; transition: background .2s, box-shadow .2s; }
+#ch04 .drop.ready { box-shadow: 0 0 0 3px #f2cf7a; }
+#ch04 .drop.over { background: #fbf1dc; box-shadow: 0 0 0 3px var(--p1); }
+#ch04 .drop.shake { animation: ch04-shake .4s; }
+@keyframes ch04-shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+#ch04 .drop-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; font-size: 15px; }
+#ch04 .free { font-size: 14px; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+#ch04 .free.low { color: var(--bad); font-weight: 700; }
+#ch04 .gauge { display: flex; height: 34px; margin-top: 8px; background: #fff; border: 1px solid #c9b08c; border-radius: 8px; overflow: hidden; }
+#ch04 .gauge i { display: block; height: 100%; flex: none; border-right: 1px solid rgba(255,255,255,.6); transition: width .35s ease-out; }
+#ch04 .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 8px; font-size: 13.5px; color: var(--ink-2); }
+#ch04 .legend span { display: inline-flex; align-items: center; gap: 6px; }
+#ch04 .legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+#ch04 .drop-hint { display: none; text-align: center; font-size: 14px; color: var(--p1); font-weight: 700; margin-top: 6px; }
+#ch04 .drop.ready .drop-hint { display: block; }
+#ch04 .full-dlg { display: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(92%, 380px); background: #fff; border: 1px solid #cfd3db; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.18); padding: 14px 16px; font-size: 14.5px; z-index: 2; }
+#ch04 .full-dlg.on { display: grid; gap: 6px; animation: ch04-dlg .25s ease-out; }
+#ch04 .full-dlg b { color: var(--bad); font-size: 16px; }
+#ch04 .full-dlg .btn { justify-self: end; padding: 4px 14px; font-size: 14px; }
+@keyframes ch04-dlg { from { opacity: 0; transform: translate(-50%, -40%); } }
+
+#ch04 .items { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-top: 12px; }
+#ch04 .item { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: 10px; padding: 8px 8px 8px 10px; background: #fff; cursor: grab; user-select: none; }
+#ch04 .item:active { cursor: grabbing; }
+#ch04 .item .fileicon.sm { width: 28px; height: 36px; }
+#ch04 .it-txt { flex: 1; min-width: 0; line-height: 1.35; }
+#ch04 .it-txt b { display: block; font-size: 14.5px; }
+#ch04 .it-txt small { display: block; font-size: 12.5px; color: var(--ink-3); }
+#ch04 .it-btns { display: flex; gap: 4px; }
+#ch04 .it-btns button { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--line); background: #fff; cursor: pointer; font-size: 18px; font-weight: 700; line-height: 1; }
+#ch04 .it-btns .plus { background: var(--p1); border-color: var(--p1); color: #fff; }
+#ch04 .it-btns button:disabled { opacity: .35; cursor: not-allowed; }
+
+/* 사진 줄이기 */
+#ch04 .shrink { display: grid; grid-template-columns: 1fr 1fr 150px; gap: 14px; align-items: start; }
+@media (max-width: 720px) { #ch04 .shrink { grid-template-columns: 1fr 1fr; } #ch04 .boxes { grid-column: 1 / -1; } }
+@media (max-width: 460px) { #ch04 .shrink { grid-template-columns: 1fr; } }
+#ch04 .ph-card { min-width: 0; }
+#ch04 .ph-frame { position: relative; aspect-ratio: 4 / 3; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: var(--soft); }
+#ch04 .ph-frame canvas { display: block; width: 100%; height: 100%; transform-origin: 27% 37%; transition: transform .6s ease; }
+#ch04 .cv-small { image-rendering: pixelated; }
+#ch04 .shrink.zoomed canvas { transform: scale(6); }
+#ch04 .ph-wait { position: absolute; inset: 0; display: grid; place-items: center; font-size: 14px; color: var(--ink-3); background: var(--soft); transition: opacity .4s; }
+#ch04 .ph-wait.gone { opacity: 0; pointer-events: none; }
+#ch04 .ph-info { font-size: 14px; margin-top: 6px; color: var(--ink-2); }
+#ch04 .ph-info .sz { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+#ch04 .boxes { display: flex; gap: 14px; align-items: flex-end; justify-content: center; min-height: 150px; padding-bottom: 4px; }
+#ch04 .bx-wrap { white-space: nowrap; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-3); }
+#ch04 .bx { width: 100px; height: 100px; background: #e8cda7; border: 2px solid #9a7449; border-radius: 4px; }
+#ch04 .bx-small { --s: 1; width: calc(100px * var(--s)); height: calc(100px * var(--s)); background: #c9ddf1; border-color: var(--p1); transition: width .1s, height .1s; }
+@media (max-width: 720px) { #ch04 .boxes { min-height: 0; } #ch04 .bx { width: 70px; height: 70px; } #ch04 .bx-small { width: calc(70px * var(--s)); height: calc(70px * var(--s)); } }
+#ch04 .shrink-acts { margin-top: 12px; }
+
+/* 좁은 화면: 그림 글자가 너무 작아지지 않게 가로로 밀어 보기 */
+@media (max-width: 560px) {
+  #ch04 .fig { overflow-x: auto; }
+  #ch04 .fig svg { min-width: 640px; }
+}

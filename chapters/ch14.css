@@ -1,0 +1,49 @@
+/* 14장 금고 열쇠 */
+#ch14 .c14-rules { margin: 10px 0 18px; padding: 0; list-style: none; counter-reset: r; }
+#ch14 .c14-rules li { position: relative; padding: 10px 14px 10px 50px; margin-bottom: 8px; background: var(--soft); border-radius: 10px; font-size: 15.5px; }
+#ch14 .c14-rules li::before { counter-increment: r; content: counter(r); position: absolute; left: 14px; top: 11px; width: 24px; height: 24px; border-radius: 50%; background: var(--p3); color: #fff; font-weight: 800; font-size: 14px; display: grid; place-items: center; }
+#ch14 .c14-rules b { display: block; }
+#ch14 .c14-say { background: #ece4f6; color: #3d2a5c; border-radius: 6px; padding: 0 6px; font-weight: 600; }
+
+#ch14 .c14-top { display: grid; grid-template-columns: 1fr; gap: 14px; }
+#ch14 .c14-top:has(.c14-kitchen:not([hidden])) { grid-template-columns: 1.3fr 1fr; }
+@media (max-width: 760px) { #ch14 .c14-top:has(.c14-kitchen:not([hidden])) { grid-template-columns: 1fr; } }
+#ch14 .c14-app .browser-bar .reload { cursor: default; display: grid; place-items: center; }
+#ch14 .c14-app .browser-view { padding: 12px; }
+#ch14 .c14-chat-head { font-weight: 800; font-size: 15px; margin-bottom: 8px; }
+#ch14 .c14-chat { height: 170px; overflow: auto; display: flex; flex-direction: column; gap: 6px; background: #f6f7f9; border-radius: 8px; padding: 8px; }
+#ch14 .c14-b { max-width: 82%; padding: 5px 11px; border-radius: 12px; font-size: 14.5px; line-height: 1.5; }
+#ch14 .c14-b.bot { background: #fff; border: 1px solid var(--line); align-self: flex-start; border-bottom-left-radius: 4px; }
+#ch14 .c14-b.me { background: var(--p3); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+#ch14 .c14-ask { display: flex; gap: 6px; margin-top: 8px; }
+#ch14 .c14-q { flex: 1; min-width: 0; border: 1px solid #cfd3db; border-radius: 8px; padding: 6px 10px; font-size: 14.5px; }
+
+#ch14 .c14-kitchen { border: 2px dashed var(--ok); border-radius: 10px; background: #eef7f1; padding: 10px 12px; font-size: 14px; animation: c14-in .4s ease; }
+#ch14 .c14-k-head { font-weight: 800; color: var(--ok); margin-bottom: 6px; }
+#ch14 .c14-k-head small { font-weight: 500; color: var(--ink-3); margin-left: 6px; }
+#ch14 .c14-file { background: #fff; border: 1px solid #cfe3d6; border-radius: 6px; margin-bottom: 8px; overflow: hidden; }
+#ch14 .c14-fname { font-family: var(--mono); font-size: 13px; background: #dff0e5; padding: 2px 8px; font-weight: 700; }
+#ch14 .c14-file pre { margin: 0; padding: 6px 8px; font-family: var(--mono); font-size: 13px; white-space: pre-wrap; word-break: break-all; }
+#ch14 .c14-kitchen p { margin: 0; color: var(--ink-2); }
+
+#ch14 .c14-steps { margin: 14px 0 0; }
+#ch14 .c14-steps .btn { font-size: 14.5px; }
+
+#ch14 .c14-source { margin-top: 14px; animation: c14-in .4s ease; }
+#ch14 .c14-src-bar { font-family: var(--mono); font-size: 13px; color: var(--ink-2); background: #eceef2; border: 1px solid #cfd3db; border-bottom: 0; border-radius: 10px 10px 0 0; padding: 4px 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#ch14 .c14-code { border-radius: 0 0 10px 10px; font-size: 13.5px; }
+#ch14 .c14-code .ln { display: block; padding: 0 6px; margin: 0 -6px; border-radius: 4px; }
+#ch14 .c14-code .ln.hl { background: rgba(242,193,78,.28); box-shadow: inset 3px 0 0 #f2c14e; animation: c14-hl 1.2s ease 2; }
+#ch14 .c14-code .ln.hl.ok { background: rgba(43,138,74,.35); box-shadow: inset 3px 0 0 #6fcf97; }
+@keyframes c14-hl { 50% { background: rgba(242,193,78,.55); } }
+@keyframes c14-in { from { opacity: 0; transform: translateY(8px); } }
+
+#ch14 .c14-abuse { margin-top: 14px; animation: c14-in .4s ease; }
+#ch14 .c14-term { min-height: 190px; max-height: 220px; overflow: auto; font-size: 13.5px; }
+#ch14 .c14-meter { background: var(--soft); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+#ch14 .c14-m-label { font-size: 14px; color: var(--ink-2); font-weight: 700; }
+#ch14 .c14-m-label small { font-weight: 500; color: var(--ink-3); }
+#ch14 .c14-money { font-size: 34px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.2; transition: color .3s; word-break: break-all; }
+#ch14 .c14-money.hot { color: var(--bad); }
+#ch14 .c14-meter .bar i { background: var(--bad); transition: width .1s linear; }
+#ch14 .c14-calls { font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; }

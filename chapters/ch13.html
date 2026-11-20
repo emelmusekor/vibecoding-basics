@@ -1,0 +1,187 @@
+<section class="chapter" id="ch13" data-part="3" data-title="다시 물어봐야 바뀐다">
+  <div class="ch-head">
+    <div class="ch-num">13</div>
+    <div>
+      <h2>다시 물어봐야 바뀐다</h2>
+      <div class="meta">비유 <b>손님이 주방에 다시 물어보기</b> · 용어 호출, 자동 새로고침, 실시간 연결</div>
+    </div>
+  </div>
+
+  <p>12장의 마지막 체험에서, 장부에 새 점수가 적혀도 이미 열어 둔 다른 기기 화면은 그대로였습니다. 주방에 새 소식이 생겨도 손님 테이블은 그 사실을 모릅니다. <strong>화면은 스스로 바뀌지 않습니다.</strong> 손님이 다시 물어봐야 알게 됩니다.</p>
+  <p>이렇게 화면이 가게에 요청을 보내는 것을 서버를 <strong>호출</strong>한다고 합니다. 8장에서 본 택배 주문과 같은 일입니다. AI가 "서버를 호출합니다", "API를 부릅니다"라고 말하면 "주방에 주문서를 보낸다"로 알아들으면 됩니다.</p>
+  <p>그래서 여러 사람이 함께 쓰는 앱은 사람이 새로고침을 누르지 않아도 몇 초마다 몰래 "새 소식 있어요?" 하고 물어보게 만듭니다. 이때는 화면 전체를 다시 받지 않습니다. 새 글 목록처럼 필요한 부분만 받아 와서 그 자리만 살짝 바꿉니다. 눈에 띄지 않는 작은 새로고침이 화면 뒤에서 계속 일어납니다.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 860 270" role="img" aria-label="손님 테이블의 화면이 일정한 간격으로 주방에 새 소식이 있는지 묻고, 새 글이 있을 때 화면에 한 줄이 더해진다">
+      <defs>
+        <path id="c13-go" d="M 250 130 Q 430 70 610 130"/>
+        <path id="c13-back" d="M 610 150 Q 430 210 250 150"/>
+      </defs>
+      <!-- 손님 테이블 -->
+      <rect x="20" y="30" width="230" height="200" rx="14" fill="#eaf1f9" stroke="#2f6fb0" stroke-width="2"/>
+      <text x="135" y="58" font-size="17" font-weight="800" text-anchor="middle" fill="#2f6fb0">손님 테이블</text>
+      <text x="135" y="78" font-size="13" text-anchor="middle" fill="#4a5468">내 화면 (홀)</text>
+      <rect x="60" y="92" width="150" height="110" rx="8" fill="#1d2433"/>
+      <rect x="67" y="99" width="136" height="96" rx="3" fill="#fff"/>
+      <text x="76" y="118" font-size="13" font-weight="700" fill="#1d2433">모인 답</text>
+      <rect x="76" y="128" width="110" height="8" rx="3" fill="#c9ccd3"/>
+      <rect x="76" y="144" width="90" height="8" rx="3" fill="#c9ccd3"/>
+      <rect x="76" y="160" width="100" height="8" rx="3" fill="#c2692a" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.82;0.84;1" dur="10s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="64" y="154" width="142" height="20" rx="4" fill="none" stroke="#c2692a" stroke-width="2" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.82;0.84;0.95;1" dur="10s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- 주방 -->
+      <rect x="610" y="30" width="230" height="200" rx="14" fill="#fbe7d6" stroke="#c2692a" stroke-width="2"/>
+      <text x="725" y="58" font-size="17" font-weight="800" text-anchor="middle" fill="#c2692a">주방과 장부</text>
+      <text x="725" y="78" font-size="13" text-anchor="middle" fill="#4a5468">서버</text>
+      <rect x="665" y="92" width="120" height="110" rx="6" fill="#fff" stroke="#9a7449" stroke-width="2"/>
+      <rect x="677" y="106" width="96" height="7" rx="3" fill="#c9ccd3"/>
+      <rect x="677" y="122" width="80" height="7" rx="3" fill="#c9ccd3"/>
+      <rect x="677" y="138" width="88" height="7" rx="3" fill="#c2692a" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.35;0.37;1" dur="10s" repeatCount="indefinite"/>
+      </rect>
+      <text x="725" y="190" font-size="13" text-anchor="middle" fill="#9a7449" opacity="0">새 글이 적힘
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.35;0.37;0.6;0.62" dur="10s" repeatCount="indefinite"/>
+      </text>
+
+      <!-- 시계 -->
+      <circle cx="430" cy="236" r="14" fill="#fff" stroke="#4a5468" stroke-width="2"/>
+      <line x1="430" y1="236" x2="430" y2="226" stroke="#4a5468" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate" from="0 430 236" to="360 430 236" dur="5s" repeatCount="indefinite"/>
+      </line>
+      <text x="452" y="241" font-size="14" fill="#4a5468">몇 초마다 한 번씩</text>
+
+      <!-- 봉투 1: 묻기 -->
+      <g opacity="0">
+        <rect x="-62" y="-14" width="124" height="28" rx="6" fill="#fff" stroke="#2f6fb0" stroke-width="2"/>
+        <text x="0" y="5" font-size="13" font-weight="700" text-anchor="middle" fill="#2f6fb0">새 소식 있어요?</text>
+        <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.02;0.18;1"><mpath href="#c13-go"/></animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.18;0.19;1" dur="10s" repeatCount="indefinite"/>
+      </g>
+      <g opacity="0">
+        <rect x="-40" y="-14" width="80" height="28" rx="6" fill="#fff" stroke="#8a93a6" stroke-width="2"/>
+        <text x="0" y="5" font-size="13" font-weight="700" text-anchor="middle" fill="#4a5468">없어요</text>
+        <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.22;0.38;1"><mpath href="#c13-back"/></animateMotion>
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.219;0.22;0.38;0.39;1" dur="10s" repeatCount="indefinite"/>
+      </g>
+      <!-- 봉투 2 -->
+      <g opacity="0">
+        <rect x="-62" y="-14" width="124" height="28" rx="6" fill="#fff" stroke="#2f6fb0" stroke-width="2"/>
+        <text x="0" y="5" font-size="13" font-weight="700" text-anchor="middle" fill="#2f6fb0">새 소식 있어요?</text>
+        <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.46;0.62;1"><mpath href="#c13-go"/></animateMotion>
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.459;0.46;0.62;0.63;1" dur="10s" repeatCount="indefinite"/>
+      </g>
+      <g opacity="0">
+        <rect x="-50" y="-14" width="100" height="28" rx="6" fill="#fff" stroke="#c2692a" stroke-width="2"/>
+        <text x="0" y="5" font-size="13" font-weight="700" text-anchor="middle" fill="#c2692a">새 글 1개</text>
+        <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.66;0.82;1"><mpath href="#c13-back"/></animateMotion>
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.659;0.66;0.82;0.83;1" dur="10s" repeatCount="indefinite"/>
+      </g>
+    </svg>
+    <figcaption>첫 번째 물음에는 "없어요", 그사이 장부에 새 글이 적힌 뒤 두 번째 물음에는 "새 글 1개"가 돌아옵니다. 화면은 그 한 줄만 바꿉니다.</figcaption>
+  </figure>
+
+  <h3>물어보는 방법은 세 가지입니다</h3>
+  <div class="c13-ways">
+    <div class="c13-way">
+      <h5>버튼 누를 때 물어보기</h5>
+      <svg viewBox="0 0 240 46" aria-hidden="true"><line x1="6" y1="30" x2="234" y2="30" stroke="#c9ccd3" stroke-width="2"/><g fill="#2f6fb0"><rect x="40" y="16" width="10" height="14" rx="2"/><rect x="62" y="16" width="10" height="14" rx="2"/><rect x="170" y="16" width="10" height="14" rx="2"/></g><text x="120" y="44" font-size="13" text-anchor="middle" fill="#8a93a6">시간 →</text></svg>
+      <p>손님이 궁금할 때 직접 종업원을 불러 묻습니다. [새로고침]이나 [목록 갱신] 버튼이 이 방식입니다.</p>
+      <p class="c13-note">주문이 적습니다. 대신 누르기 전까지는 바뀐 줄 모릅니다.</p>
+    </div>
+    <div class="c13-way">
+      <h5>몇 초마다 물어보기</h5>
+      <svg viewBox="0 0 240 46" aria-hidden="true"><line x1="6" y1="30" x2="234" y2="30" stroke="#c9ccd3" stroke-width="2"/><g fill="#2f6fb0"><rect x="20" y="16" width="10" height="14" rx="2"/><rect x="60" y="16" width="10" height="14" rx="2"/><rect x="100" y="16" width="10" height="14" rx="2"/><rect x="140" y="16" width="10" height="14" rx="2"/><rect x="180" y="16" width="10" height="14" rx="2"/><rect x="220" y="16" width="10" height="14" rx="2"/></g><text x="120" y="44" font-size="13" text-anchor="middle" fill="#8a93a6">시간 →</text></svg>
+      <p>정해진 시간마다 종업원이 주방에 다녀옵니다. 사람이 아무것도 누르지 않아도 화면이 저절로 바뀌는 것처럼 보입니다.</p>
+      <p class="c13-note">만들기 쉽습니다. 새 소식이 없어도 계속 주문이 나갑니다.</p>
+    </div>
+    <div class="c13-way">
+      <h5>가게가 먼저 알려 주기</h5>
+      <svg viewBox="0 0 240 46" aria-hidden="true"><line x1="6" y1="30" x2="234" y2="30" stroke="#c2692a" stroke-width="3" stroke-dasharray="2 4"/><g fill="#c2692a"><rect x="90" y="16" width="10" height="14" rx="2"/><rect x="196" y="16" width="10" height="14" rx="2"/></g><rect x="6" y="16" width="10" height="14" rx="2" fill="#2f6fb0"/><text x="120" y="44" font-size="13" text-anchor="middle" fill="#8a93a6">시간 →</text></svg>
+      <p>주방과 테이블 사이에 전화를 켜 둔 채로 있는 것과 같습니다. 새 소식이 생기면 주방이 먼저 말해 줍니다. 실시간 연결이라고 부릅니다.</p>
+      <p class="c13-note">가장 빠릅니다. 연결을 붙잡고 있는 만큼 만들기가 조금 더 복잡합니다.</p>
+    </div>
+  </div>
+
+  <h3>얼마나 자주 물어봐야 할까</h3>
+  <p>너무 자주 물어보면 가게가 지칩니다. 화면 하나가 1초마다 물으면 한 시간에 3,600번입니다. 30명이 같은 화면을 켜 두면 그 30배입니다. 무료 서비스는 대부분 주문 횟수에 한도가 있어서 금방 바닥나고, 휴대폰은 쉬지 못해 배터리가 빨리 닳습니다. 반대로 너무 드물게 물어보면 새 글이 늦게 보입니다.</p>
+  <p>간격을 정하는 것은 어렵지 않습니다. 얼마나 빨리 보여야 하는지를 AI에게 말해 주면 됩니다.</p>
+  <div class="c13-say">
+    <p>"다른 학생이 제출하면 선생님 화면에 5초 안에 보이게 해 줘."</p>
+    <p>"학생 화면은 30초마다 새 글을 확인하면 충분해. 무료 한도를 넘지 않게 해 줘."</p>
+  </div>
+
+  <div class="lab">
+    <div class="lab-title">직접 해 보기 · 선생님 화면은 언제 바뀔까<button class="reset" type="button">처음으로</button></div>
+    <div class="lab-body">
+      <p class="lab-guide">왼쪽 학생 폰에서 답을 제출하고 오른쪽 선생님 화면을 지켜보세요. 물어보는 방식을 하나씩 바꿔 가며 비교합니다.</p>
+      <div class="c13-modes" role="group" aria-label="물어보는 방식">
+        <button type="button" data-mode="none">물어보지 않음</button>
+        <button type="button" data-mode="button">버튼 누를 때만</button>
+        <button type="button" data-mode="poll">몇 초마다 물어보기</button>
+        <button type="button" data-mode="push">가게가 먼저 알려 주기</button>
+      </div>
+      <div class="slider c13-slider"><label for="c13-int">물어보는 간격</label><input id="c13-int" class="c13-int" type="range" min="1" max="60" step="1" value="3"><output class="c13-int-out">3초</output></div>
+
+      <div class="c13-stage">
+        <div class="c13-col c13-stu">
+          <div class="c13-cap">학생 폰</div>
+          <div class="c13-phone">
+            <div class="c13-ph-bar">class-board.example.com</div>
+            <div class="c13-ph-body">
+              <div class="c13-q">오늘 배운 것을 한 줄로</div>
+              <input class="c13-input" type="text" maxlength="30" aria-label="답 쓰기">
+              <button class="btn primary c13-send" type="button">제출</button>
+            </div>
+          </div>
+          <button class="btn c13-five" type="button">다섯 명이 연달아 제출</button>
+        </div>
+        <div class="c13-col c13-kit">
+          <div class="c13-cap">주방 · 장부</div>
+          <div class="c13-book">
+            <div class="c13-link" hidden>선생님 화면과 전화 연결됨</div>
+            <ol class="c13-kit-list"></ol>
+          </div>
+        </div>
+        <div class="c13-col c13-tea">
+          <div class="c13-cap">선생님 화면</div>
+          <div class="browser">
+            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><button class="reload" type="button" title="새로고침">↻</button><span class="addr">class-board.example.com/teacher</span></div>
+            <div class="browser-view">
+              <div class="c13-err" hidden>요청 한도 초과 (429)<br><small>잠시 후 다시 시도하세요.</small></div>
+              <div class="c13-tv-head"><b>모인 답 <span class="c13-n">0</span>개</b><button class="btn c13-check" type="button" hidden>새 글 확인</button></div>
+              <div class="c13-status"></div>
+              <ol class="c13-tea-list"></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c13-meters">
+        <div class="c13-m"><span>선생님 화면이 보낸 주문</span><b class="c13-cnt">0회</b></div>
+        <div class="c13-m c13-lim"><span>무료 한도 <small>(체험용 100회)</small></span><div class="bar"><i></i></div></div>
+        <div class="c13-m"><span>같은 화면을 30명이 1시간 켜 두면</span><b class="c13-est">-</b></div>
+        <div class="c13-m"><span>마지막 글이 보이기까지</span><b class="c13-lag">-</b></div>
+      </div>
+      <div class="lab-msg c13-msg">학생 폰에서 [제출]을 눌러 보세요.</div>
+    </div>
+  </div>
+
+  <div class="why">
+    <h4>이래서 이런 일이 생깁니다</h4>
+    <dl>
+      <dt>다른 사람이 쓴 글이 내 화면에 안 떠요.</dt>
+      <dd>글은 주방의 장부에 잘 적혔지만 내 화면이 아직 물어보지 않은 것입니다. 앱에 다시 물어보는 기능이 없으면 화면은 처음 받아 온 그대로입니다. AI에게 "새 글이 몇 초마다 자동으로 보이게 해 줘"라고 말하면 됩니다.</dd>
+      <dt>새로고침하면 그제야 보여요.</dt>
+      <dd>새로고침은 화면 전체를 가게에 다시 주문하는 일이라서, 그때 장부의 최신 내용이 함께 옵니다. 사람이 대신 물어본 것입니다. 앱이 스스로 물어보게 만들면 누르지 않아도 됩니다.</dd>
+      <dt>앱이 갑자기 멈췄어요. "요청 한도 초과" 오류가 나요.</dt>
+      <dd>너무 자주 물어봐서 무료로 쓸 수 있는 주문 횟수를 다 쓴 경우입니다. 영어로는 "Too Many Requests", "Quota exceeded", 429 같은 말로 나옵니다. 물어보는 간격을 늘리거나, 화면이 안 보일 때는 물어보지 않게 해 달라고 AI에게 말합니다.</dd>
+      <dt>휴대폰 배터리가 빨리 닳아요.</dt>
+      <dd>앱이 쉬지 않고 계속 물어보고 있을 수 있습니다. 물어볼 때마다 휴대폰이 인터넷을 쓰고 일을 합니다. 간격을 적당히 늘리면 줄어듭니다.</dd>
+    </dl>
+  </div>
+  <p class="remember">화면은 스스로 바뀌지 않습니다. 주방에 다시 물어봐야(호출해야) 바뀝니다. 얼마나 빨리 보여야 하는지 AI에게 말해 주면 물어보는 간격을 정해 줍니다.</p>
+</section>
